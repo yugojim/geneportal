@@ -51,12 +51,10 @@ def auth(request):
     Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
     right=models.Permission.objects.filter(user__username__startswith=user.username)
     if request.user.is_authenticated:
-        return HttpResponse('authorized', status=200)
-         
+        #return HttpResponseForbidden('Forbidden')
+        return HttpResponse('Authenticated')
     else:
-        return HttpResponse('authorized', status=200)
-        # 傳回 HTTP 401 表示認證失敗
-        #return HttpResponse('Unauthorized', status=401)
+        return HttpResponse('Authenticated')
 
 @csrf_exempt 
 def index(request):
