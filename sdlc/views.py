@@ -52,10 +52,10 @@ def auth(request):
     right=models.Permission.objects.filter(user__username__startswith=user.username)
     if request.user.is_authenticated:
         #return HttpResponseForbidden('Forbidden')
-        return HttpResponse(status_code = 200)
+        return HttpResponse('Authenticated' ,status = 200)
         #return HttpResponse('Authenticated')
     else:
-        return HttpResponse(status_code = 200)
+        return HttpResponse('Unauthenticated',status = 401)
         #return HttpResponse('Authenticated')
 
 @csrf_exempt 
