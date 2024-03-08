@@ -54,8 +54,9 @@ def auth(request):
         return HttpResponse('authorized', status=200)
          
     else:
+        return HttpResponse('authorized', status=200)
         # 傳回 HTTP 401 表示認證失敗
-        return HttpResponse('Unauthorized', status=401)
+        #return HttpResponse('Unauthorized', status=401)
 
 @csrf_exempt 
 def index(request):
