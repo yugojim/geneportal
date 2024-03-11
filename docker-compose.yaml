@@ -17,6 +17,7 @@ services:
       # - ../server/.env
     working_dir: /server
     tty: true
+    restart: always
     #links:
       #- mysql
     #depends_on:

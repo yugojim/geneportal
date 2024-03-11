@@ -35,12 +35,10 @@ risk = DocumentPath + 'risk.csv'
 riskdf = pd.read_csv(risk, encoding='utf8')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-fhir = 'http://192.168.211.9:8080/fhir/'#4600VM
-postgresip = "192.168.211.19"
-genepostgresip = "172.174.201.121"
+
+genepostgresip = "104.42.221.219"
 #genepostgresip = "104.208.68.39"
 #genepostgresip = "10.97.242.13"
-#genepostgresport="8081"
 genepostgresport="5432"
 jsonPath=str(pathlib.Path().absolute()) + "/static/template/Observation-Imaging-EKG.json"
 ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
