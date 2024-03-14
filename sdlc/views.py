@@ -56,7 +56,6 @@ def auth(request):
         return HttpResponse('Unauthenticated',status = 401)
         #return HttpResponse('Authenticated')
 
-@csrf_exempt 
 def index(request):
     #User = get_user_model()
     #usersdf = User.objects.all().values()
@@ -65,6 +64,7 @@ def index(request):
     user = request.user
     Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
     right=models.Permission.objects.filter(user__username__startswith=user.username)
+    
     try:
         context = {
                 'Generight' : Generight,
@@ -79,6 +79,35 @@ def index(request):
                 'FuncResult' : 'Function'
                 }
         return render(request, 'index.html', context)
+
+def convert(request):
+    #User = get_user_model()
+    #usersdf = User.objects.all().values()
+    #print(type([{i.title: i.specs} for i in User.objects.all()]))
+    #print([{i.title: i.specs} for i in User.objects.all()])
+    user = request.user
+    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+    right=models.Permission.objects.filter(user__username__startswith=user.username)
+    conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
+    cur = conn.cursor()
+    consentsql = "SELECT table_schema,table_name FROM information_schema.tables where table_schema='public';"
+    consentsql = "SELECT column_name,data_type FROM information_schema.columns WHERE table_name = 'reportxml';"
+    cur.execute(consentsql)
+    rows = cur.fetchall()
+    try:
+        context = {
+                'Generight' : Generight,
+                'right' : right,
+                'FuncResult' : 'Function'
+                }
+        return render(request, 'convert.html', context)
+    except:
+        context = {
+                'Generight' : Generight,
+                'right' : right,
+                'FuncResult' : 'Function'
+                }
+        return render(request, 'convert.html', context)
     
 def GeneReport(request):
     ReportNo=''

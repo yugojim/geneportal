@@ -52,6 +52,7 @@ urlpatterns = [
     
     path('GeneFinalReportDetails/', views.GeneFinalReportDetails, name='GeneFinalReportDetails'),
     path('GeneVariantReportDetails/', views.GeneVariantReportDetails, name='GeneVariantReportDetails'),
+    path('convert/', views.convert, name='convert'),
     
     path('working', views.working, name='working'),
     path('DischargeSummary', views.DischargeSummary, name='DischargeSummary'),

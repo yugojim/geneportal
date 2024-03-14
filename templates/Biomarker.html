@@ -16,6 +16,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 	{% include 'utilities-Sidebar.html' %}
+	{% if user.is_authenticated %}
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
@@ -135,8 +136,8 @@
                 </div>
             </footer>
 		</div>
+		{% endif %}
 	</div>
-    </div>
 {% include 'utilities-js.html' %}    
 </body>
 

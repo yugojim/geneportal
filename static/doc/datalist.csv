@@ -1,2 +1,442 @@
-	0	1	2	3
-0	1212	{'ResultsReport': {'ResultsPayload': {'FinalReport': {'Sample': {'FM_Id': None, 'SampleId': None, 'BlockId': None, 'TRFNumber': None, 'TestType': None, 'SpecFormat': None, 'ReceivedDate': None}, 'PMI': {'ReportId': None, 'MRN': None, 'FullName': None, 'FirstName': None, 'LastName': None, 'SubmittedDiagnosis': None, 'Gender': None, 'DOB': None, 'OrderingMD': None, 'OrderingMDId': None, 'Pathologist': None, 'CopiedPhysician1': None, 'MedFacilName': None, 'MedFacilID': None, 'SpecSite': None, 'CollDate': None, 'ReceivedDate': None, 'CountryOfOrigin': None}}, 'variant_report': {'short_variants': None, 'copy_number_alterations': None, 'rearrangements': {'rearrangement': {'description': 'SS18 ® SSX1', 'other_gene': 'SS18', 'targeted_gene': 'SSX1'}}, 'biomarkers': {'microsatellite_instability': {'status': None}, 'tumor_mutation_burden': {'score': None}}}}}}	M112-00118          	AS23019             
+﻿Id,報告號碼,分生號碼,病歷號,Microsatellite Status,Tumor Mutational Burden score
+76,M112-10106          ,PF23052             ,35563429,MSS,2.53
+77,M112-10107          ,PF23053             ,49487765,MSS,7.59
+78,M112-10115          ,PF23050             ,49460299,MSS,1.21
+79,M112-10116          ,PF23051             ,44788309,MSS,1.21
+82,M112-10120          ,PF23058             ,26689974,MSS,13.91
+83,M112-10132          ,PF23056             ,49487516,MSS,12.07
+129,S110-99532          ,PF21010             ,41619038,MSS,5.04
+132,S110-99573          ,PF21012             ,47439963,MSS,6.3
+135,S110-99576          ,PF21015             ,30824921,MSS,0.0
+139,S110-99668          ,PF21016             ,46527757,MSS,1.26
+137,S110-99654          ,PF21018             ,47551224,MSS,371.95
+138,S110-99655          ,PF21019             ,26007622,MSS,1.26
+140,S110-99718          ,PF21020             ,19906060,MSS,0.0
+146,S110-99813          ,PF21025             ,46470422,MSS,3.78
+145,S110-99741          ,PF21026             ,37798713,MSS,0.0
+147,S110-99814          ,PF21027             ,13396582,MSS,3.78
+149,S110-99938          ,PF21028             ,46384183,MSS,2.52
+86,S110-89474          ,PF21033             ,45378652,MSS,3.79
+87,S110-89475          ,PF21035             ,17743760,MSS,2.52
+88,S110-89476          ,PF21036             ,47590078,MSS,1.26
+9,M111-10020          ,PF22113             ,36728480,MSS,0.0
+1,M111-10001          ,PF22121             ,48284577,MSS,8.45
+3,M111-10003          ,PF22122             ,45203041,MSS,1.21
+4,M111-10006          ,PF22124             ,48984710,MSS,3.62
+5,M111-10011          ,PF22125             ,33895533,MSS,6.03
+7,M111-10018          ,PF22126             ,35462818,MSS,5.7
+12,M111-10026          ,PF22127             ,48074040,MSS,0.0
+6,M111-10015          ,PF22128             ,30426223,MSS,0.0
+8,M111-10019          ,PF22129             ,31701163,MSS,2.41
+10,M111-10021          ,PF22130             ,43240217,MSS,2.41
+11,M111-10023          ,PF22131             ,32267086,MSS,1.26
+13,M111-10027          ,PF22132             ,48830359,MSS,2.53
+14,M111-10028          ,PF22133             ,43056399,MSS,0.0
+17,M111-10031          ,PF22135             ,33525018,MSS,5.06
+15,M111-10029          ,PF22136             ,31956180,MSS,1.21
+18,M111-10032          ,PF22137             ,49084620,MSS,3.62
+19,M111-10033          ,PF22138             ,14285575,MSS,3.79
+21,M111-10036          ,PF22139             ,40164203,MSS,1.21
+24,M111-10039          ,PF22140             ,17527343,MSS,7.59
+20,M111-10035          ,PF22141             ,46763502,MSS,2.41
+22,M111-10037          ,PF22142             ,13896872,MSS,1.26
+23,M111-10038          ,PF22143             ,22888751,MSS,2.41
+25,M111-10040          ,PF22144             ,44329557,MSS,2.53
+26,M112-10001          ,PF22145             ,27693396,MSS,3.62
+35,M112-10023          ,PF22150             ,45003609,MSS,4.83
+30,M112-10011          ,PF23001             ,41872371,MSS,3.62
+31,M112-10012          ,PF23002             ,48288502,MSS,8.45
+32,M112-10013          ,PF23003             ,48288502,MSS,8.45
+33,M112-10014          ,PF23004             ,48308312,MSS,6.32
+36,M112-10024          ,PF23005             ,27477196,MSS,12.07
+37,M112-10025          ,PF23007             ,5900094,MSS,3.62
+39,M112-10027          ,PF23009             ,21930687,MSS,3.62
+41,M112-10040          ,PF23012             ,44743808,MSS,3.62
+40,M112-10039          ,PF23013             ,49243643,MSS,6.03
+42,M112-10047          ,PF23014             ,49128316,MSS,1.26
+43,M112-10048          ,PF23015             ,38460321,MSS,27.76
+44,M112-10049          ,PF23016             ,49277409,MSS,4.83
+45,M112-10050          ,PF23017             ,44684868,MSS,3.62
+47,M112-10052          ,PF23019             ,38775110,MSS,1.26
+48,M112-10053          ,PF23020             ,49181820,MSS,0.0
+49,M112-10056          ,PF23022             ,48341055,MSS,1.21
+55,M112-10072          ,PF23029             ,30431324,MSS,4.83
+56,M112-10076          ,PF23030             ,26940830,MSS,0.0
+57,M112-10080          ,PF23031             ,47951020,MSS,3.62
+58,M112-10081          ,PF23032             ,46562178,MSS,1.26
+59,M112-10083          ,PF23033             ,49289125,MSS,1.21
+62,M112-10087          ,PF23036             ,49238973,MSS,11.38
+63,M112-10091          ,PF23037             ,29735635,MSS,3.62
+64,M112-10092          ,PF23038             ,49390887,MSS,0.0
+65,M112-10093          ,PF23039             ,22406639,MSS,0.0
+66,M112-10094          ,PF23040             ,22582098,MSS,2.41
+67,M112-10095          ,PF23041             ,43273263,MSS,2.44
+69,M112-10098          ,PF23043             ,48576961,MSS,6.03
+70,M112-10099          ,PF23044             ,40089701,MSS,0.0
+71,M112-10100          ,PF23045             ,29666317,MSS,2.53
+72,M112-10101          ,PF23046             ,45669065,MSS,1.21
+73,M112-10103          ,PF23047             ,39934139,MSS,0.0
+74,M112-10104          ,PF23048             ,49225287,MSS,3.79
+75,M112-10105          ,PF23049             ,49354087,MSS,1.26
+80,M112-10117          ,PF23054             ,32708477,MSS,0.0
+81,M112-10118          ,PF23055             ,49414917,MSS,0.0
+152,S111-97804          ,PF22082             ,12700071,MSS,2.52
+179,S111-97939          ,PF22114             ,45546610,MSS,0.0
+197,S111-98124          ,PF21073             ,25229598,MSS,3.78
+198,S111-98125          ,PF21074             ,31733194,MSS,0.0
+199,S111-98126          ,PF21075             ,47841327,MSS,0.0
+261,S111-99483          ,PF22063             ,48506918,MSS,1.26
+262,S111-99484          ,PF22064             ,48192387,MSS,3.78
+120,S110-99424          ,PF21003             ,22833530,MSS,6.3
+121,S110-99424          ,PF21003             ,22833530,MSS,6.3
+127,S110-99494          ,PF21005             ,10184506,MSS,0.0
+124,S110-99443          ,PF21006             ,32396557,MSS,7.59
+125,S110-99443          ,PF21006             ,32396557,MSS,7.59
+131,S110-99552          ,PF21008             ,46179560,MSS,6.52
+128,S110-99531          ,PF21009             ,28052746,MSS,7.57
+133,S110-99574          ,PF21013             ,46613278,MSS,3.78
+148,S110-99827          ,PF21030             ,40170556,MSS,12.61
+150,S110-99939          ,PF21031             ,25017394,MSS,11.38
+95,S110-89570          ,PF21034             ,47543968,MSS,0.0
+89,S110-89477          ,PF21037             ,37147195,MSS,0.0
+90,S110-89556          ,PF21038             ,46231429,MSS,10.12
+91,S110-89557          ,PF21039             ,46883527,MSS,2.53
+92,S110-89558          ,PF21040             ,29266282,MSS,1.26
+96,S110-89571          ,PF21042             ,44309151,MSS,6.32
+94,S110-89560          ,PF21043             ,31965090,MSS,6.32
+97,S110-89572          ,PF21044             ,47781726,MSS,7.59
+99,S110-89574          ,PF21046             ,47638120,MSS,1.26
+100,S110-94648          ,PF21047             ,47638120,MSS,8.85
+101,S110-94648          ,PF21047             ,47638120,MSS,8.85
+102,S110-94691          ,PF21048             ,33574366,MSS,1.26
+103,S110-94771          ,PF21049             ,47793715,MSS,2.52
+106,S110-94786          ,PF21050             ,47589946,MSS,8.83
+107,S110-94786          ,PF21050             ,47589946,MSS,8.83
+104,S110-94772          ,PF21051             ,18068821,MSS,2.53
+108,S110-94792          ,PF21053             ,22582098,MSS,3.78
+109,S110-94793          ,PF21054             ,38827315,MSS,2.52
+105,S110-94773          ,PF21055             ,47518047,MSS,0.0
+110,S110-94842          ,PF21056             ,33729601,MSS,2.53
+111,S110-94854          ,PF21058             ,47919197,MSS,3.79
+191,S111-98005          ,PF21068             ,45267934,MSS,1.26
+201,S111-98148          ,PF21071             ,37657548,MSS,2.53
+193,S111-98044          ,PF21072             ,47897723,MSS,1.26
+194,S111-98057          ,PF21076             ,42092591,MSS,1.26
+200,S111-98146          ,PF21077             ,44954598,MSS,0.0
+216,S111-98496          ,PF22018             ,41464420,MSS,0.0
+218,S111-98505          ,PF22019             ,46429587,MSS,0.0
+220,S111-98564          ,PF22020             ,47918183,MSS,1.26
+224,S111-98653          ,PF22021             ,45579666,MSS,3.26
+221,S111-98576          ,PF22023             ,28253476,MSS,1.26
+226,S111-98659          ,PF22024             ,35526159,MSS,7.59
+223,S111-98636          ,PF22026             ,43744178,MSS,0.0
+232,S111-98727          ,PF22034             ,42050191,MSS,11.35
+241,S111-98962          ,PF22040             ,43405294,MSS,0.0
+240,S111-98955          ,PF22041             ,47952034,MSS,2.52
+239,S111-98901          ,PF22042             ,43939839,MSS,3.78
+242,S111-98963          ,PF22044             ,48333717,MSS,2.52
+151,S111-97803          ,PF22081             ,48206537,MSS,2.52
+153,S111-97816          ,PF22083             ,21667243,MSS,3.78
+154,S111-97817          ,PF22084             ,48143197,MSS,1.26
+156,S111-97827          ,PF22086             ,46526130,MSS,3.79
+157,S111-97844          ,PF22087             ,31329507,MSS,5.06
+158,S111-97854          ,PF22088             ,48239027,MSS,5.04
+159,S111-97860          ,PF22089             ,34913661,MSS,2.52
+161,S111-97868          ,PF22090             ,45806368,MSS,3.26
+162,S111-97881          ,PF22096             ,48757831,MSS,0.0
+163,S111-97882          ,PF22097             ,8879161,MSS,0.0
+168,S111-97903          ,PF22099             ,34656036,MSS,4.83
+165,S111-97889          ,PF22100             ,10305632,MSS,8.45
+166,S111-97891          ,PF22101             ,48811525,MSS,1.21
+167,S111-97892          ,PF22102             ,48800722,MSS,1.21
+169,S111-97904          ,PF22103             ,24504925,MSS,3.62
+170,S111-97905          ,PF22104             ,38161329,MSS,1.21
+171,S111-97906          ,PF22105             ,43192832,MSS,3.62
+173,S111-97918          ,PF22106             ,48872895,MSS,1.26
+172,S111-97910          ,PF22107             ,44154747,MSS,11.38
+174,S111-97924          ,PF22108             ,21384474,MSS,17.7
+175,S111-97925          ,PF22109             ,45969184,MSS,12.64
+176,S111-97926          ,PF22110             ,48875689,MSS,0.0
+196,S111-98059          ,PF21064             ,47540090,MSS,1.26
+188,S111-98002          ,PF21065             ,36563436,MSS,2.52
+189,S111-98003          ,PF21066             ,22542025,MSS,0.0
+190,S111-98004          ,PF21067             ,36294925,MSS,0.0
+195,S111-98058          ,PF21078             ,47919584,MSS,0.0
+202,S111-98222          ,PF22001             ,42375304,MSS,1.26
+204,S111-98307          ,PF22002             ,42375304,MSS,2.52
+203,S111-98234          ,PF22003             ,43272544,MSS,37.93
+217,S111-98504          ,PF22004             ,47631196,MSS,1.26
+205,S111-98309          ,PF22006             ,12406450,MSS,21.49
+206,S111-98310          ,PF22007             ,37301181,MSS,2.53
+212,S111-98368          ,PF22008             ,11555478,MSS,3.78
+207,S111-98311          ,PF22010             ,10033199,MSS,1.26
+210,S111-98319          ,PF22011             ,48102847,MSS,1.26
+208,S111-98312          ,PF22012             ,22278780,MSS,1.26
+209,S111-98313          ,PF22013             ,21541593,MSS,3.79
+219,S111-98517          ,PF22014             ,11015080,MSS,5.04
+214,S111-98494          ,PF22016             ,48020719,MSS,0.0
+215,S111-98495          ,PF22017             ,48114303,MSS,11.35
+234,S111-98804          ,PF22035             ,27866553,MSS,5.04
+237,S111-98829          ,PF22036             ,48284522,MSS,1.26
+235,S111-98805          ,PF22037             ,47863627,MSS,2.52
+236,S111-98806          ,PF22038             ,41190196,MSS,6.3
+243,S111-99016          ,PF22045             ,40131699,MSS,1.26
+245,S111-99076          ,PF22046             ,43982770,MSS,62.72
+244,S111-99045          ,PF22047             ,48392161,MSS,1.26
+246,S111-99077          ,PF22048             ,48358129,MSS,1.26
+247,S111-99078          ,PF22049             ,41115246,MSS,2.52
+256,S111-99299          ,PF22050             ,46741791,MSS,0.0
+248,S111-99102          ,PF22051             ,44789686,MSS,3.78
+249,S111-99112          ,PF22052             ,19391118,MSS,6.32
+250,S111-99113          ,PF22053             ,36421600,MSS,17.65
+251,S111-99114          ,PF22054             ,42709262,MSS,1.26
+253,S111-99187          ,PF22055             ,32909629,MSS,0.0
+252,S111-99186          ,PF22056             ,42698293,MSS,0.0
+255,S111-99248          ,PF22058             ,32487573,MSS,2.52
+258,S111-99365          ,PF22060             ,35768991,MSS,6.3
+257,S111-99359          ,PF22061             ,30120833,MSS,2.53
+259,S111-99386          ,PF22062             ,8359453,MSS,2.53
+263,S111-99586          ,PF22065             ,48535291,MSS,0.0
+265,S111-99640          ,PF22066             ,25764390,MSS,6.3
+264,S111-99639          ,PF22069             ,18448925,MSS,6.32
+186,S111-97975          ,PF22070             ,44954598,MSS,0.0
+177,S111-97932          ,PF22111             ,21100345,MSS,1.21
+178,S111-97934          ,PF22112             ,23549066,MSS,3.62
+181,S111-97955          ,PF22115             ,29198149,MSS,2.41
+182,S111-97956          ,PF22116             ,48605965,MSS,2.41
+183,S111-97957          ,PF22117             ,48228928,MSS,4.83
+184,S111-97958          ,PF22118             ,48953851,MSS,2.41
+180,S111-97949          ,PF22119             ,44091692,MSS,5.06
+266,S111-99647          ,PF22067             ,41441638,MSS,0.0
+267,S111-99666          ,PF22068             ,48618162,MSS,2.52
+268,S111-99674          ,PF22071             ,21193099,MSS,0.0
+269,S111-99721          ,PF22072             ,34518279,MSS,2.52
+275,S111-99749          ,PF22077             ,34660087,MSS,12.61
+273,S111-99745          ,PF22078             ,45624597,MSS,2.53
+276,S111-99792          ,PF22079             ,26184758,MSS,3.79
+277,S111-99880          ,PF22080             ,44841205,MSS,3.79
+284,M111-10013          ,PT22087             ,8654453,Microsatellite stable (MSS),10 muts/Mb (TMB _High)
+290,M111-10034          ,PT22094             ,10371069,Microsatellite stable (MSS),1.3 muts/Mb
+1570,M111-10001          ,PF22121             ,48284577,MSS,8.45
+310,M112-10032          ,PT23008             ,719459,Microsatellite stable (MSS),9.4 muts/Mb (TMB _High)
+323,M112-10057          ,PT23022             ,49185311,Microsatellite stable (MSS),< 1 muts/Mb
+370,S110-94994          ,PT21040             ,47885950,Microsatellite stable (MSS),1.9
+388,S111-97802          ,PT22042             ,48261070,Microsatellite stable (MSS),2.6 muts/Mb
+395,S111-97828          ,PT22049             ,47657341,Microsatellite stable (MSS),< 1 muts/Mb
+1564,S111-99226          ,PT22023             ,38194115,Microsatellite stable (MSS),1.9 muts/Mb
+452,S111-99366          ,PT22026             ,24555622,Microsatellite stable (MSS),1.3 muts/Mb
+453,S111-99429          ,PT22027             ,48492257,Microsatellite stable (MSS),1.3 muts/Mb
+417,S111-97931          ,PT22074             ,29095690,Microsatellite stable (MSS),7.5 muts/Mb (TMB _High)
+85,S110-89473          ,PF21032             ,26693243,MSS,20.23
+354,S110-89449          ,PT21022             ,19749225,Microsatellite stable (MSS),1.9
+446,S111-98954          ,PT22020             ,45276322,Microsatellite stable (MSS),< 1 muts/Mb
+415,S111-97917          ,PT22072             ,48878279,Microsatellite stable (MSS),< 1 muts/Mb
+444,S111-98941          ,PT22018             ,37798713,Microsatellite stable (MSS),6.5 muts/Mb
+280,M111-10008          ,PT22084             ,49032533,Microsatellite stable (MSS),3.8 muts/Mb
+141,S110-99719          ,PF21021             ,47541026,MSS,0.0
+142,S110-99727          ,PF21022             ,25617316,MSS,1.26
+295,M111-10045          ,PT22099             ,48395068,Microsatellite stable (MSS),1.3 muts/Mb
+422,S111-97962          ,PT22080             ,47678411,Microsatellite stable (MSS),7.5 muts/Mb (TMB _High)
+353,S110-89448          ,PT21014             ,19283126,Microsatellite stable (MSS),22.8
+362,S110-94717          ,PT21031             ,47526567,Microsatellite stable (MSS),<
+459,S111-99638          ,PT22033             ,48429158,Microsatellite stable (MSS),1.3 muts/Mb
+386,S110-99964          ,PT21021             ,47708009,Microsatellite stable (MSS),<
+355,S110-89479          ,PT21020             ,34598066,Microsatellite stable (MSS),3.2
+364,S110-94774          ,PT21033             ,29103966,Microsatellite stable (MSS),1.9
+378,S110-99599          ,PT21008             ,23814724,Microsatellite stable (MSS),5.2
+432,S111-98501          ,PT22006             ,42957426,Microsatellite stable (MSS),Burden (TMB)
+434,S111-98733          ,PT22009             ,157368,Microsatellite stable (MSS),1.9 muts/Mb
+406,S111-97855          ,PT22061             ,48813010,Microsatellite stable (MSS),1.3 muts/Mb
+349,M112-10122          ,PT23051             ,49497941,Microsatellite stable (MSS),6.3 muts/Mb
+288,M111-10024          ,PT22092             ,45525266,Microsatellite stable (MSS),9.4 muts/Mb (TMB _High)
+338,M112-10088          ,PT23039             ,46014566,Microsatellite stable (MSS),5.7 muts/Mb
+389,S111-97815          ,PT22043             ,48118838,Microsatellite stable (MSS),< 1 muts/Mb
+281,M111-10009          ,PT22085             ,29375200,Microsatellite stable (MSS),Mutational Burden (TMB)
+442,S111-98900          ,PT22016             ,14551225,Microsatellite stable (MSS),1.2 muts/Mb
+301,M112-10009          ,PT22106             ,21012964,Microsatellite stable (MSS),< 1 muts/Mb
+143,S110-99728          ,PF21023             ,48897873,MSS,3.78
+144,S110-99729          ,PF21024             ,44463221,MSS,0.0
+112,S110-94854          ,PF21058             ,47919197,MSS,3.79
+116,S110-94932          ,PF21059             ,45705928,MSS,1.26
+114,S110-94855          ,PF21060             ,36563436,MSS,1.26
+113,S110-94855          ,PF21060             ,36563436,MSS,1.26
+115,S110-94858          ,PF21063             ,47838095,MSS,1.26
+225,S111-98654          ,PF22027             ,44137044,MSS,5.04
+227,S111-98664          ,PF22028             ,28724121,MSS,1.26
+228,S111-98665          ,PF22029             ,48239550,MSS,3.78
+233,S111-98732          ,PF22030             ,25549331,MSS,0.0
+229,S111-98666          ,PF22031             ,22703851,MSS,2.52
+230,S111-98708          ,PF22032             ,25325819,MSS,1.26
+271,S111-99738          ,PF22073             ,47935648,MSS,1.26
+270,S111-99722          ,PF22074             ,47784703,MSS,1.26
+272,S111-99739          ,PF22075             ,47756887,MSS,0.0
+274,S111-99748          ,PF22076             ,48392821,MSS,3.78
+27,M112-10003          ,PF22147             ,48978138,MSS,0.0
+28,M112-10006          ,PF22149             ,19787189,MSS,12.64
+50,M112-10067          ,PF23024             ,33214436,MSS,3.62
+51,M112-10068          ,PF23025             ,40905019,MSS,1.21
+52,M112-10069          ,PF23026             ,26940830,MSS,3.79
+53,M112-10070          ,PF23027             ,46146514,MSS,2.53
+54,M112-10071          ,PF23028             ,49323435,MSS,10.12
+447,S111-99033          ,PT22021             ,45910369,Microsatellite stable (MSS),< 1 muts/Mb
+401,S111-97843          ,PT22054             ,37909163,Microsatellite stable (MSS),2.6 muts/Mb
+385,S110-99963          ,PT21016             ,31504628,Microsatellite stable (MSS),<
+431,S111-98500          ,PT22005             ,47799871,Microsatellite stable (MSS),< 1 muts/Mb
+313,M112-10036          ,PT23011             ,21429265,Microsatellite stable (MSS),< 1 muts/Mb
+429,S111-98306          ,PT22003             ,45543928,Microsatellite stable (MSS),1.9 muts/Mb
+325,M112-10059          ,PT23025             ,21012464,Microsatellite stable (MSS),3.8 muts/Mb
+397,S111-97830          ,PT22051             ,32677397,Microsatellite stable (MSS),< 1 muts/Mb
+328,M112-10062          ,PT23027             ,5658640,Microsatellite stable (MSS),3.2 muts/Mb
+333,M112-10077          ,PT23032             ,46426679,Microsatellite stable (MSS),2.6 muts/Mb
+456,S111-99588          ,PT22030             ,46317559,Microsatellite stable (MSS),< 1 muts/Mb
+466,S111-99882          ,PT22038             ,1175402,Microsatellite stable (MSS),5 muts/Mb
+398,S111-97832          ,PT22052             ,48526143,Microsatellite stable (MSS),< 1 muts/Mb
+465,S111-99879          ,PT22040             ,46701999,Microsatellite stable (MSS),3.2 muts/Mb
+390,S111-97818          ,PT22044             ,46571179,Microsatellite stable (MSS),< 1 muts/Mb
+391,S111-97819          ,PT22045             ,17033986,Microsatellite stable (MSS),< 1 muts/Mb
+346,M112-10112          ,PT23048             ,37487551,Microsatellite stable (MSS),0.1 muts/Mb
+410,S111-97872          ,PT22064             ,27931766,Microsatellite stable (MSS),1.9 muts/Mb
+283,M111-10012          ,PT22086             ,48123995,Microsatellite stable (MSS),< 1 muts/Mb
+376,S110-99572          ,PT21007             ,34869620,Microsatellite stable (MSS),1.9
+418,S111-97938          ,PT22075             ,24765819,Microsatellite stable (MSS),1.3 muts/Mb
+287,M111-10022          ,PT22091             ,7847849,Microsatellite stable (MSS),5.7 muts/Mb
+299,M112-10007          ,PT22104             ,48318167,Microsatellite stable (MSS),2.6 muts/Mb
+303,M112-10016          ,PT23001             ,4494773,Microsatellite stable (MSS),1.3 muts/Mb
+315,M112-10038          ,PT23013             ,49218908,Microsatellite stable (MSS),< 1 muts/Mb
+436,S111-98735          ,PT22012             ,48120554,Microsatellite stable (MSS),1.2 muts/Mb
+440,S111-98836          ,PT22014             ,22123815,Microsatellite stable (MSS),< 1 muts/Mb
+450,S111-99250          ,PT22024             ,48099214,Microsatellite stable (MSS),< 1 muts/Mb
+327,M112-10061          ,PT23024             ,49238224,Microsatellite stable (MSS),< 1 muts/Mb
+329,M112-10063          ,PT23028             ,12957390,Microsatellite stable (MSS),2.6 muts/Mb
+336,M112-10082          ,PT23037             ,34545330,Microsatellite stable (MSS),16.8 muts/Mb (TMB _High)
+337,M112-10084          ,PT23038             ,49381137,Microsatellite stable (MSS),< 1 muts/Mb
+340,M112-10090          ,PT23041             ,48485832,Microsatellite stable (MSS),3.2 muts/Mb
+460,S111-99672          ,PT22034             ,48534981,Microsatellite stable (MSS),< 1 muts/Mb
+392,S111-97820          ,PT22046             ,46192329,Microsatellite stable (MSS),1.9 muts/Mb
+350,M112-10124          ,PT23053             ,47801401,Microsatellite stable (MSS),0.7 muts/Mb
+416,S111-97929          ,PT22073             ,43924636,Microsatellite stable (MSS),< 1 muts/Mb
+292,M111-10042          ,PT22095             ,31615244,Microsatellite stable (MSS),4.4 muts/Mb
+309,M112-10031          ,PT23007             ,31116184,Microsatellite stable (MSS),< 1 muts/Mb
+311,M112-10033          ,PT23009             ,48588212,Microsatellite stable (MSS),< 1 muts/Mb
+316,M112-10041          ,PT23014             ,49265567,Microsatellite stable (MSS),1.3 muts/Mb
+341,M112-10096          ,PT23042             ,48433303,Microsatellite stable (MSS),1.3 muts/Mb
+345,M112-10111          ,PT23047             ,38078498,Microsatellite stable (MSS),0.7 muts/Mb
+379,S110-99667          ,PT21009             ,47017118,Microsatellite stable (MSS),<
+352,M112-10128          ,PT23055             ,37840496,Microsatellite stable (MSS),1.3 muts/Mb
+384,S110-99950          ,PT21019             ,46185813,Microsatellite stable (MSS),1.2
+358,S110-89568          ,PT21025             ,47834219,Microsatellite stable (MSS),<
+368,S110-94835          ,PT21038             ,37978920,Microsatellite stable (MSS),3.2
+297,M112-10004          ,PT22101             ,22077696,Microsatellite stable (MSS),< 1 muts/Mb
+322,M112-10055          ,PT23021             ,28951306,Microsatellite stable (MSS),< 1 muts/Mb
+428,S111-98286          ,PT22002             ,15696374,Microsatellite stable (MSS),1.2 muts/Mb
+430,S111-98350          ,PT22004             ,44587113,Microsatellite stable (MSS),1.2 muts/Mb
+441,S111-98863          ,PT22015             ,46371113,Microsatellite stable (MSS),1.2 muts/Mb
+454,S111-99430          ,PT22028             ,25405883,Microsatellite stable (MSS),6.3 muts/Mb
+457,S111-99590          ,PT22031             ,45363722,Microsatellite stable (MSS),1.9 muts/Mb
+387,S111-97801          ,PT22041             ,47594796,Microsatellite stable (MSS),1.9 muts/Mb
+404,S111-97847          ,PT22058             ,13550931,Microsatellite stable (MSS),< 1 muts/Mb
+421,S111-97959          ,PT22079             ,7759844,Microsatellite stable (MSS),9.4 muts/Mb (TMB _High)
+38,M112-10026          ,PF23008             ,49182856,MSS,3.62
+61,M112-10086          ,PF23035             ,46204846,MSS,1.21
+294,M111-10044          ,PT22098             ,11963896,Microsatellite stable (MSS),1.3 muts/Mb
+302,M112-10015          ,PT22107             ,33832814,Microsatellite stable (MSS),1.3 muts/Mb
+118,S110-99423          ,PF21002             ,30068678,MSS,1.26
+136,S110-99653          ,PF21017             ,6292279,MSS,6.32
+84,S110-89472          ,PF21029             ,2890553,MSS,21.99
+98,S110-89573          ,PF21045             ,24608400,MSS,2.53
+187,S111-98001          ,PF21061             ,47938250,MSS,0.0
+211,S111-98365          ,PF22009             ,46934058,MSS,0.0
+231,S111-98726          ,PF22033             ,16590628,MSS,2.52
+254,S111-99188          ,PF22057             ,42698293,MSS,2.52
+155,S111-97821          ,PF22085             ,46909711,MSS,3.79
+307,M112-10029          ,PT23005             ,39690749,Microsatellite stable (MSS),< 1 muts/Mb
+314,M112-10037          ,PT23012             ,30032612,Microsatellite stable (MSS),3.2 muts/Mb
+300,M112-10008          ,PT22105             ,49089078,Microsatellite stable (MSS),6.9 muts/Mb
+324,M112-10058          ,PT23023             ,43433734,Microsatellite stable (MSS),< 1 muts/Mb
+332,M112-10066          ,PT23031             ,37707350,Microsatellite stable (MSS),5.7 muts/Mb
+407,S111-97861          ,PT22062             ,10739727,Microsatellite stable (MSS),2.6 muts/Mb
+351,M112-10127          ,PT23054             ,37863095,Microsatellite stable (MSS),0.7 muts/Mb
+334,M112-10078          ,PT23033             ,23621514,Microsatellite stable (MSS),1.9 muts/Mb
+357,S110-89491          ,PT21024             ,46024402,Microsatellite stable (MSS),<
+359,S110-89569          ,PT21026             ,47541593,Microsatellite stable (MSS),1.2
+360,S110-94688          ,PT21029             ,23581911,Microsatellite stable (MSS),3.9
+394,S111-97826          ,PT22048             ,48538267,Microsatellite stable (MSS),6.3 muts/Mb
+409,S111-97867          ,PT22063             ,33120228,Microsatellite stable (MSS),< 1 muts/Mb
+402,S111-97845          ,PT22056             ,45699001,Microsatellite stable (MSS),< 1 muts/Mb
+405,S111-97848          ,PT22059             ,30972760,Microsatellite stable (MSS),< 1 muts/Mb
+413,S111-97902          ,PT22070             ,18686765,Microsatellite stable (MSS),3.8 muts/Mb
+282,M111-10010          ,PT22089             ,24044539,Microsatellite stable (MSS),1.3 muts/Mb
+312,M112-10035          ,PT23010             ,1761940,Microsatellite stable (MSS),1.9 muts/Mb
+320,M112-10046          ,PT23019             ,46075212,Microsatellite stable (MSS),< 1 muts/Mb
+335,M112-10079          ,PT23034             ,44731933,Microsatellite stable (MSS),2.6 muts/Mb
+343,M112-10109          ,PT23045             ,1372050,Microsatellite stable (MSS),1.3 muts/Mb
+371,S110-99324          ,PT21001             ,37977687,Microsatellite stable (MSS),5.2
+119,S110-99423          ,PF21002             ,30068678,MSS,1.26
+126,S110-99494          ,PF21005             ,10184506,MSS,0.0
+93,S110-89559          ,PF21041             ,47672833,MSS,2.52
+213,S111-98493          ,PF22015             ,11015080,MSS,0.0
+160,S111-97863          ,PF22094             ,48782587,MSS,2.53
+2,M111-10002          ,PF22123             ,48983411,MSS,1.21
+16,M111-10030          ,PF22134             ,30316597,MSS,3.79
+29,M112-10010          ,PF22151             ,49045047,MSS,3.62
+60,M112-10085          ,PF23034             ,45561066,MSS,3.62
+372,S110-99325          ,PT21002             ,46254119,Microsatellite stable (MSS),<
+373,S110-99396          ,PT21003             ,47155124,Microsatellite stable (MSS),1.9
+374,S110-99450          ,PT21004             ,45115568,Microsatellite stable (MSS),4.5
+375,S110-99491          ,PT21005             ,43981493,Microsatellite stable (MSS),3.2
+377,S110-99598          ,PT21006             ,23072573,Microsatellite stable (MSS),1.9
+380,S110-99717          ,PT21011             ,34285444,Microsatellite stable (MSS),3.2
+382,S110-99829          ,PT21013             ,44621365,Microsatellite stable (MSS),1.9
+383,S110-99887          ,PT21015             ,46676577,Microsatellite stable (MSS),3.9
+356,S110-89480          ,PT21023             ,47456973,Microsatellite stable (MSS),1.9
+361,S110-94689          ,PT21030             ,46726641,Microsatellite stable (MSS),2.5
+363,S110-94718          ,PT21032             ,45285981,Microsatellite stable (MSS),<
+365,S110-94775          ,PT21034             ,29103966,Microsatellite stable (MSS),8.2
+366,S110-94790          ,PT21035             ,46690840,Microsatellite stable (MSS),<
+367,S110-94791          ,PT21037             ,45100274,Microsatellite stable (MSS),1.9
+369,S110-94926          ,PT21039             ,1128581,Microsatellite stable (MSS),3.2
+433,S111-98667          ,PT22007             ,42578530,Microsatellite stable (MSS),1.9 muts/Mb
+439,S111-98835          ,PT22008             ,37511914,Microsatellite stable (MSS),1.9 muts/Mb
+437,S111-98736          ,PT22010             ,8122723,Microsatellite stable (MSS),3.2 muts/Mb
+435,S111-98734          ,PT22011             ,31940611,Microsatellite stable (MSS),< 1 muts/Mb
+438,S111-98830          ,PT22013             ,47988501,Microsatellite stable (MSS),4.5 muts/Mb
+445,S111-98953          ,PT22019             ,47987473,Microsatellite stable (MSS),1.2 muts/Mb
+464,S111-99878          ,PT22039             ,34171750,Microsatellite stable (MSS),5 muts/Mb
+449,S111-99226          ,PT22023             ,38194115,Microsatellite stable (MSS),1.9 muts/Mb
+451,S111-99300          ,PT22025             ,48327602,Microsatellite stable (MSS),2.6 muts/Mb
+455,S111-99532          ,PT22029             ,48485978,Microsatellite stable (MSS),< 1 muts/Mb
+458,S111-99637          ,PT22032             ,45874917,Microsatellite stable (MSS),3.2 muts/Mb
+461,S111-99723          ,PT22035             ,23254526,Microsatellite stable (MSS),1.3 muts/Mb
+462,S111-99814          ,PT22036             ,42241316,Microsatellite stable (MSS),1.3 muts/Mb
+463,S111-99815          ,PT22037             ,47613774,Microsatellite stable (MSS),3.2 muts/Mb
+399,S111-97841          ,PT22053             ,11411522,Microsatellite stable (MSS),1.9 muts/Mb
+400,S111-97842          ,PT22055             ,43438182,Microsatellite stable (MSS),5 muts/Mb
+403,S111-97846          ,PT22057             ,18965112,Microsatellite stable (MSS),2.6 muts/Mb
+408,S111-97862          ,PT22060             ,27292280,Microsatellite stable (MSS),2.6 muts/Mb
+411,S111-97893          ,PT22065             ,48384129,Microsatellite stable (MSS),1.9 muts/Mb
+412,S111-97894          ,PT22069             ,46791633,Microsatellite stable (MSS),< 1 muts/Mb
+414,S111-97916          ,PT22071             ,27479056,Microsatellite stable (MSS),1.3 muts/Mb
+419,S111-97945          ,PT22076             ,5658640,Microsatellite stable (MSS),1.3 muts/Mb
+420,S111-97948          ,PT22077             ,20922796,Microsatellite stable (MSS),4.4 muts/Mb
+423,S111-97976          ,PT22081             ,43438182,Microsatellite stable (MSS),3.8 muts/Mb
+1563,M111-10004          ,PT22083             ,48812186,Microsatellite stable (MSS),3.8 muts/Mb
+278,M111-10004          ,PT22083             ,48812186,Microsatellite stable (MSS),3.8 muts/Mb
+285,M111-10014          ,PT22088             ,41031769,Microsatellite stable (MSS),1.3 muts/Mb
+289,M111-10025          ,PT22093             ,48584050,Microsatellite stable (MSS),< 1 muts/Mb
+291,M111-10041          ,PT22096             ,42951724,Microsatellite stable (MSS),2.6 muts/Mb
+293,M111-10043          ,PT22097             ,13895391,Microsatellite stable (MSS),3.2 muts/Mb
+296,M111-10046          ,PT22100             ,34013155,Microsatellite stable (MSS),3.8 muts/Mb
+298,M112-10005          ,PT22103             ,42092591,Microsatellite stable (MSS),1.3 muts/Mb
+304,M112-10017          ,PT23002             ,45612235,Microsatellite stable (MSS),3.2 muts/Mb
+305,M112-10018          ,PT23003             ,46354954,Microsatellite stable (MSS),6.9 muts/Mb
+306,M112-10028          ,PT23004             ,25832206,Microsatellite stable (MSS),1.9 muts/Mb
+308,M112-10030          ,PT23006             ,49077749,Microsatellite stable (MSS),18 muts/Mb (TMB _High)
+317,M112-10042          ,PT23015             ,27071074,Microsatellite stable (MSS),< 1 muts/Mb
+318,M112-10043          ,PT23016             ,18886732,Microsatellite stable (MSS),3.2 muts/Mb
+321,M112-10054          ,PT23020             ,49088973,Microsatellite stable (MSS),< 1 muts/Mb
+326,M112-10060          ,PT23026             ,30233126,Microsatellite stable (MSS),5.7 muts/Mb
+330,M112-10064          ,PT23029             ,48000982,Microsatellite stable (MSS),2.6 muts/Mb
+331,M112-10065          ,PT23030             ,45642942,Microsatellite stable (MSS),1.3 muts/Mb
+342,M112-10102          ,PT23043             ,49347480,Microsatellite stable (MSS),5.7 muts/Mb
+344,M112-10110          ,PT23046             ,49466731,Microsatellite stable (MSS),0.7 muts/Mb
+347,M112-10113          ,PT23049             ,47556672,Microsatellite stable (MSS),3.2 muts/Mb

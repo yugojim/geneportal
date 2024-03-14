@@ -17,6 +17,7 @@
     <div id="wrapper">
 	{% include 'utilities-Sidebar.html' %}
         <!-- Content Wrapper -->
+		{% if user.is_authenticated %}
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
@@ -116,15 +117,31 @@
                                     </tfoot>
                                     <tbody>
 										{% for row in rows %}
-										<tr>											
+										<tr>										
 											<td>{{row.2}}</td>
 											<td>{{row.3}}</td>
 											<td>{{row.1.ResultsReport.ResultsPayload.FinalReport.PMI.MRN}}</td>
 											{% if "description" not in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}
-												<td>{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}{% if search.description not in rearrangement.description or rearrangement.targeted_gene == search.targeted_gene or rearrangement.other_gene == search.other_gene %}{{rearrangement.description}}    {% endif %}{% endfor %}</td>
-												<td>{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}{% if search.description not in rearrangement.description or rearrangement.targeted_gene == search.targeted_gene or rearrangement.other_gene == search.other_gene %}{{rearrangement.targeted_gene}}    {% endif %}{% endfor %}</td>
-												<td>{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}{% if search.description not in rearrangement.description or rearrangement.targeted_gene == search.targeted_gene or rearrangement.other_gene == search.other_gene %}{{rearrangement.other_gene}}    {% endif %}{% endfor %}</td>						
-												<td>{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}{% if search.description not in rearrangement.description or rearrangement.targeted_gene == search.targeted_gene or rearrangement.other_gene == search.other_gene %}{{rearrangement.in_frame}}    {% endif %}{% endfor %}</td>
+												<td>
+												{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}
+													{{rearrangement.description}}</p>
+												{% endfor %}
+												</td>
+												<td>
+												{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement%}
+													{{rearrangement.targeted_gene}}</p>
+												{% endfor %}
+												</td>
+												<td>
+												{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}
+													{{rearrangement.other_gene}}</p>
+												{% endfor %}
+												</td>						
+												<td>
+												{% for rearrangement in row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement %}
+													{{rearrangement.in_frame}}</p>
+												{% endfor %}
+												</td>
 											{% else %}
 												<td>{{row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description}}</td>
 												<td>{{row.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.targeted_gene}}</td>
@@ -150,57 +167,57 @@
                 </div>
             </footer>
 		</div>
+		{% endif %}
 	</div>
-    </div>
 {% include 'utilities-js.html' %}    
 </body>
-	<script>
-		function downloadJSONAsCSV(){
-		// 取得表格
-		var table = document.getElementById('Table');
-		// 獲取header
-		var headers = [];
-		for (var i = 0; i < table.rows[0].cells.length; i++) {
-			headers[i] = table.rows[0].cells[i].textContent.toLowerCase();
+<script>
+	function downloadJSONAsCSV(){
+	// 取得表格
+	var table = document.getElementById('Table');
+	// 獲取header
+	var headers = [];
+	for (var i = 0; i < table.rows[0].cells.length; i++) {
+		headers[i] = table.rows[0].cells[i].textContent.toLowerCase();
+	}
+	// 取得表格data
+	var data = [];
+	for (var i = 1; i < table.rows.length; i++) {
+		var rowData = {};
+		for (var j = 0; j < table.rows[i].cells.length; j++) {
+			rowData[headers[j]] = table.rows[i].cells[j].textContent;
 		}
-		// 取得表格data
-		var data = [];
-		for (var i = 1; i < table.rows.length; i++) {
-			var rowData = {};
-			for (var j = 0; j < table.rows[i].cells.length; j++) {
-				rowData[headers[j]] = table.rows[i].cells[j].textContent;
-			}
-			data.push(rowData);
-		}
-		// data轉Json
-		var jsonData = JSON.stringify(data, null, 2);
-		//console.log(jsonData);
-		//console.log(data);	
-		//const json = '[{"name": "John Doe", "age": 30, "email": "johndoe@example.com"}, {"name": "Jane Smith", "age": 25, "email": "janesmith@example.com"}]';
-		const csv = convertToCSV(jsonData);
-		//console.log(csv);
-		//下載
-		var link = window.document.createElement("a");
-		link.setAttribute("href", "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(csv));
-		link.setAttribute("download", "searchRearrangements.csv");
-		link.click();
-		}
-		
-		function convertToCSV(json) {
-		  const items = JSON.parse(json);
-		  // Get column headers from first item in JSON array
-		  const headers = Object.keys(items[0]);
-		  // Build CSV header row
-		  const csvHeader = headers.join(",");
-		  // Build CSV body rows
-		  const csvBody = items.map(item => {
-			return headers.map(header => {
-			  return item[header];
-			}).join(",");
-		  }).join("\n");
-		  // Combine header and body into single CSV string
-		  const csv = `${csvHeader}\n${csvBody}`;
-		  return csv;
-		}
-	</script>
+		data.push(rowData);
+	}
+	// data轉Json
+	var jsonData = JSON.stringify(data, null, 2);
+	//console.log(jsonData);
+	//console.log(data);	
+	//const json = '[{"name": "John Doe", "age": 30, "email": "johndoe@example.com"}, {"name": "Jane Smith", "age": 25, "email": "janesmith@example.com"}]';
+	const csv = convertToCSV(jsonData);
+	//console.log(csv);
+	//下載
+	var link = window.document.createElement("a");
+	link.setAttribute("href", "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(csv));
+	link.setAttribute("download", "searchRearrangements.csv");
+	link.click();
+	}
+	
+	function convertToCSV(json) {
+	  const items = JSON.parse(json);
+	  // Get column headers from first item in JSON array
+	  const headers = Object.keys(items[0]);
+	  // Build CSV header row
+	  const csvHeader = headers.join(",");
+	  // Build CSV body rows
+	  const csvBody = items.map(item => {
+		return headers.map(header => {
+		  return item[header];
+		}).join(",");
+	  }).join("\n");
+	  // Combine header and body into single CSV string
+	  const csv = `${csvHeader}\n${csvBody}`;
+	  return csv;
+	}
+</script>
 </html>

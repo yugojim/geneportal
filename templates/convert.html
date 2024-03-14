@@ -13,10 +13,24 @@
 </head>
 
 <body id="page-top">
+<script>
+department=new Array();
+department[0]=["張隆紋", "黃能富", "王炳豐", "張世杰", "張智星"];	// 資訊系
+department[1]=["黃瑞星", "黃仲陵", "呂忠津", "鄭博泰", "盧向成"];	// 電機系
+department[2]=["楊敬堂", "王培仁", "葉銘權", "宋鎮國"];			// 動機系
+department[3]=["王天戈", "開執中", "梁正宏"];				// 工科系
+
+function renew(index){
+	for(var i=0;i<department[index].length;i++)
+		document.myForm.member.options[i]=new Option(department[index][i], department[index][i]);	// 設定新選項
+	document.myForm.member.length=department[index].length;	// 刪除多餘的選項
+}
+</script>
+
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 	{% include 'utilities-Sidebar.html' %}
-	{% if user.is_authenticated %}
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
@@ -26,32 +40,45 @@
                 <div class="container-fluid">
 				
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h3><span class="badge badge-secondary">Gene Report Count</span><span class="badge badge-Success">{{ FuncResult }}</span></h3>
-					</div>					
-					<form method="post" action="{% url 'GeneReport' %}">
+						<h3><span class="badge badge-secondary">Biomarker Count</span><span class="badge badge-Success">{{ FuncResult }}</span></h3>
+						{% if FuncResult  > 0 %}
+								<a href="/static/doc/datalist.csv" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>download report</a>
+						{% endif %}
+						
+					</div>
+					<form name="myForm">
+					系別：
+					<select class="form-select form-select-sm" aria-label=".form-select-sm example" onChange="renew(this.selectedIndex);">
+					  <option value="資訊系" selected>資訊系</option>
+					  <option value="工科系">工科系</option>
+					  <option value="電機系">電機系</option>
+					  <option value="動機系">動機系</option>
+					</select>
+
+					隊員：
+					<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="member" size=5>
+						<option value="">請由左方選取系別
+					</select>
+					</form>
+					<form method="post" action="{% url 'convert' %}">
 					{% csrf_token %}
 					<div class="form-group">
 						<div class="form-row">
-							<div class="form-group col-md-1">
-								<label><h5>報告號碼</h5></label>
+							<div class="form-group col-md-2">
+								<label><h5>Microsatellite Status</h5></label>
 							</div>
 							<div class="form-group col-md-2">
-								<input type="text" class="form-control" id="ReportNo" name="ReportNo" value="{{search.ReportNo}}">
-							</div>
-							<div class="form-group col-md-1">
-								<label><h5>分生號碼</h5></label>
+								<input type="text" class="form-control" id="status" name="status" value="{{search.status}}">
 							</div>
 							<div class="form-group col-md-2">
-								<input type="text" class="form-control" id="MPNo" name="MPNo" value="{{search.MPNo}}">
+								<label><h5>Tumor Mutational Burden</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="score" name="score" value="{{search.score}}">
 							</div>							
-							<div class="form-group col-md-">
-								<label><h5>病歷號</h5></label>
-							</div>
-							<div class="form-group col-md-2">
-								<input type="text" class="form-control" id="MRN" name="MRN" value="{{search.MRN}}">
-							</div>
 							<div class="form-group col-md-1">
-								<button type="submit" class="btn btn-primary">Search</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</div>				  
 					</div>
@@ -63,14 +90,16 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="Table" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
 											<th>報告號碼</th>
 											<th>分生號碼</th>
 											<th>病歷號</th>
+											<th>Microsatellite Status</th>
+											<th>Tumor Mutational Burden score</th>
 											<th>Report</th>
-											<th>Report PDF</th>																
+											<th>Report PDF</th>																	
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -78,17 +107,20 @@
 											<th>報告號碼</th>
 											<th>分生號碼</th>
 											<th>病歷號</th>
+											<th>Microsatellite Status</th>
+											<th>Tumor Mutational Burden score</th>
 											<th>Report</th>
-											<th>Report PDF</th>
+											<th>Report PDF</th>	
                                         </tr>
                                     </tfoot>
                                     <tbody>
 										{% for row in rows %}
 										<tr>											
-											<!--<td>{{row.0}}</td><th>id</th>-->
 											<td>{{row.2}}</td>
 											<td>{{row.3}}</td>
 											<td>{{row.1.ResultsReport.ResultsPayload.FinalReport.PMI.MRN}}</td>
+											<td>{{row.1.ResultsReport.ResultsPayload.variant_report.biomarkers.microsatellite_instability.status}}</td>
+											<td>{{row.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.score}}</td>
 											<td><a href="/GeneFinalReportDetails?id={{ row.0}}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Report</a></td>
 											<td><a href="/static/doc/gene/{{row.2.split|join:"_"}}_({{row.3.split|join:"_"}}).pdf" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">{{row.3}}</a></td>
 										</tr>
@@ -109,8 +141,8 @@
                 </div>
             </footer>
 		</div>
-	{% endif %}
 	</div>
+    </div>
 {% include 'utilities-js.html' %}    
 </body>
 
