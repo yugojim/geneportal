@@ -383,16 +383,16 @@ def ACTGV12xml(PdfPath):
                             
                         if len(short_variants) > 0:
                             short_variantllist=[]
-                            for i in range(len(short_variants)):
-                                short_variants[i] = short_variants[i].strip().replace(' ', ',').replace(',,', ',')
-                                if len(short_variants[i].split(',')) > 3:                            
+                            for j in range(len(short_variants)):
+                                short_variants[j] = short_variants[j].strip().replace(' ', ',').replace(',,', ',')
+                                if len(short_variants[j].split(',')) > 3:                            
                                     short_variantllist.append({
-                                        "cds_effect": short_variants[i].split(',')[3],
-                                        "depth": short_variants[i].split(',')[7],
-                                        "gene": short_variants[i].split(',')[0],
-                                        "percent_reads": short_variants[i].split(',')[6],
-                                        "protein_effect": short_variants[i].split(',')[1],
-                                        "transcript": short_variants[i].split(',')[4],
+                                        "cds_effect": short_variants[j].split(',')[3],
+                                        "depth": short_variants[j].split(',')[7],
+                                        "gene": short_variants[j].split(',')[0],
+                                        "percent_reads": short_variants[j].split(',')[6],
+                                        "protein_effect": short_variants[j].split(',')[1],
+                                        "transcript": short_variants[j].split(',')[4],
                                         }) 
                             basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variantllist
                         #print(short_variantllist)   
@@ -691,14 +691,14 @@ def ACTGV22xml(PdfPath):
                             
                         if len(short_variants) > 0:
                             short_variantllist=[]
-                            for i in range(len(short_variants)):
+                            for j in range(len(short_variants)):
                                 
-                                if len(short_variants[i].split('  ')) >= 3:                            
+                                if len(short_variants[j].split('  ')) >= 3:                            
                                     short_variantllist.append({
-                                        "depth": short_variants[i].replace('  ', ' ').split(' ')[2],
-                                        "gene": short_variants[i].replace('  ', ' ').split(' ')[0],
-                                        "percent_reads": short_variants[i].replace('  ', ' ').split(' ')[3],
-                                        "protein_effect": short_variants[i].replace('  ', ' ').split(' ')[1],
+                                        "depth": short_variants[j].replace('  ', ' ').split(' ')[2],
+                                        "gene": short_variants[j].replace('  ', ' ').split(' ')[0],
+                                        "percent_reads": short_variants[j].replace('  ', ' ').split(' ')[3],
+                                        "protein_effect": short_variants[j].replace('  ', ' ').split(' ')[1],
                                          }) 
                             basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variantllist
                         #print(short_variantllist)   
@@ -844,14 +844,18 @@ def Archer2xml(PdfPath):
                         if text[i].find('Reportable Isoforms') > -1: 
                             #print(text[i])
                             #print('rearrangement ' + str(i))
-                            import re
                             test_string = text[i]
                             ans=re.findall('Fusion:.+\n',test_string)
-                            for a in ans:                            
-                                rearrangementlist.append({
-                                    "description": a[8:],
-                                    "other_gene": a[8:].replace(' ','').replace('\n','').split('®')[0],
-                                    "targeted_gene": a[8:].replace(' ','').replace('\n','').split('®')[1]
+                            exon=re.findall('on:.\n',test_string)
+                            for a in range(len(ans)):
+                                try:
+                                    description= ans[a][8:].replace(' ','').replace('\n','').replace('®','_')+'.E'+exon[a*2-1].replace('on:','').replace('\n','')+'E'+exon[a*2].replace('on:','').replace('\n','')
+                                except:
+                                    description= ans[a][8:].replace(' ','').replace('\n','').replace('®','_')                          
+                                rearrangementlist.append({                                
+                                    "description":description,
+                                    "other_gene": ans[a][8:].replace(' ','').replace('\n','').split('®')[0],
+                                    "targeted_gene": ans[a][8:].replace(' ','').replace('\n','').split('®')[1]
                                     })
                             basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['rearrangements']['rearrangement'] = rearrangementlist
                             #print(rearrangementlist)
@@ -1140,7 +1144,7 @@ def MyeloidAssay2xml(PdfPath):
                             end = text[i].find('Gene Fusions')
                             rearrangement.extend(text[i][start+11:end].split('  '))
                             rearrangement=rearrangement[0].split('\n')
-                            for i in range(len(rearrangement)):
+                            for j in range(len(rearrangement)):
                                 rearrangementlist.append({
                                     "description": "",
                                     "equivocal": "",
@@ -1205,26 +1209,26 @@ def MyeloidAssay2xml(PdfPath):
                     if len(short_variants) > 0:
                         short_variantllist=[]
                         short_variantllist_temp=''
-                        for i in range(len(short_variants)):
-                            if len(short_variants[i].split(' ')) > 8 : 
+                        for j in range(len(short_variants)):
+                            if len(short_variants[j].split(' ')) > 8 : 
                                 try:
-                                    functional_effect = short_variants[i].split(' ')[7]
-                                    depth = short_variants[i].split(' ')[8]
+                                    functional_effect = short_variants[j].split(' ')[7]
+                                    depth = short_variants[j].split(' ')[8]
                                 except:
                                     depth = ''
                                     functional_effect = ''
-                                if  short_variants[i].split(' ')[6] == 'frameshift':
+                                if  short_variants[j].split(' ')[6] == 'frameshift':
                                     transcript = 'frameshift Deletion'
                                 else:
-                                    transcript = short_variants[i].split(' ')[6]
+                                    transcript = short_variants[j].split(' ')[6]
                                 short_variantllist.append({
-                                    "cds_effect": short_variants[i].split(' ')[2],
+                                    "cds_effect": short_variants[j].split(' ')[2],
                                     "depth":depth,
                                     "functional_effect": functional_effect,
-                                    "gene": short_variants[i].split(' ')[0],
-                                    "percent_reads": short_variants[i].split(' ')[5],
-                                    "position": short_variants[i].split(' ')[4],
-                                    "protein_effect": short_variants[i].split(' ')[1],
+                                    "gene": short_variants[j].split(' ')[0],
+                                    "percent_reads": short_variants[j].split(' ')[5],
+                                    "position": short_variants[j].split(' ')[4],
+                                    "protein_effect": short_variants[j].split(' ')[1],
                                     "transcript": transcript,
                                     })
                             else:
@@ -1334,8 +1338,7 @@ def MutationLoadAssay2xml(PdfPath):
                 copy_number_alterations = []
                 pmi = [] 
                 
-                for i in range(len(text)):
-                        
+                for i in range(len(text)):                        
                     try:    
                         #rearrangement
                         if text[i].find('Fusions (RNA)') > -1: 
@@ -1345,7 +1348,7 @@ def MutationLoadAssay2xml(PdfPath):
                             end = text[i].find('Gene Fusions')
                             rearrangement.extend(text[i][start+11:end].split('  '))
                             rearrangement=rearrangement[0].split('\n')
-                            for i in range(len(rearrangement)):
+                            for j in range(len(rearrangement)):
                                 rearrangementlist.append({
                                     "description": "",
                                     "equivocal": "",
@@ -1354,7 +1357,6 @@ def MutationLoadAssay2xml(PdfPath):
                                     "pos1": rearrangement[0].replace(' - ', '-').split(' ')[2],
                                     "pos2": "",
                                     "status": "",
-                                    "supporting_read_pairs": rearrangement[0].replace(' - ', '-').split(' ')[3],
                                     "targeted_gene": rearrangement[0].replace(' - ', '-').split(' ')[0],
                                     "type": "",
                                     "dna_evidence": {
@@ -1410,26 +1412,26 @@ def MutationLoadAssay2xml(PdfPath):
                     if len(short_variants) > 0:
                         short_variantllist=[]
                         short_variantllist_temp=''
-                        for i in range(len(short_variants)):
-                            if len(short_variants[i].split(' ')) > 8 : 
+                        for j in range(len(short_variants)):
+                            if len(short_variants[j].split(' ')) > 8 : 
                                 try:
-                                    functional_effect = short_variants[i].split(' ')[7]
-                                    depth = short_variants[i].split(' ')[8]
+                                    functional_effect = short_variants[j].split(' ')[7]
+                                    depth = short_variants[j].split(' ')[8]
                                 except:
                                     depth = ''
                                     functional_effect = ''
-                                if  short_variants[i].split(' ')[6] == 'frameshift':
+                                if  short_variants[j].split(' ')[6] == 'frameshift':
                                     transcript = 'frameshift Deletion'
                                 else:
-                                    transcript = short_variants[i].split(' ')[6]
+                                    transcript = short_variants[j].split(' ')[6]
                                 short_variantllist.append({
-                                    "cds_effect": short_variants[i].split(' ')[2],
+                                    "cds_effect": short_variants[j].split(' ')[2],
                                     "depth":depth,
                                     "functional_effect": functional_effect,
-                                    "gene": short_variants[i].split(' ')[0],
-                                    "percent_reads": short_variants[i].split(' ')[5],
-                                    "position": short_variants[i].split(' ')[4],
-                                    "protein_effect": short_variants[i].split(' ')[1],
+                                    "gene": short_variants[j].split(' ')[0],
+                                    "percent_reads": short_variants[j].split(' ')[5],
+                                    "position": short_variants[j].split(' ')[4],
+                                    "protein_effect": short_variants[j].split(' ')[1],
                                     "transcript": transcript,
                                     })
                             else:
@@ -1559,14 +1561,13 @@ def FocusAssay2xml(PdfPath):
                             
                             rearrangement.extend(text[i][start+19:end].strip().split('\n'))
                             rearrangementlist=[]
-                            for i in range(len(rearrangement)):
+                            for j in range(len(rearrangement)):
                                 rearrangementlist.append({
-                            		"description": rearrangement[i].replace(' - ', '-').split(' ')[1].split('.')[0]+'.'+rearrangement[i].replace(' - ', '-').split(' ')[1].split('.')[1],
-                            		"other_gene": rearrangement[i].replace(' - ', '-').split(' ')[0].split('-')[0],
-                                    "pos1": rearrangement[i].replace(' - ', '-').split(' ')[2].split('-')[0],
-                                    "pos2": rearrangement[i].replace(' - ', '-').split(' ')[2].split('-')[1],
-                                    "supporting_read_pairs": rearrangement[i].replace(' - ', '-').split(' ')[3],
-                            		"targeted_gene": rearrangement[i].replace(' - ', '-').split(' ')[0].split('-')[1]
+                            		"description": rearrangement[j].replace(' - ', '-').split(' ')[1].split('.')[0]+'.'+rearrangement[i].replace(' - ', '-').split(' ')[1].split('.')[1],
+                            		"other_gene": rearrangement[j].replace(' - ', '-').split(' ')[0].split('-')[0],
+                                    "pos1": rearrangement[j].replace(' - ', '-').split(' ')[2].split('-')[0],
+                                    "pos2": rearrangement[j].replace(' - ', '-').split(' ')[2].split('-')[1],
+                            		"targeted_gene": rearrangement[j].replace(' - ', '-').split(' ')[0].split('-')[1]
                                     })                                                       
                             basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['rearrangements']['rearrangement']=rearrangementlist
                             #print(len(text[i][start+16:end-5].split(' \n')))    
@@ -1644,17 +1645,17 @@ def FocusAssay2xml(PdfPath):
                         
                     if len(short_variants) > 0:
                         short_variantllist=[]
-                        for i in range(len(short_variants)):
-                            if len(short_variants[i].split(' '))==9:                                
+                        for j in range(len(short_variants)):
+                            if len(short_variants[j].split(' '))==9:                                
                                 short_variantllist.append({
-                                    "cds_effect": short_variants[i].split(' ')[2],
-                                    "depth": short_variants[i].split(' ')[8],
-                                    "functional_effect": short_variants[i].split(' ')[7],
-                                    "gene": short_variants[i].split(' ')[0],
-                                    "percent_reads": short_variants[i].split(' ')[5],
-                                    "position": short_variants[i].split(' ')[4],
-                                    "protein_effect": short_variants[i].split(' ')[1],
-                                    "transcript": short_variants[i].split(' ')[6],
+                                    "cds_effect": short_variants[j].split(' ')[2],
+                                    "depth": short_variants[j].split(' ')[8],
+                                    "functional_effect": short_variants[j].split(' ')[7],
+                                    "gene": short_variants[j].split(' ')[0],
+                                    "percent_reads": short_variants[j].split(' ')[5],
+                                    "position": short_variants[j].split(' ')[4],
+                                    "protein_effect": short_variants[j].split(' ')[1],
+                                    "transcript": short_variants[j].split(' ')[6],
                                     }) 
 
                         basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variantllist

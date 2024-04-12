@@ -1,0 +1,51 @@
+{
+
+			"resource": {
+				"resourceType": "Patient",
+				"id": "86792f98-e4f6-4a71-9a04-a962fb759210",
+				"identifier": [
+					{
+						"type": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+									"code": "MR"
+								}
+							]
+						},
+						"system": "http://www.vghtpe.org.tw/fhir/patient-identifier",
+						"value": "98765436"
+					}
+				],
+				"active": true,
+				"name": [
+					{
+						"family": "朱O嘉",
+						"given": [
+							"朱O嘉"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1980-06-01",
+                "telecom": [
+                    {
+                        "rank": 1,
+                        "value": "23222111",
+                        "system": "phone"
+                    },
+                    {
+                        "rank": 2,
+                        "value": null,
+                        "system": "phone"
+                    }
+                ],
+                "address": [
+                    {
+                        "text": "臺北市士林區社子街１６０號４樓",
+                        "type": "physical",
+                        "postalCode": "111"
+                    }
+                ]
+			}
+}

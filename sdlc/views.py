@@ -1,4 +1,4 @@
-from django.shortcuts import render#, get_object_or_404
+from django.shortcuts import render,redirect#, from django.shortcuts import redirectget_object_or_404
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseRedirect
 #from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
@@ -30,6 +30,34 @@ WSGIServer.handle_error = lambda *args, **kwargs: None
 import warnings
 warnings.filterwarnings('ignore')
 
+def flatten_dict(d):
+    flattened_dict = {}
+
+    def flatten(item, key=''):
+        if isinstance(item, dict):
+            for sub_key, sub_item in item.items():
+                flatten(sub_item, key + sub_key + '_')
+        elif isinstance(item, list):
+            for i, sub_item in enumerate(item):
+                flatten(sub_item, key + str(i) + '_')
+        else:
+            flattened_dict[key[:-1]] = item
+
+    flatten(d)
+    return flattened_dict
+
+def unflatten_dict(flat_dict):
+    unflattened_dict = {}
+    for key, value in flat_dict.items():
+        parts = key.split('_')  # 拆分键名中的点号
+        current_dict = unflattened_dict
+        for part in parts[:-1]:
+            if part not in current_dict:
+                current_dict[part] = {}
+            current_dict = current_dict[part]
+        current_dict[parts[-1]] = value
+    return unflattened_dict
+
 DocumentPath = str(pathlib.Path().absolute()) + "/static/doc/"
 risk = DocumentPath + 'risk.csv'
 riskdf = pd.read_csv(risk, encoding='utf8')
@@ -47,13 +75,17 @@ ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
 def auth(request):
     user = request.user
     Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+    #print(Generight.get().cbioportal)
     right=models.Permission.objects.filter(user__username__startswith=user.username)
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and Generight.get().cbioportal:
         #return HttpResponseForbidden('Forbidden')
         return HttpResponse('Authenticated' ,status = 200)
         #return HttpResponse('Authenticated')
-    else:
+    elif request.user.is_authenticated:
         return HttpResponse('Unauthenticated',status = 401)
+        #return redirect('https://104.42.221.219/accounts/login/')
+    else:
+        return HttpResponse('forbidden',status = 403)
         #return HttpResponse('Authenticated')
 
 def index(request):
@@ -79,23 +111,85 @@ def index(request):
                 'FuncResult' : 'Function'
                 }
         return render(request, 'index.html', context)
-
+@csrf_exempt
 def convert(request):
-    #User = get_user_model()
-    #usersdf = User.objects.all().values()
-    #print(type([{i.title: i.specs} for i in User.objects.all()]))
-    #print([{i.title: i.specs} for i in User.objects.all()])
     user = request.user
     Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
     right=models.Permission.objects.filter(user__username__startswith=user.username)
-    conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
-    cur = conn.cursor()
-    consentsql = "SELECT table_schema,table_name FROM information_schema.tables where table_schema='public';"
-    consentsql = "SELECT column_name,data_type FROM information_schema.columns WHERE table_name = 'reportxml';"
-    cur.execute(consentsql)
-    rows = cur.fetchall()
+    Resourcejsonall=models.Resourcejson.objects.all()
+    
+    rows=''
+    flattendict=''
+    Resource=''
+    try:
+        try:
+            uploadedFile = request.FILES["uploadedFile"]
+            Resourcejson = models.Resourcejson(
+                uploadedFile = uploadedFile
+            )
+            Resourcejson.save()  
+        except:
+            uploadedFile = '' 
+        try:
+            if request.POST['DBtype'] != '' and request.POST['IP'] != '' and request.POST['Port'] != '' and request.POST['ID'] != '' and request.POST['PassWord'] != '' and request.POST['table'] != '' and  request.POST['db'] != '':
+                DBtype=request.POST['DBtype']
+                IP=request.POST['IP']
+                Port=request.POST['Port']
+                ID=request.POST['ID'] 
+                PassWord=request.POST['PassWord']
+                db=request.POST['db']
+                table=request.POST['table']
+                dbconn={
+                    'DBtype':DBtype,
+                    'IP':IP,
+                    'Port':Port,
+                    'ID':ID,
+                    'PassWord':PassWord,
+                    'db':db,
+                    'table':table                
+                    }
+                #print(dbconn)
+                #conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
+                conn = psycopg2.connect(database=db, user=ID, password=PassWord, host=IP, port=Port)
+                cur = conn.cursor()
+                #db list
+                #consentsql = "SELECT table_schema,table_name FROM information_schema.tables where table_schema='public';"
+                #table list
+                consentsql = "SELECT column_name,data_type FROM information_schema.columns WHERE table_name = 'reportxml';"
+                #consentsql = "SELECT column_name,data_type FROM information_schema.columns WHERE table_name = '"+table+"';"
+                #print(consentsql)
+                cur.execute(consentsql)
+                rows = cur.fetchall()
+                #print(rows)
+        except:
+            dbconn={}
+            rows={}
+
+        if request.POST['Resource'] != '':
+            #print(request.POST['Resource'])
+            Resource=request.POST['Resource']        
+            jsonPath=str(pathlib.Path().absolute()) + '/media/'+Resource
+            cancerbasejson = json.load(open(jsonPath,encoding="utf-8"))
+            sqw=flatten_dict(cancerbasejson)
+            for k in flattendict.keys():
+                if request.POST[k+'_select']!='':
+                    #print(request.POST[k+'_select'])
+                    flattendict[k]='SQL_'+table + '_' + request.POST[k+'_select']
+                else:
+                    pass
+            with open('static/doc/Resource.json', 'w', encoding='utf-8') as fp:
+                json.dump(flattendict, fp, indent=1) 
+
+    except:
+        pass
+    
     try:
         context = {
+                'dbconn' : dbconn,
+                'Resource' : Resource,
+                'Resourcejsonall' : Resourcejsonall,
+                'rows':rows,
+                'flattendict' : flattendict,
                 'Generight' : Generight,
                 'right' : right,
                 'FuncResult' : 'Function'
@@ -1804,7 +1898,7 @@ def logging(request):
         operationdate=''    
     #print(formip,method,operationdate)
     
-    conn = psycopg2.connect(database="consent", user="postgres", password="1qaz@WSX3edc", host=postgresip, port="5432")
+    conn = psycopg2.connect(database="consent", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port="5432")
     cur = conn.cursor()  
     sqlstring =  "SELECT * FROM public.log WHERE method = '" + method + "'"
     if formip != '':

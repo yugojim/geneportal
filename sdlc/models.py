@@ -12,7 +12,11 @@ class Metaxlsx(models.Model):
     uploadedFile = models.FileField(upload_to="Metaxlsx/")
     status = models.CharField(max_length=200)
     dateTimeOfUpload = models.DateTimeField(auto_now=True)
-
+    
+class Resourcejson(models.Model):
+    uploadedFile = models.FileField(upload_to="Resourcejson/")
+    dateTimeOfUpload = models.DateTimeField(auto_now=True)
+    
 class Genezip(models.Model):
     fileTitle = models.CharField(max_length=200)
     uploadedFile = models.FileField(upload_to="Genezip/")
@@ -52,6 +56,7 @@ class Genepermission(models.Model):
     reportProperties=models.BooleanField()
     copy_number_alterations=models.BooleanField()
     short_variants=models.BooleanField()
+    cbioportal=models.BooleanField()
     dateTimeOfUpload = models.DateTimeField(auto_now = True)
     #def __str__(self):
         #return self.User
@@ -90,7 +95,9 @@ class fhirip(models.Model):
     ip = models.CharField(max_length = 50)
     token = models.CharField(max_length = 200)
     dateTimeOfUpload = models.DateTimeField(auto_now = True)
+    '''
     def __str__(self):
         #return self.user 
         return f'{self.id} {self.location} {self.ip} \
              {self.token} 修改時間{self.dateTimeOfUpload}'
+             '''

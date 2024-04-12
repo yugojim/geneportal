@@ -13,21 +13,6 @@
 </head>
 
 <body id="page-top">
-<script>
-department=new Array();
-department[0]=["張隆紋", "黃能富", "王炳豐", "張世杰", "張智星"];	// 資訊系
-department[1]=["黃瑞星", "黃仲陵", "呂忠津", "鄭博泰", "盧向成"];	// 電機系
-department[2]=["楊敬堂", "王培仁", "葉銘權", "宋鎮國"];			// 動機系
-department[3]=["王天戈", "開執中", "梁正宏"];				// 工科系
-
-function renew(index){
-	for(var i=0;i<department[index].length;i++)
-		document.myForm.member.options[i]=new Option(department[index][i], department[index][i]);	// 設定新選項
-	document.myForm.member.length=department[index].length;	// 刪除多餘的選項
-}
-</script>
-
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 	{% include 'utilities-Sidebar.html' %}
@@ -36,6 +21,7 @@ function renew(index){
             <!-- Main Content -->
             <div id="content">
 			{% include 'utilities-Topbar.html' %}
+			
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 				
@@ -47,82 +33,113 @@ function renew(index){
 						{% endif %}
 						
 					</div>
-					<form name="myForm">
-					系別：
-					<select class="form-select form-select-sm" aria-label=".form-select-sm example" onChange="renew(this.selectedIndex);">
-					  <option value="資訊系" selected>資訊系</option>
-					  <option value="工科系">工科系</option>
-					  <option value="電機系">電機系</option>
-					  <option value="動機系">動機系</option>
-					</select>
-
-					隊員：
-					<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="member" size=5>
-						<option value="">請由左方選取系別
-					</select>
-					</form>
-					<form method="post" action="{% url 'convert' %}">
 					{% csrf_token %}
+					<form method="post" action="{% url 'convert' %}" enctype="multipart/form-data">
 					<div class="form-group">
 						<div class="form-row">
-							<div class="form-group col-md-2">
-								<label><h5>Microsatellite Status</h5></label>
+							<div class="form-group col-md-1">
+								<label><h5>DBtype</h5></label>
 							</div>
-							<div class="form-group col-md-2">
-								<input type="text" class="form-control" id="status" name="status" value="{{search.status}}">
+							<div class="form-group col-md-1">
+								<select name="DBtype" class="form-control">
+									<option value="PostgreSql" selected>PostgreSql</option>
+								</select>
 							</div>
-							<div class="form-group col-md-2">
-								<label><h5>Tumor Mutational Burden</h5></label>
+							<div class="form-group col-md-1">
+								<label><h5>IP</h5></label>
 							</div>
-							<div class="form-group col-md-2">
-								<input type="text" class="form-control" id="score" name="score" value="{{search.score}}">
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="IP" name="IP" value="{{dbconn.IP}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Port</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="Port" name="Port" value="{{dbconn.Port}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>ID</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="ID" name="ID" value="{{dbconn.ID}}">
 							</div>							
+							<div class="form-group col-md-1">
+							<label><h5>PassWord</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="password" class="form-control" id="PassWord" name="PassWord" value="{{dbconn.PassWord}}">
+							</div>
+							<div class="form-group col-md-1">
+							<label><h5>db</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="db" name="db" value="{{dbconn.db}}">
+							</div>
+						</div>
+						
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							<label><h5>table</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="table" name="table" value="{{dbconn.table}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Resource</h5></label>
+							</div>
+							<div class="form-group col-md-3">
+								<select name="Resource" class="form-control">
+									{% for Resourcejson in Resourcejsonall %}
+									  <option value="{{Resourcejson.uploadedFile}}" {% if Resourcejson.uploadedFile == Resource %}selected{% endif %}>{{Resourcejson.uploadedFile}}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Upload Resource</h5></label>
+							</div>
+							<div class="form-group col-md-3">
+								<input class="form-control" type="file" name="uploadedFile" accept=".json">
+							</div>
+
 							<div class="form-group col-md-1">
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
-						</div>				  
-					</div>
-					</form>
-					{{data.diagnostics}}
+						</div>
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">GeneReport</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Resource</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="Table" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-											<th>報告號碼</th>
-											<th>分生號碼</th>
-											<th>病歷號</th>
-											<th>Microsatellite Status</th>
-											<th>Tumor Mutational Burden score</th>
-											<th>Report</th>
-											<th>Report PDF</th>																	
+											<th>Resource items</th>
+											<th>default sameple</th>
+											<th>db table column</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-											<th>報告號碼</th>
-											<th>分生號碼</th>
-											<th>病歷號</th>
-											<th>Microsatellite Status</th>
-											<th>Tumor Mutational Burden score</th>
-											<th>Report</th>
-											<th>Report PDF</th>	
+											<th>Resource items</th>
+											<th>default sameple</th>
+											<th>table column</th>
+											<th></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-										{% for row in rows %}
+										{% for key, value in flattendict.items %}
 										<tr>											
-											<td>{{row.2}}</td>
-											<td>{{row.3}}</td>
-											<td>{{row.1.ResultsReport.ResultsPayload.FinalReport.PMI.MRN}}</td>
-											<td>{{row.1.ResultsReport.ResultsPayload.variant_report.biomarkers.microsatellite_instability.status}}</td>
-											<td>{{row.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.score}}</td>
-											<td><a href="/GeneFinalReportDetails?id={{ row.0}}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Report</a></td>
-											<td><a href="/static/doc/gene/{{row.2.split|join:"_"}}_({{row.3.split|join:"_"}}).pdf" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">{{row.3}}</a></td>
+											<td>{{key}}</td>
+											<td><input type="text" class="form-control" id="status" name="{{ key }}" value="{{ value }}"></td>
+											<td>								
+											<select name="{{key}}_select" class="form-control">
+												<option value="" selected></option>
+												{% for row in rows %}
+												  <option value="{{row.0}}">{{row.0}}</option>
+												{% endfor %}
+											</select>
+											</td>
 										</tr>
 										{% endfor %}										 
                                     </tbody>
@@ -130,6 +147,17 @@ function renew(index){
                             </div>
                         </div>
                     </div>
+				
+
+
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>						
+					</div>
+					</form>
+				
 				</div>
 			</div>
             <!-- Footer -->
