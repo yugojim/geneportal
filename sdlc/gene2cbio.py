@@ -2,17 +2,32 @@ import PyPDF2
 import os
 import glob
 import xmltodict
-import xml.etree.ElementTree as ET
 import json
-import psycopg2
-import os
 import shutil
 import re
-import pandas as pd
-import csv
-import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
+
+### 新增XML 至SQL ###
+def pdf2floder(PdfPath):
+    os.chdir(PdfPath)
+    dirlist=glob.glob('*_*')
+    for dirpath in dirlist:
+        print(dirpath.replace('.pdf', ''))
+        
+        source_dir = dirpath
+        destination_dir = dirpath.replace('.pdf', '')
+                
+        # 确保目标目录存在
+        if not os.path.exists(destination_dir):
+            os.makedirs(destination_dir)
+        try:
+            shutil.move(source_dir, destination_dir)
+            #print(f"移动文件 {source_dir} 到 {destination_dir}")
+        except Exception as e:
+            print(f"移动文件 {source_dir} 失败：{e}")
+    os.chdir('..')
+    return 'xml2sql done'
 
 ### 新增XML 至SQL ###
 def xmlisql(PdfPath,conn,cur):
@@ -73,6 +88,7 @@ def xml2sql(PdfPath,conn,cur):
             print(dirpath + ' NG')
     os.chdir('..')
     return 'xml2sql done'
+
 ### Guardant360 ###
 def Guardant3602xml(PdfPath):
     os.chdir(PdfPath)
@@ -191,7 +207,7 @@ def Guardant3602xml(PdfPath):
                                             "allele_fraction": copy_number_alteration.strip().split(' ')[1]}) 
                                         basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variantllist
                                     else:
-                                        print(copy_number_alteration)
+                                        #print(copy_number_alteration)
                                         try:
                                             if 'Amplification' in copy_number_alteration:
                                                 #print(copy_number_alteration.strip())

@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rr:ResultsReport xmlns:rr="http://integration.foundationmedicine.com/reporting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://integration.foundationmedicine.com/reporting http://integration.foundationmedicine.com/reporting/ResultsReport.2.1.xsd">
+  <rr:CustomerInformation>
+    <rr:ReferenceID>01-2023-00029501</rr:ReferenceID>
+    <rr:CSN />
+    <rr:TRF>ORD-1631801-01</rr:TRF>
+    <rr:MRN>49487516</rr:MRN>
+    <rr:PhysicianId>109266</rr:PhysicianId>
+    <rr:NPI />
+  </rr:CustomerInformation>
+  <rr:ResultsPayload>
+    <FinalReport xmlns:xsd="http://www.w3.org/2001/XMLSchema" StagingId="1322190" clinicalId="1323537" xsi:noNamespaceSchemaLocation="http://integration.foundationmedicine.com/reporting/ClinicalReport.1.1.xsd">
+      <Application>
+        <ApplicationSettings>
+          <ApplicationSetting>
+            <Name>Statement</Name>
+            <Value />
+          </ApplicationSetting>
+        </ApplicationSettings>
+      </Application>
+      <DemographicCorrectionDate />
+      <ReportId>ORD-1631801-01</ReportId>
+      <SampleName>US1556823.01</SampleName>
+      <Version>0</Version>
+      <Sample>
+        <FM_Id>ORD-1631801-01</FM_Id>
+        <SampleId>US1556823.01</SampleId>
+        <BlockId>S112-20568 A (PF23056)</BlockId>
+        <TRFNumber>ORD-1631801-01</TRFNumber>
+        <TestType>FoundationOne CDX</TestType>
+        <SpecFormat>Slide Deck</SpecFormat>
+        <ReceivedDate>2023-05-17</ReceivedDate>
+        <processSites>
+          <processSite address="150 Second St., 1st Floor, Cambridge, MA 02141" cliaNumber="22D2027531" locationID="1" locationName="Cambridge" processID="1" processName="Extracted DNA" />
+          <processSite address="150 Second St., 1st Floor, Cambridge, MA 02141" cliaNumber="22D2027531" locationID="1" locationName="Cambridge" processID="1" processName="LC" />
+        </processSites>
+      </Sample>
+      <PMI>
+        <ReportId>ORD-1631801-01</ReportId>
+        <MRN>49487516</MRN>
+        <FullName>Chen, Hsiao Ting</FullName>
+        <FirstName>Hsiao Ting</FirstName>
+        <LastName>Chen</LastName>
+        <SubmittedDiagnosis>Kidney urothelial carcinoma</SubmittedDiagnosis>
+        <Gender>Female</Gender>
+        <DOB>1981-01-20</DOB>
+        <OrderingMD>Yeh, Yi-Chen</OrderingMD>
+        <OrderingMDId>109266</OrderingMDId>
+        <Pathologist>Not Provided</Pathologist>
+        <CopiedPhysician1 />
+        <MedFacilName>Taipei Veterans General Hospital</MedFacilName>
+        <MedFacilID>205872</MedFacilID>
+        <SpecSite>Kidney</SpecSite>
+        <CollDate>2023-05-08</CollDate>
+        <ReceivedDate>2023-05-17</ReceivedDate>
+        <CountryOfOrigin>TW</CountryOfOrigin>
+      </PMI>
+      <PertinentNegatives>
+        <PertinentNegative>
+          <Gene>FGFR2</Gene>
+        </PertinentNegative>
+        <PertinentNegative>
+          <Gene>FGFR3</Gene>
+        </PertinentNegative>
+      </PertinentNegatives>
+      <Summaries alterationCount="21" clinicalTrialCount="20" resistiveCount="0" sensitizingCount="9" />
+      <VariantProperties>
+        <VariantProperty geneName="AR" isVUS="true" variantName="S176R" />
+        <VariantProperty geneName="AXIN1" isVUS="true" variantName="V849I" />
+        <VariantProperty geneName="CHEK2" isVUS="true" variantName="V463F" />
+        <VariantProperty geneName="CSF3R" isVUS="true" variantName="E206Q" />
+        <VariantProperty geneName="ERBB4" isVUS="true" variantName="splice site 1717-2A&gt;T" />
+        <VariantProperty geneName="FGFR4" isVUS="true" variantName="D709G" />
+        <VariantProperty geneName="JAK1" isVUS="true" variantName="R69C" />
+        <VariantProperty geneName="KLHL6" isVUS="true" variantName="amplification" />
+        <VariantProperty geneName="KMT2D (MLL2)" isVUS="true" variantName="P4916L" />
+        <VariantProperty geneName="MST1R" isVUS="true" variantName="rearrangement" />
+        <VariantProperty geneName="PDGFRA" isVUS="true" variantName="L875Q" />
+        <VariantProperty geneName="ROS1" isVUS="true" variantName="W1361R" />
+        <VariantProperty geneName="SRC" isVUS="true" variantName="A79V" />
+        <VariantProperty geneName="TENT5C (FAM46C)" isVUS="true" variantName="M215L" />
+        <VariantProperty geneName="ZNF703" isVUS="true" variantName="S395C" />
+      </VariantProperties>
+      <priorTests />
+      <Genes>
+        <Gene>
+          <Name>ARID1A</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>E966*</Name>
+              <AlterationProperties>
+                <AlterationProperty dnaFraction="82.99" isEquivocal="false" name="E966*" />
+              </AlterationProperties>
+              <Interpretation>ARID1A encodes the AT-rich interactive domain-containing protein 1A, also known as Baf250a, a member of the SWI/SNF chromatin remodeling complex. Mutation, loss, or inactivation of ARID1A has been reported in many cancers, and the gene is considered a tumor suppressor (Guan et al., 2011; 21900401, Jones et al., 2012; 22009941, Wiegand et al., 2010; 20942669, Jones et al., 2010; 20826764, Yan et al., 2014; 24293408, Wang et al., 2012; 22808142, Huang et al., 2012; 22922871, Chan-On et al., 2013; 24185513, Mamo et al., 2012; 21892209). ARID1A mutations, which are mostly truncating, have been identified along the entire gene and often correlate with ARID1A protein loss (Jones et al., 2012; 22009941, Wiegand et al., 2010; 20942669, Jones et al., 2010; 20826764, Zang et al., 2012; 22484628, Wang et al., 2011; 22037554), whereas ARID1A missense mutations are mostly uncharacterized. ARID1A alterations are particularly prevalent in ovarian clear cell carcinoma (46-50%), ovarian and uterine endometrioid carcinomas (24-44%), and cholangiocarcinoma (27%); they are also reported in up to 27% of gastric carcinoma, esophageal adenocarcinoma, Waldenstrom macroglobulinemia, pediatric Burkitt lymphoma, hepatocellular carcinoma, colorectal carcinoma, and urothelial carcinoma samples analyzed (COSMIC, cBioPortal, 2023) (Tate et al., 2019; 30371878, Cerami et al., 2012; 22588877, Gao et al., 2013; 23550210, Wu et al., 2014; 24618703, Jones et al., 2012; 22009941, Dulak et al., 2013; 23525077, Streppel et al., 2013; 23318448, Jiao et al., 2014; 24293293, Ross et al., 2014; 24563076). ARID1A loss is associated with microsatellite instability in ovarian and endometrial endometrioid adenocarcinomas (Huang et al., 2014; 25195947, Hussein et al., 2014; 25394778, Bosse et al., 2013; 23702729, Allo et al., 2014; 23887303, Okamura et al., 2020; 32111729), CRC (Chou et al., 2014; 24925223, Ye et al., 2014; 25311944, Wei et al., 2014; 25561809, Okamura et al., 2020; 32111729), and gastric cancer (Chen et al., 2015; 25583476, Wang et al., 2011; 22037554, Abe et al., 2012; 22915242, Wang et al., 2012; 22808142, Wiegand et al., 2014; 24767857, Okamura et al., 2020; 32111729). In the context of urothelial carcinomas, one study reported no association between ARID1A mutation and tumor grade (Gui et al., 2011; 21822268), whereas others have reported contradictory associations between ARID1A protein loss and prognosis (Balbás-Martínez et al., 2013; 23650517, Faraj et al., 2014; 25175170). There are no therapies approved to address the mutation or loss of ARID1A in cancer. However, on the basis of limited clinical and preclinical evidence, ARID1A inactivating mutations may lead to sensitivity to ATR inhibitors such as M6620 and ceralasertib (Williamson et al., 2016; 27958275). In a Phase 2 study of ceralasertib in solid tumors, 2 patients with endometrial carcinoma in the cohort with loss of ARID1A expression achieved CRs on ceralasertib monotherapy; at least 1 of these 2 patients carried an inactivating ARID1A mutation. In contrast, no responses were observed for patients with normal ARID1A expression treated with ceralasertib combined with olaparib (Aggarwal et al., 2021; ESMO Abstract 512O). One patient with small cell lung cancer harboring an ARID1A mutation experienced a PR when treated with M6620 combined with topotecan (Thomas et al., 2018; 29252124). In a Phase 1 trial, a patient with metastatic colorectal cancer (CRC) harboring both an ARID1A mutation and ATM loss treated with single-agent M6620 achieved a CR that was ongoing at 29 months (Yap et al., 2020; 32568634). On the basis of limited clinical and preclinical evidence, ARID1A inactivation may predict sensitivity to EZH2 inhibitors (Papadopoulos et al., 2022; ENA Abstract 188, Bitler et al., 2015; 25686104, Kim et al., 2015; 26552009). A Phase 1 study of EZH2 inhibitor CPI-0209 reported 1 PR for a patient with ARID1A-mutated endometrial cancer (Papadopoulos et al., 2022; ENA Abstract 188). Other studies have reported that the loss of ARID1A may activate the PI3K-AKT pathway and be linked with sensitivity to inhibitors of this pathway (Wiegand et al., 2014; 24559118, Huang et al., 2014; 24336158, Samartzis et al., 2014; 24979463). Patients with ARID1A alterations in advanced or metastatic solid tumors may derive benefit from treatment with anti-PD-1 or anti-PD-L1 immunotherapy (Okamura et al., 2020; 32111729). Loss of ARID1A expression has been associated with chemoresistance to platinum-based therapy for patients with ovarian clear cell carcinoma (Yokoyama et al., 2014; 24459582, Katagiri et al., 2012; 22101352) and to 5-fluorouracil in CRC cell lines (Xie et al., 2014; 24833095). Limited clinical evidence indicates that ARID1A-altered urothelial cancer may be sensitive to pan-HDAC inhibitors; a retrospective analysis reported a CR to belinostat and a PR to panobinostat in patients with ARID1A alterations (Gupta et al., 2019; 30301863).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</ClinicalTrialNote>
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks>
+                <ClinicalTrialLink nctId="NCT05166577">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT02264678">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT05320640">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04802174">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04657068">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04514497">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT05053971">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03669601">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT01543763">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04491942">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+              </ClinicalTrialLinks>
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>TP53</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>Y220C</Name>
+              <AlterationProperties>
+                <AlterationProperty dnaFraction="82" isEquivocal="false" name="Y220C" />
+              </AlterationProperties>
+              <Interpretation>Functional loss of the tumor suppressor p53, which is encoded by the TP53 gene, is common in aggressive advanced cancers (Brown et al., 2009; 19935675). Alterations such as seen here may disrupt TP53 function or expression (Joerger and Fersht, 2008; 18410249, Kato et al., 2003; 12826609, Kamada et al., 2011; 20978130, Zerdoumi et al., 2017; 28472496, Yamada et al., 2007; 17690113). TP53 Y220C is targetable by mutation-specific inhibitors such as PC14586 (Dumbrava et al., 2022; ASCO Abstract 3003). TP53 mutation has been reported in 49–54% of bladder urothelial carcinoma (UC) (Ross et al., 2013; 23887298, Cancer Genome Atlas Research Network, 2014; 24476821), 33% of renal pelvis UC (Bringuier et al., 1998; 9761125), and 25% (22/71) of ureter UC samples (Furihata et al., 2000; 10675480). Expression of p53 has been correlated with TP53 mutation, and reported in 52–84% of bladder cancers (Esrig et al., 1993; 7901994, Cordon-Cardo et al., 1994; 7906253, Diaz-Cano et al., 2000; 10744064, Kapur et al., 2011; 21571954, Lotan et al., 2013; 23571005, Kim et al., 2014; 25092538), 48% (24/50) bladder SCCs (El-Kenawy et al., 2003; 14756544), 36–53% of upper urinary tract UCs (UTUC) (Joung et al., 2008; 18931548, Jinza et al., 1998; 9644783, Kamijima et al., 2005; 16351648), and in 4/4 urethral clear cell carcinomas (Alexiev et al., 2013; 23307189). TP53 mutations in both bladder and renal pelvis urothelial carcinoma (UC) are more common in invasive tumors (Bringuier et al., 1998; 9761125, Goebell and Knowles, 2010; 20610279, Lindgren et al., 2012; 22685613, Kim et al., 2014; 25092538), and have been associated with inferior survival in patients with renal pelvis UC (Bringuier et al., 1998; 9761125) or upper tract UC (UTUC) (Feng et al., 2014; 24500328). Alterations to the p53 pathway are correlated with aggressive disease and poor prognosis in bladder cancer (Eissa et al., 2010; 20012564, Mitra et al., 2007; 17710407, Lambrou et al., 2013; 23624844), and p53 overexpression has been linked to poor progression-free survival in UTUC (Lee et al., 2013; 23482786, Feng et al., 2014; 24500328), disease progression in UC of the renal pelvis and ureter (Hashimoto et al., 2000; 11168685), and higher tumor grade in bladder squamous cell carcinoma (Osman et al., 1997; 9815716, Helal et al., 2006; 16998598, Jalali et al., 2011; 22126554). For patients with TP53 Y220C-mutated disease, a Phase 1 study of the Y220C-specific reactivator PC14586 reported an ORR of 32% (8/25) and DCR of 88% (22/25) at higher doses across a variety of solid tumor types (Dumbrava et al., 2022; ASCO Abstract 3003). There are no approved therapies to address TP53 mutation or loss. However, tumors with TP53 loss of function alterations may be sensitive to the WEE1 inhibitor adavosertib (Hirai et al., 2010; 20107315, Bridges et al., 2011; 21799033, Rajeshkumar et al., 2011; 21389100, Osman et al., 2015; 25504633) or p53 gene therapy such as SGT53 (Xu et al., 2002; 12489850, Xu et al., 2001; 11713371, Camp et al., 2013; 23470564, Kim et al., 2015; 25240597, Pirollo et al., 2016; 27357628, Leung et al., 2021; ASCO Abstract 4139). In a Phase 1 study, adavosertib in combination with gemcitabine, cisplatin, or carboplatin elicited PRs in 9.7% and SDs in 53% of patients with solid tumors; the response rate was 21% (4/19) for patients with TP53 mutations versus 12% (4/33) for patients who were TP53 wildtype (Leijen et al., 2016; 27601554). A Phase 2 trial of adavosertib in combination with chemotherapy (gemcitabine, carboplatin, paclitaxel, or doxorubicin) reported a 32% (30/94, 3 CR) ORR and a 73% (69/94) DCR for patients with platinum-refractory TP53-mutated ovarian, Fallopian tube, or peritoneal cancer (Moore et al., 2019; ASCO Abstract 5513). A smaller Phase 2 trial of adavosertib in combination with carboplatin achieved a 43% (9/21, 1 CR) ORR and a 76% (16/21) DCR for patients with platinum-refractory TP53-mutated ovarian cancer (Leijen et al., 2016; 27998224). The combination of adavosertib with paclitaxel and carboplatin for patients with TP53-mutated ovarian cancer also significantly increased PFS compared with paclitaxel and carboplatin alone (Oza et al., 2015; ASCO Abstract 5506). In the Phase 2 VIKTORY trial, patients with TP53-mutated metastatic and/or recurrent gastric cancer experienced a 24% (6/25) ORR with adavosertib combined with paclitaxel (Lee et al., 2019; 31315834). A Phase 1 trial of neoadjuvant adavosertib in combination with cisplatin and docetaxel for head and neck squamous cell carcinoma (HNSCC) elicited a 71% (5/7) response rate for patients with TP53 alterations (Mendez et al., 2018; 29535125). The Phase 2 FOCUS4-C trial for patients with TP53- and RAS-mutated colorectal cancer reported improvement in PFS (3.61 vs. 1.87 months, HR=0.35, p=0.0022), but not OS (14.0 vs 12.8 months, p=0.93), following adavosertib treatment compared with active monitoring (Seligmann et al., 2021; 34538072). In a Phase 1b clinical trial of SGT-53 in combination with docetaxel for patients with solid tumors, 75% (9/12) of evaluable patients experienced clinical benefit, including 2 confirmed and 1 unconfirmed PRs and 2 instances of SD with significant tumor shrinkage (Pirollo et al., 2016; 27357628). Missense mutations leading to TP53 inactivation may be sensitive to therapies that reactivate mutated p53 such as eprenetapopt. In a Phase 1b trial for patients with p53-positive high-grade serous ovarian cancer, eprenetapopt combined with carboplatin and pegylated liposomal doxorubicin achieved a 52% (11/21) response rate and 100% DCR (Gourley et al., 2016; ASCO Abstract 5571). A Phase 1 trial of eprenetapopt with pembrolizumab for patients with solid tumors reported an ORR of 10% (3/29) (Park et al., 2022; 36084396). One or more of the TP53 variants observed here has been described in the ClinVar database as a likely pathogenic or pathogenic germline mutation (by an expert panel or multiple submitters) associated with Li-Fraumeni syndrome (ClinVar, Apr 2023)(Landrum et al., 2018; 29165669). Follow-up germline testing would be needed to distinguish whether the finding in this patient is somatic or germline. Germline mutations in TP53 are associated with the very rare autosomal dominant disorder Li-Fraumeni syndrome and the early onset of many cancers (Bougeard et al., 2015; 26014290, Sorrell et al., 2013; 23355100, Nichols et al., 2001; 11219776), including sarcomas (Kleihues et al., 1997; 9006316, Gonzalez et al., 2009; 19204208). Estimates for the prevalence of germline TP53 mutations in the general population range from 1:5,000 (Lalloo et al., 2003; 12672316) to 1:20,000 (Gonzalez et al., 2009; 19204208). For pathogenic TP53 mutations identified during tumor sequencing, the rate of germline mutations was 1% in the overall population and 6% in tumors arising before age 30 (Mandelker et al., 2019; 31050713). In the appropriate clinical context, germline testing of TP53 is recommended. Variants seen in this gene have been reported to occur in clonal hematopoiesis (CH), an age-related process in which hematopoietic stem cells acquire somatic mutations that allow for clonal expansion (Jaiswal et al., 2014; 25426837, Genovese et al., 2014; 25426838, Xie et al., 2014; 25326804, Acuna-Hidalgo et al., 2017; 28669404, Severson et al., 2018; 29678827, Fuster et al., 2018; 29420212). CH in this gene has been associated with increased mortality, risk of coronary heart disease, risk of ischemic stroke, and risk of secondary hematologic malignancy (Jaiswal et al., 2014; 25426837, Genovese et al., 2014; 25426838). Clinical management of patients with CH in this gene may include monitoring for hematologic changes and reduction of controllable risk factors for cardiovascular disease (Steensma., 2018; 30504320). Comprehensive genomic profiling of solid tumors detects nontumor alterations that are due to CH (Severson et al., 2018; 29678827, Chabon et al., 2020; 32269342, Razavi et al., 2019; 31768066). Patient-matched peripheral blood mononuclear cell sequencing is required to conclusively determine if this alteration is present in tumor or is secondary to CH.</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote>Clinical evidence suggests patients with TP53 Y220C mutations may benefit from Y220C-specific reactivators of TP53.</ClinicalTrialNote>
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks>
+                <ClinicalTrialLink nctId="NCT04585750">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+              </ClinicalTrialLinks>
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>Tumor Mutation Burden</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>12</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="12" />
+              </AlterationProperties>
+              <Interpretation>Tumor mutation burden (TMB, also known as mutation load) is a measure of the number of somatic protein-coding base substitution and insertion/deletion mutations occurring in a tumor specimen. TMB is affected by a variety of causes, including exposure to mutagens such as ultraviolet light in melanoma (Pfeifer et al., 2005; 15748635, Hill et al., 2013; 23875803) and cigarette smoke in lung cancer (Pfeifer et al., 2002; 12379884, Rizvi et al., 2015; 25765070), treatment with temozolomide-based chemotherapy in glioma (Johnson et al., 2014; 24336570, Choi et al., 2018; 29452419), mutations in the proofreading domains of DNA polymerases encoded by the POLE and POLD1 genes (Cancer Genome Atlas Research Network, 2013; 23636398, Briggs and Tomlinson, 2013; 23447401, Heitzer and Tomlinson, 2014; 24583393, Cancer Genome Atlas Network, 2012; 22810696, Roberts and Gordenin, 2014; 25568919), and microsatellite instability (MSI) (Cancer Genome Atlas Research Network, 2013; 23636398, Cancer Genome Atlas Network, 2012; 22810696, Roberts and Gordenin, 2014; 25568919). This sample harbors a TMB level that may be associated with sensitivity to PD-1- or PD-L1-targeting immune checkpoint inhibitors in urothelial carcinoma (Galsky et al., 2017; ESMO Abstract 848PD, Necchi et al., 2018; AACR Abstract CT003, Rosenberg et al., 2016; 26952546, Balar et al., 2017; 27939400, Powles et al., 2018; 29268948, Mariathasan et al., 2018; 29443960, Miao et al., 2018; 30150660, Samstein et al., 2019; 30643254, Sarid et al., 2019; ESMO Abstract 938, Marabelle et al., 2020; 32919526). In the Bladder Urothelial Carcinoma TCGA dataset, the median somatic mutation burden was 5.5 mutations per megabase (muts/Mb)(Cancer Genome Atlas Research Network, 2014; 24476821). One study reported that the number of somatic mutations positively correlates with increased tumor stage and grade of bladder cancers (Cazier et al., 2016; 24777035). For patients with metastatic urothelial carcinoma receiving atezolizumab, however, higher median mutation load has been reported to be significantly associated with improved PFS and OS (Rosenberg et al., 2016; ASCO Abstract 104, Rosenberg et al., 2016; 26952546, Balar et al., 2017; 27939400). Another study for patients with urothelial bladder carcinoma showed that high tumor mutational burden (TMB) was associated with superior OS and disease-specific survival compared with low TMB; the OS benefit of high TMB was driven by the cohort with Stage 3 disease, whereas OS was similar between low and high TMB for patients with Stage 2 or Stage 4 disease (Voutsadakis, 2022; 35323317). On the basis of clinical evidence in solid tumors, increased TMB may be associated with greater sensitivity to immunotherapeutic agents, including anti-PD-L1 (Legrand et al., 2018; ASCO Abstract 12000, Samstein et al., 2019; 30643254, Goodman et al., 2017; 28835386, Goodman et al., 2019; 31405947), anti-PD-1 therapies (Cristescu et al., 2018; 30309915, Goodman et al., 2017; 28835386, Samstein et al., 2019; 30643254, Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947), and combination nivolumab and ipilimumab (Ready et al., 2019; 30785829, Hellmann et al., 2018; 29658845, Hellmann et al., 2018; 29657128, Rizvi et al., 2017; WCLC Abstract 1106, Hellmann et al., 2018; 29731394, Rozeman et al., 2021; 33558721, Hodi et al., 2019; AACR abstract CT037, Lee et al., 2019; ASCO Abstract 641, Sharma et al., 2020; 32916128). In multiple studies of immune checkpoint inhibitors in urothelial carcinoma, higher TMB has corresponded with clinical benefit from treatment with anti-PD-L1 (Rosenberg et al., 2016; 26952546, Balar et al., 2017; 27939400, Powles et al., 2018; 29268948, Mariathasan et al., 2018; 29443960, Samstein et al., 2019; 30643254, Miao et al., 2018; 30150660) and anti-PD-1 immunotherapeutic agents (Galsky et al., 2017; ESMO Abstract 848PD, Necchi et al., 2018; AACR Abstract CT003). For patients with metastatic urothelial carcinoma treated with the PD-L1 inhibitor atezolizumab, those with a significantly increased mutational load (9.7 Muts/Mb or greater by this assay or others) were associated with response and longer OS compared with those with lower TMB (Rosenberg et al., 2016; 26952546, Powles et al., 2018; 29268948, Balar et al., 2017; 27939400, Samstein et al., 2019; 30643254). Similarly, in a study of pembrolizumab in muscle invasive bladder cancer, the median TMB in responders was 12.3 Muts/Mb, versus 7.0 Muts/Mb in nonresponding patients (Necchi et al., 2018; AACR Abstract CT003). The PD-1 inhibitor nivolumab led to increased ORR, PFS, and OS for patients with a TMB of 167 missense mutations/tumor or higher (~ equivalency = 9 Muts/Mb or higher as measured by this assay) compared with those harboring lower TMB in a study of metastatic urothelial cancer (Galsky et al., 2017; ESMO Abstract 848PD).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</ClinicalTrialNote>
+              <Therapies>
+                <Therapy>
+                  <Name />
+                  <GenericName>Pembrolizumab</GenericName>
+                  <FDAApproved>true</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Pembrolizumab is a monoclonal antibody that binds to the PD-1 receptor and blocks its interaction with the ligands PD-L1 and PD-L2 to enhance antitumor immune responses. It is FDA approved for patients with tumor mutational burden-high (≥10 Muts/Mb), microsatellite instability-high (MSI-H), or MMR-deficient (dMMR) solid tumors; as monotherapy for PD-L1-positive head and neck squamous cell cancer (HNSCC), cervical cancer, or esophageal cancer; and in combination with chemotherapy for PD-L1-positive triple-negative breast cancer (TNBC) or cervical cancer. It is also approved in various treatment settings as monotherapy for patients with non-small cell lung cancer (NSCLC), melanoma, HNSCC, urothelial carcinoma, hepatocellular carcinoma, Merkel cell carcinoma, cutaneous squamous cell carcinoma, MSI-H or dMMR endometrial carcinoma, classical Hodgkin lymphoma, or primary mediastinal large B-cell lymphoma; and in combination with chemotherapy or targeted therapy for NSCLC, HNSCC, esophageal or gastroesophageal junction cancer, renal cell carcinoma, TNBC, urothelial carcinoma, or endometrial carcinoma that is not MSI-H or dMMR. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In the Phase 2 PURE-01 study of neoadjuvant pembrolizumab for muscle-invasive bladder urothelial carcinoma, TMB was significantly associated with the probability of pathologic CR (pCR) but was not an independent marker of pCR probability (Bandini et al., 2020; 32516377). For TMB ≤11 Muts/Mb, the probability of pCR was not dependent on the PD-L1 combined positive score (CPS); however, increased CPS was associated with increased pCR probability for TMB &gt;11 Muts/Mb (Bandini et al., 2020; 32516377). The Phase 3 KEYNOTE-045 trial for patients with platinum-refractory advanced urothelial carcinoma (UC) found second-line pembrolizumab superior to chemotherapy (median OS [mOS] 10.1 vs. 7.2 months, HR=0.71; 4-year OS rate 17% vs. 10%) (Balar et al., 2022; 36494006, Bellmunt et al., 2017; 28212060). For cisplatin-ineligible patients with advanced UC, first-line pembrolizumab monotherapy achieved an ORR of 29% and mOS of 11.3 months, with improved clinical benefit observed for patients with a PD-L1 combined positive score (CPS) ≥10 compared with patients with PD-L1 CPS &lt;10 (mOS 18.5 vs. 9.7 months, ORR 47% vs. 21%) (Balar et al., 2022; 36494006); pembrolizumab combined with the Nectin 4-directed antibody drug conjugate enfortumab vedotin has benefited patients in this setting irrespective of PD-L1 expression (ORR 65-73%, mOS 26.1 months) (O'Donnell et al., 2023; ASCO GU Abstract 499, Hoimes et al., 2023; 36041086). The EV-103/KEYNOTE-869 trial reported an ORR of 65% (49/76) for cisplatin-ineligible patients, including 61% (27/44) for patients with PD-L1 expression of CPS &lt;10 (O'Donnell et al., 2023; ASCO GU Abstract 499). The Phase 3 KEYNOTE-361 study investigating first-line pembrolizumab for advanced UC reported similar mOS for patients treated with single-agent pembrolizumab versus platinum-containing chemotherapy (15.6 vs. 14.3 months, HR=0.92) irrespective of PD-L1 CPS ≥10 (16.1 vs. 15.2 months, HR=1.01) and found that the addition of pembrolizumab to chemotherapy was not superior to chemotherapy (mOS 17.0 vs. 14.3 months, HR=0.86) (Powles et al., 2021; 34051178). A post-hoc analysis of first-line pembrolizumab monotherapy efficacy reported that patients with a CR or PR at 9 weeks of pembrolizumab therapy achieved better mOS outcomes (50.7 months) than patients with SD (17.5 months) or PD (5.3 months) as best response (Powles et al., 2022; ASCO Abstract 519). A Phase 2 study investigated neoadjuvant pembrolizumab followed by radical cystectomy in muscle-invasive urothelial bladder carcinoma (MIBC) and reported pathologic CRs for 42% (21/50) of patients (Necchi et al., 2018; 30343614). Three-year event-free survival rates of 60%, 77%, and 90% were reported for cohorts with PD-L1 low, medium, and high CPS, respectively (Basile et al., 2022; 36190522). The Phase 2 KEYNOTE-057 trial evaluating pembrolizumab for patients with high-risk non-MIBC unresponsive to the Bacillus Calmette-Guerin vaccine reported clinical benefit for patients with carcinoma in situ (CIS) with and without papillary tumors (cohort A) (Balar et al., 2021; 34051177) and non-CIS papillary tumors (cohort B) (Necchi et al., 2023; ASCO GU Abstract LBA442). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Nivolumab</GenericName>
+                  <FDAApproved>true</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Nivolumab is a monoclonal antibody that binds to the PD-1 receptor and blocks its interaction with PD-L1 and PD-L2, reducing inhibition of the antitumor immune response. It is FDA approved as a monotherapy in various treatment settings for patients with melanoma, renal cell carcinoma (RCC), non-small cell lung cancer (NSCLC), head and neck squamous cell carcinoma (HNSCC), urothelial carcinoma, colorectal cancer (CRC), classical Hodgkin lymphoma (cHL), gastric cancer, gastroesophageal junction cancer, or esophageal adenocarcinoma or squamous cell carcinoma (ESCC). It is also approved in combination with chemotherapy to treat ESCC, in combination with cabozantinib to treat RCC, and in combination with relatlimab to treat melanoma. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; Exploratory analysis of the CheckMate-274 trial suggests that adjuvant nivolumab may provide less benefit for patients with upper tract high-risk muscle-invasive urothelial carcinoma (estimated disease-free survival HR of 1.23 and 1.56 for patients with renal pelvis and ureteral primary tumors, respectively)(Bajorin et al., 2021; 34077643). Phase 1/2 and Phase 2 studies evaluating nivolumab for patients with platinum-refractory metastatic urothelial carcinoma (UC) reported ORRs of 21-26%, PFS of 1.9-2.8 months, and OS of 8.6-9.9 months (Galsky et al., 2020; 32532789, Sharma et al., 2019; 31100038, Sharma et al., 2017; 28131785, Siefker-Radtke et al., 2019; ASCO Abstract 4524). The Phase 3 CheckMate-274 study of adjuvant nivolumab versus placebo following radical surgery for patients with high-risk muscle-invasive UC reported an improved median disease-free survival (mDFS) for the intent-to-treat population (22.0 vs. 10.9 months, HR=0.71) as well as for patients with PD-L1+ tumors (tumor cell score ≥1%: 52.6 vs. 8.4 months, HR=0.52; combined positive score ≥1%: 24.6 vs. 9.4 months, HR=0.62) (Galsky et al., 2023; 36868932, Galsky et al., 2023; ASCO GU Abstract LBA443, Bajorin et al., 2021; 34077643). A Phase 2 study of nivolumab plus chemotherapy for patients with muscle-invasive bladder cancer reported a complete clinical response (cCR) rate of 43% (33/76); an exploratory biomarker analysis of this study found an association between cCR and tumor mutational burden ≥10 Muts/Mb (Galsky et al., 2023; ASCO GU Abstract 447). Combining the multikinase inhibitor cabozantinib with nivolumab or with nivolumab plus ipilimumab demonstrated activity for patients with chemotherapy-refractory metastatic UC who were immunotherapy-naive (ORR of 50% [6/12] and 22% [2/9], respectively; median PFS of 24 and 10 months, respectively); cabozantinib combined with nivolumab also benefited patients who were immunotherapy-refractory (ORR of 29% [2/7]) (Nadal et al., 2018; ASCO Abstract 4528), and responses to these combination treatments were observed for patients with bladder squamous cell carcinoma (SCC) or bladder adenocarcinoma (Nadal et al., 2018; ASCO GU Abstract 515). Addition of the IDO1 inhibitor BMS986205 to nivolumab in previously treated advanced UC elicited ORRs for 37% (3/27 CRs, 7/27 PRs) of patients who were immunotherapy-naive but no responses for 3 patients who had prior immunotherapy (Luke et al., 2019; ASCO GU Abstract 358). As first-line therapy for advanced UC, nivolumab combined with the immunostimulatory therapy bempegaldesleukin achieved an ORR of 48% (13/27, 5/27 CRs), with 50% (6/12) of patients who were PD-L1+ and 45% (5/11) of patients who were PD-L1- responding (Siefker-Radtke et al., 2019; ASCO GU Abstract 388). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Cemiplimab</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Cemiplimab is a monoclonal antibody that binds to the PD-1 receptor and blocks its interaction with the ligands PD-L1 and PD-L2 to enhance antitumor immune responses. It is FDA approved to treat patients with non-small cell lung cancer (NSCLC), cutaneous squamous cell carcinoma, or basal cell carcinoma. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; Clinical data on the efficacy of cemiplimab for the treatment of urothelial carcinoma are limited (PubMed, Feb 2023). Cemiplimab has been studied primarily in advanced cutaneous squamous cell carcinoma (CSCC), where it elicited a combined ORR of 48% (41/85) in Phase 1 and 2 studies (Migden et al., 2018; 29863979). A Phase 2 trial of cemiplimab in patients with basal cell carcinoma (BCC) reported ORRs of 31% (5 CRs and 21 PRs) in patients with locally advanced BCC and 21% (6 PRs) in patients with metastatic BCC (Stratigos et al., 2020; EMSO Abstract LBA47, Lewis et al. 2020; doi: 10.1136/jitc-2020-SITC2020.0428). The Phase 3 EMPOWER-Lung 1 trial for advanced non-small cell lung cancer (NSCLC) with PD-L1 expression ≥50% reported that cemiplimab is associated with improved PFS (8.2 vs. 5.7 months), OS (not reached vs. 14.2 months), and ORR (37% vs. 21%) compared with chemotherapy (Sezer et al., 2020; ESMO Abstract LBA52). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Nivolumab + Ipilimumab</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Nivolumab is a monoclonal antibody that binds to the PD-1 receptor and blocks its interaction with PD-L1 and PD-L2, reducing inhibition of the antitumor immune response, and ipilimumab is a cytotoxic T-lymphocyte antigen 4 (CTLA-4)-blocking antibody. The combination is FDA approved in various treatment settings for patients with melanoma, renal cell carcinoma (RCC), non-small cell lung cancer (NSCLC), hepatocellular carcinoma (HCC), pleural mesothelioma, and esophageal squamous cell carcinoma (ESCC). Furthermore, nivolumab is approved in combination with ipilimumab to treat patients with mismatch repair-deficient (dMMR) or microsatellite instability-high (MSI-H) colorectal cancer (CRC). Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Ready et al., 2019; 30785829, Hellmann et al., 2018; 29658845, Hodi et al., 2019; AACR abstract CT037), a TMB score of ≥10 Muts/Mb (as measured by this assay) may predict sensitivity to combination nivolumab and ipilimumab treatment. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In a Phase 3 trial of neoadjuvant nivolumab and ipilimumab for patients with high-risk advanced urothelial carcinoma (UC), 60% (9/15) of patients with a combined positive PD-L1 score ≥10 experienced a pathologic CR compared with 22% (2/9) of patients with lower PD-L1 expression (van der Heijden et al., 2019; ESMO Abstract 904PD). A Phase 2 study of ipilimumab and nivolumab for patients with platinum-refractory metastatic UC who progressed on nivolumab monotherapy observed PRs for 23% (5/22) of patients (Keegan et al., 2019; ASCO GU Abstract 481). The Phase 1/2 CheckMate 032 trial reported a 38% ORR, a 4.9-month median PFS, and a 15.3-month median OS for patients with locally advanced or metastatic UC treated with nivolumab and ipilimumab; a 58% ORR was observed for patients with ≥1% tumor PD-L1 expression (Sharma et al., 2019; 31100038). A Phase 2 study of nivolumab in combination with ipilimumab for patients with advanced bladder cancers reported 1 CR for a patient with plasmacytoid carcinoma and 2 PRs for patients with small cell carcinoma (McGregor et al., 2019; ASCO Abstract 4518). A Phase 1 trial of nivolumab plus ipilimumab and cabozantinib for patients with refractory metastatic UC and other genitourinary cancers reported a 42% ORR among patients with metastatic UC and bladder squamous cell carcinoma (SCC) (Apolo et al., 2017; ASCO Abstract 4562). In the Phase 1 NABUCCO study of neoadjuvant ipilimumab plus nivolumab for patients with advanced urothelial cancer, 96% (23/24) of patients underwent resection within 12 weeks and 46% (11/24) had a pathological CR (Dijk et al., 2020; 33046870). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Retifanlimab</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Retifanlimab is a monoclonal antibody that binds to the PD-1 receptor and blocks its interaction with PD-L1 and PD-L2, reducing inhibition of the antitumor response. It is FDA approved to treat patients with Merkel cell carcinoma. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; The Phase 2 POD1UM-203 trial of retifanlimab for patients with cisplatin-ineligible locally advanced or metastatic urothelial carcinoma with PD-L1 expression (combined positive score ≥10%) reported an ORR of 38% (11/29; 1 CR, 10 PRs), median PFS of 5.7 months, and median OS of 15.2 months (Maio et al., 2021; ASCO Abstract 2571). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Dostarlimab</GenericName>
+                  <FDAApproved>true</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Dostarlimab is a monoclonal antibody that binds to the PD-1 receptor and blocks its interaction with PD-L1 and PD-L2, reducing inhibition of the antitumor response. It is FDA approved to treat patients with mismatch repair deficient recurrent or advanced endometrial cancer or solid tumors. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; Clinical data on the efficacy of dostarlimab for the treatment of urothelial carcinoma are limited (PubMed, Feb 2023). Dostarlimab has been studied primarily in recurrent and advanced mismatch repair-deficient (dMMR) endometrial and non-endometrial cancers (Andre et al., 2021; ASCO GI Abstract 9, Oaknin et al., 2020; 33001143, Berton et al., 2021; ASCO Abstract 2564). In the Phase 1 GARNET trial, single-agent dostarlimab elicited an ORR of 39% (41/106) and an immune-related ORR of 46% (50/110) for patients with non-endometrial dMMR solid tumors (Andre et al., 2021; ASCO GI Abstract 9, Andre et al., 2021; ESMO GI Abstract SO-9). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Durvalumab</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Durvalumab is a monoclonal antibody that binds to PD-L1 and blocks its interaction with PD-1 to enhance antitumor immune responses. It is FDA approved to treat patients with non-small cell lung cancer (NSCLC), small cell lung cancer (SCLC), and biliary tract cancer. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In the neoadjuvant setting, a Phase 2 study of durvalumab and olaparib yielded an ORR of 14% (4/29) for patients with muscle-invasive bladder carcinoma (Rodriguez-Moreno et al., 2020; ESMO Abstract 761P). In the first-line setting for locally advanced or metastatic urothelial carcinoma, the randomized controlled Phase 3 DANUBE study showed that durvalumab monotherapy did not significantly improve median OS (mOS) for patients with PD-L1-high tumor status compared with chemotherapy (14.4 vs. 12.1 months, HR=0.89, p=0.30) (Powles et al., 2020; 32971005, Powles et al., 2020; ESMO Abstract 697O). For chemotherapy-pretreated patients with advanced urinary tract carcinoma, the Phase 3b STRONG study of durvalumab reported an ORR of 18% and mOS of 7.0 months, with longer mOS observed for patients with high PD-L1 expression (9.3 vs. 6.5 months) (Sonpavde et al., 2021; ASCO GI Abstract 429). The Phase 2 DUART study of concurrent durvalumab and radiation therapy followed by adjuvant durvalumab for patients with locally advanced bladder urothelial carcinoma reported a 65% (13/20) ORR and a 70% (14/20) DCR; median PFS was 18.5 months and mOS was not reached, but 1- and 2-year OS probabilities were 84% and 77%, respectively (Joshi et al., 2021; ASCO GU Abstract 398). Interim results from the Phase 2 ARCADIA study evaluating the combination of durvalumab and cabozantinib to treat patients with advanced urothelial carcinoma following progression on platinum chemotherapy reported an ORR of 38% (6/16, 2 CRs) (Marandino et al., 2021; 34006499). Combining durvalumab with matched targeted therapies (FGFR, PARP, or mTOR inhibitors) did not improve PFS or OS for patients with platinum-refractory advanced urothelial cancer in the Phase 2 BISCAY study (Powles et al., 2021; 33941921). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Avelumab</GenericName>
+                  <FDAApproved>true</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Avelumab is a monoclonal antibody that binds to PD-L1 and blocks its interaction with PD-1 in order to enhance antitumor immune responses. It is FDA approved to treat patients 12 years and older with Merkel cell carcinoma, or for urothelial carcinoma in various treatment settings. The combination of avelumab and axitinib is FDA approved for patients with renal cell carcinoma (RCC). Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In the dose expansion phase of the Phase 1b/2 JAVELIN PARP Medley combining talazoparib with avelumab for solid tumors, patients with genomically unselected urothelial carcinoma experienced an ORR of 15% (6/40, 1 CR), and of those with DNA damage repair alterations (n=15), an ORR of 13% (Yap et al., 2022; 36394849). The Phase 3 JAVELIN Bladder 100 trial of maintenance avelumab for patients with advanced or metastatic urothelial cancer reported longer median OS (mOS) for avelumab plus best supportive care (BSC) compared with BSC in the randomized population (29.7 vs. 20.5 months, HR=0.69) (Powles et al., 2020; 32945632, Shridar et al., 2023; ASCO GU Abstract 508). Biomarker analysis of JAVELIN Bladder 100 showed further survival benefit with the addition of avelumab to BSC for patients with elevated TMB (HR=0.48) relative to those with TMB at or below the median (HR=0.88) and for patients with high PD-L1 expression (HR=0.35) relative to those with low PD-L1 expression (HR=0.79) (Powles et al., 2021; 34893775). A Phase 2 trial of first-line avelumab for patients with metastatic or advanced urothelial cancer with PD-L1-positive disease who were ineligible for cisplatin treatment reported an ORR of 23% (16/71), a median PFS (mPFS) of 2 months, and mOS of 10 months (Iacovelli et al., 2022; ASCO GU Abstract 439). In a Phase 2 study, avelumab plus axitinib yielded an ORR of 10% (2/20) and mPFS of 2.3 months for patients with treatment-naive, cisplatin-ineligible urothelial carcinoma (Galffy et al., 2020; SITC Abstract 281). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Atezolizumab</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Atezolizumab is a monoclonal antibody that binds to PD-L1 and blocks its interaction with PD-1 to enhance antitumor immune responses. It is FDA approved to treat patients with non-small cell lung cancer (NSCLC) as well as adult and pediatric patients 2 years and older with alveolar soft part sarcoma, depending on treatment setting. Atezolizumab is also approved in combination with other therapies to treat patients with non-squamous NSCLC lacking EGFR or ALK alterations, small cell lung cancer, hepatocellular carcinoma, and BRAF V600-positive melanoma. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical data across solid tumors (Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386, Legrand et al., 2018; ASCO Abstract 12000, Cristescu et al., 2018; 30309915), TMB of ≥10 Muts/Mb (based on this assay or others) may predict sensitivity to immune checkpoint inhibitors targeting PD-1 or PD-L1. An association between higher TMB and improved OS, median PFS, and ORR has been observed in large pan-solid tumor studies for patients treated with immune checkpoint inhibitors (Goodman et al., 2019; 31405947, Goodman et al., 2017; 28835386). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In the IMvigor130 study, patients with metastatic urothelial carcinoma harboring TMB-high (&gt;10 muts/Mb) and PD-L1 expression &gt;5% experienced improved OS with atezolizumab monotherapy compared to platinum-based chemotherapy (HR=0.22)(Galsky et al., 2020; ASCO Abstract 5011). As second-line therapy for advanced urothelial carcinoma in the Phase 3 IMvigor211 study, atezolizumab did not significantly improve median OS (mOS) compared with chemotherapy (11.1 vs. 10.6 months, HR=0.87) but was associated with a numerically longer median duration of response (15.9 vs. 8.3 months) for patients with PD-L1 expression on 5% or more of tumor-infiltrating immune cells (Powles et al., 2018; 29268948) and improved 2-year OS rate (23% vs. 13%, HR=0.82) irrespective of PD-L1 status (van der Heijden et al., 2021; 33902955). The Phase 3 IMvigor130 study for patients with treatment-naive metastatic urothelial carcinoma found that the addition of atezolizumab to platinum-based chemotherapy improved median PFS (8.2 vs. 6.3 months, HR=0.82) and mOS (16.1 vs. 13.4 months, HR=0.85) (Galsky et al., 2020; 32416780, Galsky et al., 2023; ASCO GU Abstract LBA440), while atezolizumab monotherapy compared with chemotherapy did not significantly improve mOS (15.2 vs. 13.3 months, HR=0.98) (Bamias et al., 2023; ASCO GU Abstract LBA441). In a Phase 2 study, patients with metastatic urothelial carcinoma treated with atezolizumab as first-line therapy experienced an ORR of 23%, a CR rate of 8.9%, and a clinical benefit rate of 30% (Balar et al., 2017; 27939400). Multiple studies have reported superior ORR and OS outcomes with atezolizumab monotherapy for patients with higher tumor mutational burden (TMB) or PD-L1 expression compared with those with lower TMB or PD-L1 expression (Balar et al., 2017; 27939400, Powles et al., 2018; 29268948, Rosenberg et al., 2016; 26952546, Galsky et al., 2020; ASCO Abstract 5011, Bamias et al., 2023; ASCO GU Abstract LBA441). A neoadjuvant trial for patients with muscle-invasive bladder cancer added atezolizumab to gemcitabine plus cisplatin and met its primary endpoint (non-muscle-invasive downstaging rate of 27/39) (Funt et al., 2022; 35089812). In the COSMIC-021 trial, patients with urothelial carcinoma (UC) post-platinum chemotherapy treated with the combination of atezolizumab with cabozantinib experienced an ORR of 27%, a DCR of 64%, and a median PFS (mPFS) of 5.4 months (n=30) (Pal et al., 2020; ASCO Abstract 5013). The trial also reported benefit for patients with locally advanced or metastatic UC (mUC) receiving the combination in the first line, whether cisplatin-eligible (ORR: 30% [9/30]) or ineligible (ORR: 20% [6/30]) (Pal et al., 2022; ASCO Abstract 4504). For patients who had previously received an immune-checkpoint inhibitor (ICI), the ORR was 10% (3/31) (Pal et al., 2022; ASCO Abstract 4504). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+              </Therapies>
+              <ReferenceLinks />
+              <ClinicalTrialLinks>
+                <ClinicalTrialLink nctId="NCT04237649">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03682068">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03869190">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04589845">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03674567">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04047862">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT05166577">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03530397">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03967977">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03821935">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+              </ClinicalTrialLinks>
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>EMSY (C11orf30)</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>amplification</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="amplification" />
+              </AlterationProperties>
+              <Interpretation>EMSY, also known as C11orf30, encodes a BRCA2-interacting protein with roles in transcriptional regulation (Varier et al., 2016; 26841866, Hughes-Davies et al., 2003; 14651845). Preclinical studies have suggested that EMSY binds to and suppresses the function of BRCA2, and EMSY overexpression may therefore mimic BRCA2 inactivation (Cousineau and Belmaaza, 2011; 21409565, Hughes-Davies et al., 2003; 14651845). Amplification of the EMSY gene correlates with increased mRNA expression (Wilkerson et al., 2011; 21735447, van Hattem et al., 2008; 18787609), although conflicting data have been reported (Shih et al., 2005; 16172393). The functional consequences of other EMSY alterations have not been extensively studied (PubMed, Jan 2023). In the TCGA datasets, EMSY amplification has been most frequently observed in ovarian carcinoma (8%)(Cancer Genome Atlas Research Network., 2011; 21720365), breast invasive carcinoma (6%)(Cancer Genome Atlas Network., 2012; 23000897), esophageal carcinoma (5%)(cBioPortal, 2023), and head and neck squamous cell carcinoma (3.5%)(HNSCC-Cancer Genome Atlas Network., 2015; 25631445, Cerami et al., 2012; 22588877, Gao et al., 2013; 23550210). EMSY overexpression has been primarily reported in breast and high-grade ovarian cancers, where it is implicated in BRCA2 inactivation and correlates with poor prognosis or advanced disease (Wilkerson et al., 2011; 21735447, Brown et al., 2008; 18314909, Brown et al., 2010; 19636701, Altinisik et al., 2011; 20349280, Madjd et al., 2014; 24641409, Bane et al., 2011; 21327470, Rodriguez et al., 2004; 15355907, Hughes-Davies et al., 2003; 14651845). The consequences of EMSY alterations in other solid tumors or hematologic malignancies have not been studied in detail in the scientific literature (PubMed, Jan 2023). EMSY overexpression in breast cancer cell lines has been reported to mimic the effects of inactivating BRCA2 mutations (Cousineau and Belmaaza, 2011; 21409565). Unlike BRCA2 inactivation, which predicts sensitivity to DNA-repair-associated inhibitors, such as the PARP inhibitor olaparib (Dedes et al., 2011; 21487248, Ihnen et al., 2013; 23729402), EMSY amplification in breast cancer lines was not associated with enhanced sensitivity to this drug in 1 preclinical study (Wilkerson et al., 2011; 21735447). In a preclinical study of KEAP1-mutated lung cancer, loss of KEAP1 induced EMSY accumulation and sensitization to PARP inhibitors and stimulator of interferon genes protein agonists (Marzio et al., 2022; 34963055). In clinical studies of high-grade serous ovarian cancer, high EMSY expression was associated with greater rates of response to platinum-based chemotherapy and improved clinical outcomes (Hollis et al., 2022; 35696721, Hollis et al., 2019; 31154673, Weberpals et al., 2021; 33811746), although EMSY copy number was found to be a poor predictor of EMSY overexpression (Hollis et al., 2022; 35696721). There are no therapies that target EMSY alterations.</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>KMT2D (MLL2)</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>K3630*</Name>
+              <AlterationProperties>
+                <AlterationProperty dnaFraction="46.12" isEquivocal="false" name="K3630*" />
+              </AlterationProperties>
+              <Interpretation>MLL2 encodes an H3K4-specific histone methyltransferase that is involved in the transcriptional response to progesterone signaling (Vicent et al., 2011; 21447625). Germline de novo mutations of MLL2 are responsible for the majority of cases of Kabuki syndrome, a complex and phenotypically distinctive developmental disorder (Hannibal et al., 2011; 21671394). A significant number of inactivating MLL2 alterations have been observed in multiple tumor types, suggesting a tumor suppressor role (Fagan et al.,2019; 31128216). MLL2 alterations are observed in a number of solid tumor contexts (cBio-Zehir et al., 2017; 28481359), and are especially prevalent in lung squamous cell carcinoma (SCC) (Cancer Genome Atlas Research Network et al., 2012; 22960745) and small cell lung carcinoma (SCLC) (Augert et al., 2017; 28007623). MLL2 mutation was found to be an independent prognostic factor of poor PFS and OS in non-small cell lung cancer, but not in SCLC (Ardeshir-Larijani et al., 2018; 29627316). One study reported that MLL2 truncating mutations were more common in recurrent ovary granulosa cell tumors (GCT) compared with primary GCTs (24% [10/42] vs. 3.0% [1/32])(Hillman et al., 2018; 29950560). In a study of esophageal SCC, high MLL2 expression positively correlated with tumor stage, differentiation, and size, and negatively correlated with OS (Abudureheman et al., 2018; 29532228). There are no targeted therapies available to address genomic alterations in MLL2. Variants seen in this gene have been reported to occur in clonal hematopoiesis (CH), an age-related process in which hematopoietic stem cells acquire somatic mutations that allow for clonal expansion (Jaiswal et al., 2014; 25426837, Genovese et al., 2014; 25426838, Xie et al., 2014; 25326804, Acuna-Hidalgo et al., 2017; 28669404, Severson et al., 2018; 29678827, Fuster et al., 2018; 29420212). Comprehensive genomic profiling of solid tumors may detect nontumor alterations that are due to CH (Severson et al., 2018; 29678827, Chabon et al., 2020; 32269342, Razavi et al., 2019; 31768066). Patient-matched peripheral blood mononuclear cell sequencing is required to conclusively determine if this alteration is present in tumor or is secondary to CH.</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>Microsatellite status</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>MS-Stable</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="MS-Stable" />
+              </AlterationProperties>
+              <Interpretation>Microsatellite instability (MSI) is a condition of genetic hypermutability that generates excessive amounts of short insertion/deletion mutations in the genome; it generally occurs at microsatellite DNA sequences and is caused by a deficiency in DNA mismatch repair (MMR) in the tumor (Kocarnik et al., 2015; 26337942). Defective MMR and consequent MSI occur as a result of genetic or epigenetic inactivation of one of the MMR pathway proteins, primarily MLH1, MSH2, MSH6, or PMS2 (You et al., 2010; 21081928, Bairwa et al., 2014; 24623249, Kocarnik et al., 2015; 26337942). This sample is microsatellite-stable (MSS), equivalent to the clinical definition of an MSS tumor: one with mutations in none of the tested microsatellite markers (Boland et al., 1998; 9823339, Pawlik et al., 2004; 15528785, Boland and Goel, 2010; 20420947). MSS status indicates MMR proficiency and typically correlates with intact expression of all MMR family proteins (Kocarnik et al., 2015; 26337942, Bairwa et al., 2014; 24623249, Pawlik et al., 2004; 15528785, Boland and Goel, 2010; 20420947). MSI has been detected in 26-49% of urothelial carcinomas (Mylona et al., 2008; 18254781, Amira et al., 2003; 14501713); MSI-H has also been reported in multiple case studies of upper urinary tract urothelial carcinoma (Bai et al., 2013; 23690119). Microsatellite instability (MSI), as determined through loss of MSH2 or MSH6 protein expression, correlated with noninvasive well-differentiated bladder tumors and favorable OS (Mylona et al., 2008; 18254781). On the basis of clinical evidence, MSS tumors are significantly less likely than MSI-H tumors to respond to anti-PD-1 immune checkpoint inhibitors (Gatalica et al., 2014; 25392179, Kroemer et al., 2015; 26140250, Lal et al., 2015; 25949894), including approved therapies nivolumab and pembrolizumab (Overman et al., 2016; ASCO Abstract 3501, Le et al., 2015; 26028255). In a retrospective analysis of 361 patients with solid tumors treated with pembrolizumab, 3% were MSI-H and experienced a significantly higher ORR compared with non-MSI-H cases (70% vs. 12%, p=0.001) (Ayers et al., 2016; ASCO-SITC Abstract P60).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+      </Genes>
+      <Trials>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Nanatinostat Plus Valganciclovir in Patients With Advanced EBV+ Solid Tumors, and in Combination With Pembrolizumab in EBV+ RM-NPC</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>HDAC, PD-1</Target>
+          <Locations>Taipei City (Taiwan), Taipei (Taiwan), Taoyuan City (Taiwan), Sha Tin (Hong Kong), Hong Kong (Hong Kong), Seoul (Korea, Republic of), Kuching (Malaysia), Kuala Lumpur (Malaysia), Singapore (Singapore), Blacktown (Australia)</Locations>
+          <NCTID>NCT05166577</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Ascending Doses of AZD6738 in Combination With Chemotherapy and/or Novel Anti Cancer Agents</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>ATR, PARP, PD-L1</Target>
+          <Locations>Seongnam-si (Korea, Republic of), Seoul (Korea, Republic of), Goyang-si (Korea, Republic of), Cambridge (United Kingdom), Withington (United Kingdom), Manchester (United Kingdom), London (United Kingdom), Coventry (United Kingdom), Sutton (United Kingdom), Oxford (United Kingdom)</Locations>
+          <NCTID>NCT02264678</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Study of Chidamide, Decitabine and Immune Checkpoint Inhibitors in R/R NHL and Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>PD-L1, CTLA-4, DNMT, HDAC, PD-1</Target>
+          <Locations>Beijing (China)</Locations>
+          <NCTID>NCT05320640</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Lurbinectedin With Berzosertib, an ATR Kinase Inhibitor in Small Cell Cancers and High-Grade Neuroendocrine Cancers</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>ATR</Target>
+          <Locations>Maryland</Locations>
+          <NCTID>NCT04802174</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>A Study of ART0380 for the Treatment of Advanced or Metastatic Solid Tumors</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>ATR</Target>
+          <Locations>London (United Kingdom), Colorado, Oklahoma, Texas, Pennsylvania, Tennessee, Florida</Locations>
+          <NCTID>NCT04657068</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Testing the Addition of an Anti-cancer Drug, BAY 1895344, to Usual Chemotherapy for Advanced Stage Solid Tumors, With a Specific Focus on Patients With Small Cell Lung Cancer, Poorly Differentiated Neuroendocrine Cancer, and Pancreatic Cancer</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>TOP1, ATR</Target>
+          <Locations>California, Arizona, Minnesota, Oklahoma, Missouri, Pennsylvania, Connecticut, New York</Locations>
+          <NCTID>NCT04514497</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Testing A New Anti-cancer Drug Combination, Entinostat and ZEN003694, for Advanced and Refractory Solid Tumors and Lymphomas</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>BRD3, BRD4, BRD2, BRDT, HDAC</Target>
+          <Locations>Oklahoma, Connecticut, Florida</Locations>
+          <NCTID>NCT05053971</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>AZD6738 &amp; Gemcitabine as Combination Therapy</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>ATR</Target>
+          <Locations>Cambridge (United Kingdom)</Locations>
+          <NCTID>NCT03669601</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Phase I Tolerability, Efficacy, and Safety Study of Pazopanib in Combination With PCI-24781 in Patients With Metastatic Solid Tumors</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>HDAC, FGFR3, KIT, FGFR1, VEGFRs, FGFR2</Target>
+          <Locations>California</Locations>
+          <NCTID>NCT01543763</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>ARID1A</Gene>
+          <Alteration>E966*</Alteration>
+          <Title>Testing the Addition of an Anti-cancer Drug, BAY 1895344, to the Usual Chemotherapy Treatment (Cisplatin, or Cisplatin and Gemcitabine) for Advanced Solid Tumors With Emphasis on Urothelial Cancer</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>ATR</Target>
+          <Locations>California, Wisconsin, Toronto (Canada), Ohio, Pennsylvania, Maryland</Locations>
+          <NCTID>NCT04491942</NCTID>
+          <Note>ARID1A loss or inactivation may predict sensitivity to ATR inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>TP53</Gene>
+          <Alteration>Y220C</Alteration>
+          <Title>The Evaluation of PC14586 in Patients With Advanced Solid Tumors Harboring a p53 Y220C Mutation</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>TP53</Target>
+          <Locations>Washington, Oregon, California, Ohio, Massachusetts, Connecticut, New York, Texas, Tennessee</Locations>
+          <NCTID>NCT04585750</NCTID>
+          <Note>Clinical evidence suggests patients with TP53 Y220C mutations may benefit from Y220C-specific reactivators of TP53.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>KAZ954 Alone and With PDR001, NZV930 and NIR178 in Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE null</StudyPhase>
+          <Target>ADORA2A, CD73, PD-1</Target>
+          <Locations>Taipei (Taiwan), Shatin, New Territories (Hong Kong), Sunto Gun (Japan), Singapore (Singapore), Milano (Italy), Barcelona (Spain), California, Illinois, Toronto (Canada), Missouri</Locations>
+          <NCTID>NCT04237649</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>Study of Durvalumab Given With Chemotherapy, Durvalumab in Combination With Tremelimumab Given With Chemotherapy, or Chemotherapy in Patients With Unresectable Urothelial Cancer</Title>
+          <StudyPhase>PHASE 3</StudyPhase>
+          <Target>PD-L1, CTLA-4</Target>
+          <Locations>Taipei (Taiwan), Taoyuan (Taiwan), Xiamen (China), Hangzhou (China), Shanghai (China), Nanchang (China), Suzhou (China), Nanjing (China), Guangzhou (China), Beijing (China)</Locations>
+          <NCTID>NCT03682068</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>A Study Evaluating the Efficacy and Safety of Multiple Immunotherapy-based Treatment Combinations in Patients With Locally Advanced or Metastatic Urothelial Carcinoma After Failure With Platinum-Containing Chemotherapy</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>CD38, PARP, CD47, PD-L1, Nectin-4, IL-6R</Target>
+          <Locations>Taipei City (Taiwan), Huwei Township (Taiwan), Tainan (Taiwan), Kaohsiung City (Taiwan), Seoul (Korea, Republic of), Athens (Greece), London (United Kingdom), Sutton (United Kingdom), Oxford (United Kingdom), Caen (France)</Locations>
+          <NCTID>NCT03869190</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>Tumor-Agnostic Precision Immuno-Oncology and Somatic Targeting Rational for You (TAPISTRY) Platform Study</Title>
+          <StudyPhase>PHASE 2</StudyPhase>
+          <Target>TRKB, ALK, TRKC, ROS1, TRKA, RET, PD-L1, AKTs, ERBB2, MDM2, PI3K-alpha, RAFs, NRAS</Target>
+          <Locations>Taipei City (Taiwan), Taoyuan County (Taiwan), Tainan (Taiwan), Shanghai City (China), Shanghai (China), Shatin (Hong Kong), Hong Kong (Hong Kong), Seoul (Korea, Republic of), Seongnam-si (Korea, Republic of), Xi'an (China)</Locations>
+          <NCTID>NCT04589845</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>Dose Escalation and Expansion Study of FLX475 Monotherapy and in Combination With Pembrolizumab</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>PD-1, CCR4</Target>
+          <Locations>Taipei (Taiwan), Tainan (Taiwan), Busan (Korea, Republic of), Shatin (Hong Kong), High West (Hong Kong), Chungbuk (Korea, Republic of), Seoul (Korea, Republic of), Gyeonggi-do (Korea, Republic of), Bangkok (Thailand), Nedlands (Australia)</Locations>
+          <NCTID>NCT03674567</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>Study of BGB-A1217 in Combination With Tislelizumab in Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>PD-1, TIGIT</Target>
+          <Locations>Taipei (Taiwan), Taoyuan (Taiwan), Hualien City (Taiwan), Taichung (Taiwan), Fujian (China), Hangzhou (China), Shanghai (China), Hefei (China), Guangdong (China), Changsha (China)</Locations>
+          <NCTID>NCT04047862</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>Nanatinostat Plus Valganciclovir in Patients With Advanced EBV+ Solid Tumors, and in Combination With Pembrolizumab in EBV+ RM-NPC</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>HDAC, PD-1</Target>
+          <Locations>Taipei City (Taiwan), Taipei (Taiwan), Taoyuan City (Taiwan), Sha Tin (Hong Kong), Hong Kong (Hong Kong), Seoul (Korea, Republic of), Kuching (Malaysia), Kuala Lumpur (Malaysia), Singapore (Singapore), Blacktown (Australia)</Locations>
+          <NCTID>NCT05166577</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>A Study to Evaluate MEDI5752 in Subjects With Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>PD-L1, PD-1, CTLA-4</Target>
+          <Locations>Taipei (Taiwan), Tainan (Taiwan), Cheongju-si (Korea, Republic of), Incheon (Korea, Republic of), Seoul (Korea, Republic of), Gyeonggi-do (Korea, Republic of), Melbourne (Australia), Amsterdam (Netherlands), Ravenna (Italy), Meldola (Italy)</Locations>
+          <NCTID>NCT03530397</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>Study of Tislelizumab in Combination With Chemotherapy Compared to Chemotherapy Alone for Participants With Urothelial Carcinoma</Title>
+          <StudyPhase>PHASE 3</StudyPhase>
+          <Target>PD-1</Target>
+          <Locations>Fuzhou (China), Quanzhou (China), Wenzhou (China), Xiamen (China), Ningbo (China), Hangzhou (China), Shanghai (China), Nanchang (China), Nanjing (China), Hefei (China)</Locations>
+          <NCTID>NCT03967977</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>Tumor Mutation Burden</Gene>
+          <Alteration>12</Alteration>
+          <Title>Study to Determine the Safety, Tolerability, Pharmacokinetics and Recommended Phase 2 Dose (RP2D) of ABBV-151 as a Single Agent and in Combination With ABBV-181 in Participants With Locally Advanced or Metastatic Solid Tumors</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>PD-1, GARP</Target>
+          <Locations>Taichung City (Taiwan), Taipei City (Taiwan), Seoul (Korea, Republic of), Chuo-ku (Japan), Kashiwa-shi (Japan), South Brisbane (Australia), Camperdown (Australia), Ramat Gan (Israel), Tel Aviv-Yafo (Israel), Haifa (Israel)</Locations>
+          <NCTID>NCT03821935</NCTID>
+          <Note>Increased tumor mutational burden may predict response to anti-PD-1 (alone or in combination with anti-CTLA-4) or anti-PD-L1 immune checkpoint inhibitors.</Note>
+          <Include>true</Include>
+        </Trial>
+      </Trials>
+      <References>
+        <Reference number="0">
+          <ReferenceId>21900401</ReferenceId>
+          <FullCitation>Guan B, et al. Cancer Res. (2011) pmid: 21900401</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="1">
+          <ReferenceId>22009941</ReferenceId>
+          <FullCitation>Jones S, et al. Hum. Mutat. (2012) pmid: 22009941</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="2">
+          <ReferenceId>20942669</ReferenceId>
+          <FullCitation>Wiegand KC, et al. N. Engl. J. Med. (2010) pmid: 20942669</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="3">
+          <ReferenceId>20826764</ReferenceId>
+          <FullCitation>Jones S, et al. Science (2010) pmid: 20826764</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="4">
+          <ReferenceId>24293408</ReferenceId>
+          <FullCitation>Yan HB, et al. Carcinogenesis (2014) pmid: 24293408</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="5">
+          <ReferenceId>22808142</ReferenceId>
+          <FullCitation>Wang DD, et al. PLoS ONE (2012) pmid: 22808142</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="6">
+          <ReferenceId>22922871</ReferenceId>
+          <FullCitation>Huang J, et al. Nat. Genet. (2012) pmid: 22922871</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="7">
+          <ReferenceId>24185513</ReferenceId>
+          <FullCitation>Chan-On W, et al. Nat. Genet. (2013) pmid: 24185513</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="8">
+          <ReferenceId>21892209</ReferenceId>
+          <FullCitation>Mamo A, et al. Oncogene (2012) pmid: 21892209</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="9">
+          <ReferenceId>22484628</ReferenceId>
+          <FullCitation>Zang ZJ, et al. Nat. Genet. (2012) pmid: 22484628</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="10">
+          <ReferenceId>22037554</ReferenceId>
+          <FullCitation>Wang K, et al. Nat. Genet. (2011) pmid: 22037554</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="11">
+          <ReferenceId>30371878</ReferenceId>
+          <FullCitation>Tate JG, et al. Nucleic Acids Res. (2019) pmid: 30371878</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="12">
+          <ReferenceId>22588877</ReferenceId>
+          <FullCitation>Cerami E, et al. Cancer Discov (2012) pmid: 22588877</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="13">
+          <ReferenceId>23550210</ReferenceId>
+          <FullCitation>Gao J, et al. Sci Signal (2013) pmid: 23550210</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="14">
+          <ReferenceId>24618703</ReferenceId>
+          <FullCitation>Wu RC, et al. Cancer Biol. Ther. (2014) pmid: 24618703</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="15">
+          <ReferenceId>23525077</ReferenceId>
+          <FullCitation>Dulak AM, et al. Nat. Genet. (2013) pmid: 23525077</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="16">
+          <ReferenceId>23318448</ReferenceId>
+          <FullCitation>Streppel MM, et al. Oncogene (2014) pmid: 23318448</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="17">
+          <ReferenceId>24293293</ReferenceId>
+          <FullCitation>Jiao Y, et al. J. Pathol. (2014) pmid: 24293293</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="18">
+          <ReferenceId>24563076</ReferenceId>
+          <FullCitation>Ross JS, et al. Oncologist (2014) pmid: 24563076</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="19">
+          <ReferenceId>25195947</ReferenceId>
+          <FullCitation>Huang HN, et al. Histopathology (2015) pmid: 25195947</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="20">
+          <ReferenceId>25394778</ReferenceId>
+          <FullCitation>Hussein YR, et al. Mod. Pathol. (2015) pmid: 25394778</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="21">
+          <ReferenceId>23702729</ReferenceId>
+          <FullCitation>Bosse T, et al. Mod. Pathol. (2013) pmid: 23702729</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="22">
+          <ReferenceId>23887303</ReferenceId>
+          <FullCitation>Allo G, et al. Mod. Pathol. (2014) pmid: 23887303</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="23">
+          <ReferenceId>32111729</ReferenceId>
+          <FullCitation>Okamura R, et al. J Immunother Cancer (2020) pmid: 32111729</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="24">
+          <ReferenceId>24925223</ReferenceId>
+          <FullCitation>Chou A, et al. Hum. Pathol. (2014) pmid: 24925223</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="25">
+          <ReferenceId>25311944</ReferenceId>
+          <FullCitation>Ye J, et al. Hum. Pathol. (2014) pmid: 25311944</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="26">
+          <ReferenceId>25561809</ReferenceId>
+          <FullCitation>Wei XL, et al. World J. Gastroenterol. (2014) pmid: 25561809</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="27">
+          <ReferenceId>25583476</ReferenceId>
+          <FullCitation>Chen K, et al. Proc. Natl. Acad. Sci. U.S.A. (2015) pmid: 25583476</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="28">
+          <ReferenceId>22915242</ReferenceId>
+          <FullCitation>Abe H, et al. Virchows Arch. (2012) pmid: 22915242</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="29">
+          <ReferenceId>24767857</ReferenceId>
+          <FullCitation>Wiegand KC, et al. Hum. Pathol. (2014) pmid: 24767857</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="30">
+          <ReferenceId>21822268</ReferenceId>
+          <FullCitation>Gui Y, et al. Nat. Genet. (2011) pmid: 21822268</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="31">
+          <ReferenceId>23650517</ReferenceId>
+          <FullCitation>Balbás-Martínez C, et al. PLoS ONE (2013) pmid: 23650517</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="32">
+          <ReferenceId>25175170</ReferenceId>
+          <FullCitation>Faraj SF, et al. Hum. Pathol. (2014) pmid: 25175170</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="33">
+          <ReferenceId>27958275</ReferenceId>
+          <FullCitation>Williamson CT, et al. Nat Commun (2016) pmid: 27958275</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="34">
+          <ReferenceId>29252124</ReferenceId>
+          <FullCitation>Thomas A, et al. J. Clin. Oncol. (2018) pmid: 29252124</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="35">
+          <ReferenceId>32568634</ReferenceId>
+          <FullCitation>Yap TA, et al. J Clin Oncol (2020) pmid: 32568634</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="36">
+          <ReferenceId>25686104</ReferenceId>
+          <FullCitation>Bitler BG, et al. Nat. Med. (2015) pmid: 25686104</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="37">
+          <ReferenceId>26552009</ReferenceId>
+          <FullCitation>Kim KH, et al. Nat. Med. (2015) pmid: 26552009</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="38">
+          <ReferenceId>24559118</ReferenceId>
+          <FullCitation>Wiegand KC, et al. BMC Cancer (2014) pmid: 24559118</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="39">
+          <ReferenceId>24336158</ReferenceId>
+          <FullCitation>Huang HN, et al. Mod. Pathol. (2014) pmid: 24336158</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="40">
+          <ReferenceId>24979463</ReferenceId>
+          <FullCitation>Samartzis EP, et al. Oncotarget (2014) pmid: 24979463</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="41">
+          <ReferenceId>24459582</ReferenceId>
+          <FullCitation>Yokoyama Y, et al. J Gynecol Oncol (2014) pmid: 24459582</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="42">
+          <ReferenceId>22101352</ReferenceId>
+          <FullCitation>Katagiri A, et al. Mod. Pathol. (2012) pmid: 22101352</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="43">
+          <ReferenceId>24833095</ReferenceId>
+          <FullCitation>Xie C, et al. Tumour Biol. (2014) pmid: 24833095</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="44">
+          <ReferenceId>30301863</ReferenceId>
+          <FullCitation>Gupta S, et al. Mol. Cancer Ther. (2019) pmid: 30301863</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="45">
+          <ReferenceId>15748635</ReferenceId>
+          <FullCitation>Pfeifer GP, et al. Mutat. Res. (2005) pmid: 15748635</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="46">
+          <ReferenceId>23875803</ReferenceId>
+          <FullCitation>Hill VK, et al. Annu Rev Genomics Hum Genet (2013) pmid: 23875803</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="47">
+          <ReferenceId>12379884</ReferenceId>
+          <FullCitation>Pfeifer GP, et al. Oncogene (2002) pmid: 12379884</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="48">
+          <ReferenceId>25765070</ReferenceId>
+          <FullCitation>Rizvi NA, et al. Science (2015) pmid: 25765070</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="49">
+          <ReferenceId>24336570</ReferenceId>
+          <FullCitation>Johnson BE, et al. Science (2014) pmid: 24336570</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="50">
+          <ReferenceId>29452419</ReferenceId>
+          <FullCitation>Choi S, et al. Neuro-oncology (2018) pmid: 29452419</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="51">
+          <ReferenceId>23636398</ReferenceId>
+          <FullCitation>Cancer Genome Atlas Research Network, et al. Nature (2013) pmid: 23636398</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="52">
+          <ReferenceId>23447401</ReferenceId>
+          <FullCitation>Briggs S, et al. J. Pathol. (2013) pmid: 23447401</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="53">
+          <ReferenceId>24583393</ReferenceId>
+          <FullCitation>Heitzer E, et al. Curr. Opin. Genet. Dev. (2014) pmid: 24583393</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="54">
+          <ReferenceId>22810696</ReferenceId>
+          <FullCitation>Nature (2012) pmid: 22810696</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="55">
+          <ReferenceId>25568919</ReferenceId>
+          <FullCitation>Roberts SA, et al. Nat. Rev. Cancer (2014) pmid: 25568919</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="56">
+          <ReferenceId>26952546</ReferenceId>
+          <FullCitation>Rosenberg JE, et al. Lancet (2016) pmid: 26952546</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="57">
+          <ReferenceId>27939400</ReferenceId>
+          <FullCitation>Balar AV, et al. Lancet (2017) pmid: 27939400</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="58">
+          <ReferenceId>29268948</ReferenceId>
+          <FullCitation>Powles T, et al. Lancet (2018) pmid: 29268948</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="59">
+          <ReferenceId>29443960</ReferenceId>
+          <FullCitation>Mariathasan S, et al. Nature (2018) pmid: 29443960</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="60">
+          <ReferenceId>30150660</ReferenceId>
+          <FullCitation>Miao D, et al. Nat. Genet. (2018) pmid: 30150660</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="61">
+          <ReferenceId>30643254</ReferenceId>
+          <FullCitation>Samstein RM, et al. Nat. Genet. (2019) pmid: 30643254</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="62">
+          <ReferenceId>32919526</ReferenceId>
+          <FullCitation>Marabelle A, et al. Lancet Oncol. (2020) pmid: 32919526</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="63">
+          <ReferenceId>24476821</ReferenceId>
+          <FullCitation>Nature (2014) pmid: 24476821</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="64">
+          <ReferenceId>24777035</ReferenceId>
+          <FullCitation>Cazier JB, et al. Nat Commun (2014) pmid: 24777035</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="65">
+          <ReferenceId>35323317</ReferenceId>
+          <FullCitation>Curr Oncol (2022) pmid: 35323317</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="66">
+          <ReferenceId>28835386</ReferenceId>
+          <FullCitation>Goodman AM, et al. Mol. Cancer Ther. (2017) pmid: 28835386</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="67">
+          <ReferenceId>31405947</ReferenceId>
+          <FullCitation>Goodman AM, et al. Cancer Immunol Res (2019) pmid: 31405947</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="68">
+          <ReferenceId>30309915</ReferenceId>
+          <FullCitation>Cristescu R, et al. Science (2018) pmid: 30309915</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="69">
+          <ReferenceId>30785829</ReferenceId>
+          <FullCitation>Ready N, et al. J. Clin. Oncol. (2019) pmid: 30785829</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="70">
+          <ReferenceId>29658845</ReferenceId>
+          <FullCitation>Hellmann MD, et al. N. Engl. J. Med. (2018) pmid: 29658845</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="71">
+          <ReferenceId>29657128</ReferenceId>
+          <FullCitation>Hellmann MD, et al. Cancer Cell (2018) pmid: 29657128</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="72">
+          <ReferenceId>29731394</ReferenceId>
+          <FullCitation>Hellmann MD, et al. Cancer Cell (2018) pmid: 29731394</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="73">
+          <ReferenceId>33558721</ReferenceId>
+          <FullCitation>Rozeman EA, et al. Nat Med (2021) pmid: 33558721</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="74">
+          <ReferenceId>32916128</ReferenceId>
+          <FullCitation>Sharma P, et al. Cancer Cell (2020) pmid: 32916128</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="75">
+          <ReferenceId>19935675</ReferenceId>
+          <FullCitation>Brown CJ, et al. Nat. Rev. Cancer (2009) pmid: 19935675</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="76">
+          <ReferenceId>18410249</ReferenceId>
+          <FullCitation>Joerger AC, et al. Annu. Rev. Biochem. (2008) pmid: 18410249</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="77">
+          <ReferenceId>12826609</ReferenceId>
+          <FullCitation>Kato S, et al. Proc. Natl. Acad. Sci. U.S.A. (2003) pmid: 12826609</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="78">
+          <ReferenceId>20978130</ReferenceId>
+          <FullCitation>Kamada R, et al. J. Biol. Chem. (2011) pmid: 20978130</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="79">
+          <ReferenceId>28472496</ReferenceId>
+          <FullCitation>Zerdoumi Y, et al. Hum. Mol. Genet. (2017) pmid: 28472496</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="80">
+          <ReferenceId>17690113</ReferenceId>
+          <FullCitation>Yamada H, et al. Carcinogenesis (2007) pmid: 17690113</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="81">
+          <ReferenceId>23887298</ReferenceId>
+          <FullCitation>Ross JS, et al. Mod. Pathol. (2014) pmid: 23887298</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="82">
+          <ReferenceId>9761125</ReferenceId>
+          <FullCitation>Bringuier PP, et al. Int. J. Cancer (1998) pmid: 9761125</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="83">
+          <ReferenceId>10675480</ReferenceId>
+          <FullCitation>Furihata M, et al. Int. J. Oncol. (2000) pmid: 10675480</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="84">
+          <ReferenceId>7901994</ReferenceId>
+          <FullCitation>Esrig D, et al. Am. J. Pathol. (1993) pmid: 7901994</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="85">
+          <ReferenceId>7906253</ReferenceId>
+          <FullCitation>Cordon-Cardo C, et al. Int. J. Cancer (1994) pmid: 7906253</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="86">
+          <ReferenceId>10744064</ReferenceId>
+          <FullCitation>Diaz-Cano SJ, et al. Lab. Invest. (2000) pmid: 10744064</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="87">
+          <ReferenceId>21571954</ReferenceId>
+          <FullCitation>Kapur P, et al. Am. J. Clin. Pathol. (2011) pmid: 21571954</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="88">
+          <ReferenceId>23571005</ReferenceId>
+          <FullCitation>Lotan Y, et al. Eur. Urol. (2013) pmid: 23571005</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="89">
+          <ReferenceId>25092538</ReferenceId>
+          <FullCitation>Kim PH, et al. Eur. Urol. (2015) pmid: 25092538</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="90">
+          <ReferenceId>14756544</ReferenceId>
+          <FullCitation>El-Kenawy Ael-M, et al. Int. J. Biol. Markers () pmid: 14756544</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="91">
+          <ReferenceId>18931548</ReferenceId>
+          <FullCitation>Joung JY, et al. Urol. Int. (2008) pmid: 18931548</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="92">
+          <ReferenceId>9644783</ReferenceId>
+          <FullCitation>Jinza S, et al. Urol. Int. (1998) pmid: 9644783</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="93">
+          <ReferenceId>16351648</ReferenceId>
+          <FullCitation>Kamijima S, et al. Int. J. Urol. (2005) pmid: 16351648</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="94">
+          <ReferenceId>23307189</ReferenceId>
+          <FullCitation>Alexiev BA, et al. Virchows Arch. (2013) pmid: 23307189</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="95">
+          <ReferenceId>20610279</ReferenceId>
+          <FullCitation>Goebell PJ, et al. Urol. Oncol. () pmid: 20610279</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="96">
+          <ReferenceId>22685613</ReferenceId>
+          <FullCitation>Lindgren D, et al. PLoS ONE (2012) pmid: 22685613</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="97">
+          <ReferenceId>24500328</ReferenceId>
+          <FullCitation>Feng C, et al. Sci Rep (2014) pmid: 24500328</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="98">
+          <ReferenceId>20012564</ReferenceId>
+          <FullCitation>Eissa S, et al. Med. Oncol. (2010) pmid: 20012564</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="99">
+          <ReferenceId>17710407</ReferenceId>
+          <FullCitation>Mitra AP, et al. World J Urol (2007) pmid: 17710407</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="100">
+          <ReferenceId>23624844</ReferenceId>
+          <FullCitation>Lambrou GI, et al. Cell Cycle (2013) pmid: 23624844</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="101">
+          <ReferenceId>23482786</ReferenceId>
+          <FullCitation>Lee YC, et al. Anticancer Res. (2013) pmid: 23482786</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="102">
+          <ReferenceId>11168685</ReferenceId>
+          <FullCitation>Hashimoto H, et al. Int. J. Urol. (2000) pmid: 11168685</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="103">
+          <ReferenceId>9815716</ReferenceId>
+          <FullCitation>Osman I, et al. Clin. Cancer Res. (1997) pmid: 9815716</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="104">
+          <ReferenceId>16998598</ReferenceId>
+          <FullCitation>Helal Tel A, et al. Pathol. Oncol. Res. (2006) pmid: 16998598</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="105">
+          <ReferenceId>22126554</ReferenceId>
+          <FullCitation>Jalali MM, et al. Asian Pac. J. Cancer Prev. (2011) pmid: 22126554</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="106">
+          <ReferenceId>20107315</ReferenceId>
+          <FullCitation>Hirai H, et al. Cancer Biol. Ther. (2010) pmid: 20107315</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="107">
+          <ReferenceId>21799033</ReferenceId>
+          <FullCitation>Bridges KA, et al. Clin. Cancer Res. (2011) pmid: 21799033</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="108">
+          <ReferenceId>21389100</ReferenceId>
+          <FullCitation>Rajeshkumar NV, et al. Clin. Cancer Res. (2011) pmid: 21389100</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="109">
+          <ReferenceId>25504633</ReferenceId>
+          <FullCitation>Osman AA, et al. Mol. Cancer Ther. (2015) pmid: 25504633</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="110">
+          <ReferenceId>12489850</ReferenceId>
+          <FullCitation>Xu L, et al. Mol. Cancer Ther. (2002) pmid: 12489850</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="111">
+          <ReferenceId>11713371</ReferenceId>
+          <FullCitation>Xu L, et al. Mol. Med. (2001) pmid: 11713371</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="112">
+          <ReferenceId>23470564</ReferenceId>
+          <FullCitation>Camp ER, et al. Cancer Gene Ther. (2013) pmid: 23470564</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="113">
+          <ReferenceId>25240597</ReferenceId>
+          <FullCitation>Kim SS, et al. Nanomedicine (2015) pmid: 25240597</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="114">
+          <ReferenceId>27357628</ReferenceId>
+          <FullCitation>Pirollo KF, et al. Mol. Ther. (2016) pmid: 27357628</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="115">
+          <ReferenceId>27601554</ReferenceId>
+          <FullCitation>Leijen S, et al. J. Clin. Oncol. (2016) pmid: 27601554</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="116">
+          <ReferenceId>27998224</ReferenceId>
+          <FullCitation>Leijen S, et al. J. Clin. Oncol. (2016) pmid: 27998224</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="117">
+          <ReferenceId>31315834</ReferenceId>
+          <FullCitation>Lee J, et al. Cancer Discov (2019) pmid: 31315834</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="118">
+          <ReferenceId>29535125</ReferenceId>
+          <FullCitation>Méndez E, et al. Clin. Cancer Res. (2018) pmid: 29535125</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="119">
+          <ReferenceId>34538072</ReferenceId>
+          <FullCitation>Seligmann JF, et al. J Clin Oncol (2021) pmid: 34538072</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="120">
+          <ReferenceId>36084396</ReferenceId>
+          <FullCitation>Park H, et al. ESMO Open (2022) pmid: 36084396</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="121">
+          <ReferenceId>29165669</ReferenceId>
+          <FullCitation>Landrum MJ, et al. Nucleic Acids Res. (2018) pmid: 29165669</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="122">
+          <ReferenceId>26014290</ReferenceId>
+          <FullCitation>Bougeard G, et al. J. Clin. Oncol. (2015) pmid: 26014290</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="123">
+          <ReferenceId>23355100</ReferenceId>
+          <FullCitation>Sorrell AD, et al. Mol Diagn Ther (2013) pmid: 23355100</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="124">
+          <ReferenceId>11219776</ReferenceId>
+          <FullCitation>Nichols KE, et al. Cancer Epidemiol. Biomarkers Prev. (2001) pmid: 11219776</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="125">
+          <ReferenceId>9006316</ReferenceId>
+          <FullCitation>Kleihues P, et al. Am. J. Pathol. (1997) pmid: 9006316</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="126">
+          <ReferenceId>19204208</ReferenceId>
+          <FullCitation>Gonzalez KD, et al. J. Clin. Oncol. (2009) pmid: 19204208</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="127">
+          <ReferenceId>12672316</ReferenceId>
+          <FullCitation>Lalloo F, et al. Lancet (2003) pmid: 12672316</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="128">
+          <ReferenceId>31050713</ReferenceId>
+          <FullCitation>Mandelker D, et al. Ann. Oncol. (2019) pmid: 31050713</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="129">
+          <ReferenceId>25426837</ReferenceId>
+          <FullCitation>Jaiswal S, et al. N. Engl. J. Med. (2014) pmid: 25426837</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="130">
+          <ReferenceId>25426838</ReferenceId>
+          <FullCitation>Genovese G, et al. N. Engl. J. Med. (2014) pmid: 25426838</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="131">
+          <ReferenceId>25326804</ReferenceId>
+          <FullCitation>Xie M, et al. Nat. Med. (2014) pmid: 25326804</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="132">
+          <ReferenceId>28669404</ReferenceId>
+          <FullCitation>Acuna-Hidalgo R, et al. Am. J. Hum. Genet. (2017) pmid: 28669404</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="133">
+          <ReferenceId>29678827</ReferenceId>
+          <FullCitation>Severson EA, et al. Blood (2018) pmid: 29678827</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="134">
+          <ReferenceId>29420212</ReferenceId>
+          <FullCitation>Fuster JJ, et al. Circ. Res. (2018) pmid: 29420212</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="135">
+          <ReferenceId>30504320</ReferenceId>
+          <FullCitation>Hematology Am Soc Hematol Educ Program (2018) pmid: 30504320</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="136">
+          <ReferenceId>32269342</ReferenceId>
+          <FullCitation>Chabon JJ, et al. Nature (2020) pmid: 32269342</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="137">
+          <ReferenceId>31768066</ReferenceId>
+          <FullCitation>Razavi P, et al. Nat. Med. (2019) pmid: 31768066</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="138">
+          <ReferenceId>21447625</ReferenceId>
+          <FullCitation>Vicent GP, et al. Genes Dev. (2011) pmid: 21447625</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="139">
+          <ReferenceId>21671394</ReferenceId>
+          <FullCitation>Hannibal MC, et al. Am. J. Med. Genet. A (2011) pmid: 21671394</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="140">
+          <ReferenceId>31128216</ReferenceId>
+          <FullCitation>Fagan RJ, et al. Cancer Lett. (2019) pmid: 31128216</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="141">
+          <ReferenceId>28481359</ReferenceId>
+          <FullCitation>Zehir A, et al. Nat. Med. (2017) pmid: 28481359</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="142">
+          <ReferenceId>22960745</ReferenceId>
+          <FullCitation>Nature (2012) pmid: 22960745</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="143">
+          <ReferenceId>28007623</ReferenceId>
+          <FullCitation>Augert A, et al. J Thorac Oncol (2017) pmid: 28007623</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="144">
+          <ReferenceId>29627316</ReferenceId>
+          <FullCitation>Ardeshir-Larijani F, et al. Clin Lung Cancer (2018) pmid: 29627316</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="145">
+          <ReferenceId>29950560</ReferenceId>
+          <FullCitation>Hillman RT, et al. Nat Commun (2018) pmid: 29950560</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="146">
+          <ReferenceId>29532228</ReferenceId>
+          <FullCitation>Abudureheman A, et al. J. Cancer Res. Clin. Oncol. (2018) pmid: 29532228</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="147">
+          <ReferenceId>26841866</ReferenceId>
+          <FullCitation>Varier RA, et al. J. Biol. Chem. (2016) pmid: 26841866</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="148">
+          <ReferenceId>14651845</ReferenceId>
+          <FullCitation>Hughes-Davies L, et al. Cell (2003) pmid: 14651845</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="149">
+          <ReferenceId>21409565</ReferenceId>
+          <FullCitation>Cousineau I, et al. Mol. Genet. Genomics (2011) pmid: 21409565</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="150">
+          <ReferenceId>21735447</ReferenceId>
+          <FullCitation>Wilkerson PM, et al. J. Pathol. (2011) pmid: 21735447</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="151">
+          <ReferenceId>18787609</ReferenceId>
+          <FullCitation>van Hattem WA, et al. Int J Clin Exp Pathol (2008) pmid: 18787609</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="152">
+          <ReferenceId>16172393</ReferenceId>
+          <FullCitation>Shih IeM, et al. Proc. Natl. Acad. Sci. U.S.A. (2005) pmid: 16172393</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="153">
+          <ReferenceId>21720365</ReferenceId>
+          <FullCitation>Nature (2011) pmid: 21720365</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="154">
+          <ReferenceId>23000897</ReferenceId>
+          <FullCitation>Nature (2012) pmid: 23000897</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="155">
+          <ReferenceId>25631445</ReferenceId>
+          <FullCitation>Nature (2015) pmid: 25631445</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="156">
+          <ReferenceId>18314909</ReferenceId>
+          <FullCitation>Brown LA, et al. Genes Chromosomes Cancer (2008) pmid: 18314909</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="157">
+          <ReferenceId>19636701</ReferenceId>
+          <FullCitation>Brown LA, et al. Breast Cancer Res. Treat. (2010) pmid: 19636701</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="158">
+          <ReferenceId>20349280</ReferenceId>
+          <FullCitation>Altinisik J, et al. Mol. Biol. Rep. (2011) pmid: 20349280</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="159">
+          <ReferenceId>24641409</ReferenceId>
+          <FullCitation>Madjd Z, et al. Asian Pac. J. Cancer Prev. (2014) pmid: 24641409</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="160">
+          <ReferenceId>21327470</ReferenceId>
+          <FullCitation>Bane AL, et al. Breast Cancer Res. Treat. (2011) pmid: 21327470</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="161">
+          <ReferenceId>15355907</ReferenceId>
+          <FullCitation>Rodriguez C, et al. Clin. Cancer Res. (2004) pmid: 15355907</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="162">
+          <ReferenceId>21487248</ReferenceId>
+          <FullCitation>Dedes KJ, et al. Cell Cycle (2011) pmid: 21487248</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="163">
+          <ReferenceId>23729402</ReferenceId>
+          <FullCitation>Ihnen M, et al. Mol. Cancer Ther. (2013) pmid: 23729402</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="164">
+          <ReferenceId>34963055</ReferenceId>
+          <FullCitation>Marzio A, et al. Cell (2022) pmid: 34963055</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="165">
+          <ReferenceId>35696721</ReferenceId>
+          <FullCitation>Hollis RL, et al. Clin Cancer Res (2022) pmid: 35696721</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="166">
+          <ReferenceId>31154673</ReferenceId>
+          <FullCitation>Hollis RL, et al. Cancer (2019) pmid: 31154673</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="167">
+          <ReferenceId>33811746</ReferenceId>
+          <FullCitation>Weberpals JI, et al. Cancer Med (2021) pmid: 33811746</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="168">
+          <ReferenceId>26337942</ReferenceId>
+          <FullCitation>Kocarnik JM, et al. Gastroenterol Rep (Oxf) (2015) pmid: 26337942</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="169">
+          <ReferenceId>21081928</ReferenceId>
+          <FullCitation>You JF, et al. Br. J. Cancer (2010) pmid: 21081928</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="170">
+          <ReferenceId>24623249</ReferenceId>
+          <FullCitation>Bairwa NK, et al. Methods Mol. Biol. (2014) pmid: 24623249</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="171">
+          <ReferenceId>9823339</ReferenceId>
+          <FullCitation>Boland CR, et al. Cancer Res. (1998) pmid: 9823339</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="172">
+          <ReferenceId>15528785</ReferenceId>
+          <FullCitation>Pawlik TM, et al. Dis. Markers (2004) pmid: 15528785</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="173">
+          <ReferenceId>20420947</ReferenceId>
+          <FullCitation>Boland CR, et al. Gastroenterology (2010) pmid: 20420947</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="174">
+          <ReferenceId>18254781</ReferenceId>
+          <FullCitation>Mylona E, et al. APMIS (2008) pmid: 18254781</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="175">
+          <ReferenceId>14501713</ReferenceId>
+          <FullCitation>Amira N, et al. J. Urol. (2003) pmid: 14501713</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="176">
+          <ReferenceId>23690119</ReferenceId>
+          <FullCitation>Bai S, et al. Am. J. Clin. Pathol. (2013) pmid: 23690119</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="177">
+          <ReferenceId>25392179</ReferenceId>
+          <FullCitation>Gatalica Z, et al. Cancer Epidemiol. Biomarkers Prev. (2014) pmid: 25392179</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="178">
+          <ReferenceId>26140250</ReferenceId>
+          <FullCitation>Kroemer G, et al. Oncoimmunology (2015) pmid: 26140250</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="179">
+          <ReferenceId>25949894</ReferenceId>
+          <FullCitation>Lal N, et al. Oncoimmunology (2015) pmid: 25949894</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="180">
+          <ReferenceId>26028255</ReferenceId>
+          <FullCitation>Le DT, et al. N. Engl. J. Med. (2015) pmid: 26028255</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="181">
+          <ReferenceId>36494006</ReferenceId>
+          <FullCitation>Balar AV, et al. Ann Oncol (2022) pmid: 36494006</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="182">
+          <ReferenceId>28212060</ReferenceId>
+          <FullCitation>Bellmunt J, et al. N. Engl. J. Med. (2017) pmid: 28212060</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="183">
+          <ReferenceId>36041086</ReferenceId>
+          <FullCitation>Hoimes CJ, et al. J Clin Oncol (2023) pmid: 36041086</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="184">
+          <ReferenceId>34051178</ReferenceId>
+          <FullCitation>Powles T, et al. Lancet Oncol (2021) pmid: 34051178</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="185">
+          <ReferenceId>30343614</ReferenceId>
+          <FullCitation>Necchi A, et al. J Clin Oncol (2018) pmid: 30343614</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="186">
+          <ReferenceId>36190522</ReferenceId>
+          <FullCitation>Basile G, et al. Clin Cancer Res (2022) pmid: 36190522</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="187">
+          <ReferenceId>34051177</ReferenceId>
+          <FullCitation>Balar AV, et al. Lancet Oncol (2021) pmid: 34051177</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="188">
+          <ReferenceId>32516377</ReferenceId>
+          <FullCitation>Bandini M, et al. J. Natl. Cancer Inst. (2020) pmid: 32516377</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="189">
+          <ReferenceId>32532789</ReferenceId>
+          <FullCitation>Galsky MD, et al. Clin Cancer Res (2020) pmid: 32532789</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="190">
+          <ReferenceId>31100038</ReferenceId>
+          <FullCitation>Sharma P, et al. J. Clin. Oncol. (2019) pmid: 31100038</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="191">
+          <ReferenceId>28131785</ReferenceId>
+          <FullCitation>Sharma P, et al. Lancet Oncol. (2017) pmid: 28131785</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="192">
+          <ReferenceId>36868932</ReferenceId>
+          <FullCitation>Galsky MD, et al. Eur Urol (2023) pmid: 36868932</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="193">
+          <ReferenceId>34077643</ReferenceId>
+          <FullCitation>Bajorin DF, et al. N Engl J Med (2021) pmid: 34077643</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="194">
+          <ReferenceId>33001143</ReferenceId>
+          <FullCitation>Oaknin A, et al. JAMA Oncol (2020) pmid: 33001143</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="195">
+          <ReferenceId>32945632</ReferenceId>
+          <FullCitation>Powles T, et al. N Engl J Med (2020) pmid: 32945632</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="196">
+          <ReferenceId>34893775</ReferenceId>
+          <FullCitation>Powles T, et al. Nat Med (2021) pmid: 34893775</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="197">
+          <ReferenceId>36394849</ReferenceId>
+          <FullCitation>Yap TA, et al. JAMA Oncol (2022) pmid: 36394849</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="198">
+          <ReferenceId>33902955</ReferenceId>
+          <FullCitation>van der Heijden MS, et al. Eur Urol (2021) pmid: 33902955</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="199">
+          <ReferenceId>32416780</ReferenceId>
+          <FullCitation>Galsky MD, et al. Lancet (2020) pmid: 32416780</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="200">
+          <ReferenceId>35089812</ReferenceId>
+          <FullCitation>Funt SA, et al. J Clin Oncol (2022) pmid: 35089812</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="201">
+          <ReferenceId>29863979</ReferenceId>
+          <FullCitation>Migden MR, et al. N. Engl. J. Med. (2018) pmid: 29863979</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="202">
+          <ReferenceId>33046870</ReferenceId>
+          <FullCitation>van Dijk N, et al. Nat Med (2020) pmid: 33046870</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="203">
+          <ReferenceId>32971005</ReferenceId>
+          <FullCitation>Powles T, et al. Lancet Oncol (2020) pmid: 32971005</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="204">
+          <ReferenceId>34006499</ReferenceId>
+          <FullCitation>Marandino L, et al. Clin Genitourin Cancer (2021) pmid: 34006499</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="205">
+          <ReferenceId>33941921</ReferenceId>
+          <FullCitation>Powles T, et al. Nat Med (2021) pmid: 33941921</FullCitation>
+          <Include>true</Include>
+        </Reference>
+      </References>
+      <Signatures>
+        <Signature>
+          <ServerTime>2023-05-25 17:45:07</ServerTime>
+          <OpName>Erik Williams, M.D. | Julia Elvin, M.D., Ph.D., Laboratory Director</OpName>
+          <Text>Erik Williams, M.D. | Julia Elvin, M.D., Ph.D., Laboratory Director</Text>
+        </Signature>
+      </Signatures>
+      <reportProperties>
+        <reportProperty identifier="QualityControlMetrics" key="MedianCoverageValue">
+          <value>470x</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="TumorMutationBurdenScore">
+          <value>12 Muts/Mb</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="MicrosatelliteStatusScore">
+          <value>0 fraction-unstable-loci</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="LossOfHeterozygosityScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="BloodTumorMutationalBurdenScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="TumorFractionScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+      </reportProperties>
+      <comments />
+      <AAC>
+        <Amendmends />
+      </AAC>
+    </FinalReport>
+    <variant-report xmlns="http://foundationmedicine.com/compbio/variant-report-external" disease="KIDNEY" disease-ontology="Kidney urothelial carcinoma" flowcell-analysis="2000029197" gender="female" pathology-diagnosis="Urothelial carcinoma" percent-tumor-nuclei="50" pipeline-version="v3.22.0" purity-assessment="82.98" specimen="ORD-1631801-01*US1556823.01" study="CLINICAL-F1CDx v2" test-request="ORD-1631801-01" test-type="FoundationOneDx" tissue-of-origin="Kidney" xsi:schemaLocation="http://foundationmedicine.com/compbio/variant-report-external http://integration.foundationmedicine.com/reporting/variant-report-external-2.2.xsd">
+      <samples>
+        <sample bait-set="DX2" mean-exon-depth="516.34" name="SQ-US1556823.01-1" nucleic-acid-type="DNA" />
+      </samples>
+      <quality-control status="Pass" />
+      <short-variants>
+        <short-variant allele-fraction="0.8299" cds-effect="2896G&gt;T" depth="341" equivocal="false" functional-effect="nonsense" gene="ARID1A" percent-reads="82.99" position="chr1:27092965" protein-effect="E966*" status="likely" strand="+" transcript="NM_006015">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.7895" cds-effect="643A&gt;T" depth="418" equivocal="false" functional-effect="missense" gene="FAM46C" percent-reads="78.95" position="chr1:118166133" protein-effect="M215L" status="unknown" strand="+" transcript="NM_017709">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.82" cds-effect="659A&gt;G" depth="300" equivocal="false" functional-effect="missense" gene="TP53" percent-reads="82.0" position="chr17:7578190" protein-effect="Y220C" status="known" strand="-" transcript="NM_000546">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.8198" cds-effect="616G&gt;C" depth="333" equivocal="false" functional-effect="missense" gene="CSF3R" percent-reads="81.98" position="chr1:36939093" protein-effect="E206Q" status="unknown" strand="-" transcript="NM_156039">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.5448" cds-effect="236C&gt;T" depth="290" equivocal="false" functional-effect="missense" gene="SRC" percent-reads="54.48" position="chr20:36012792" protein-effect="A79V" status="unknown" strand="+" transcript="NM_005417">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.0873" cds-effect="2126A&gt;G" depth="229" equivocal="false" functional-effect="missense" gene="FGFR4" percent-reads="8.73" position="chr5:176523715" protein-effect="D709G" status="unknown" strand="+" transcript="NM_213647">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4612" cds-effect="10888A&gt;T" depth="399" equivocal="false" functional-effect="nonsense" gene="MLL2" percent-reads="46.12" position="chr12:49427600" protein-effect="K3630*" status="likely" strand="-" transcript="NM_003482">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.5236" cds-effect="205C&gt;T" depth="296" equivocal="false" functional-effect="missense" gene="JAK1" percent-reads="52.36" position="chr1:65348960" protein-effect="R69C" status="unknown" strand="-" transcript="NM_002227">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.2457" cds-effect="1717-2A&gt;T" depth="407" equivocal="false" functional-effect="splice" gene="ERBB4" percent-reads="24.57" position="chr2:212530204" protein-effect="splice site 1717-2A&gt;T" status="unknown" strand="-" transcript="NM_005235">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.3378" cds-effect="4081T&gt;A" depth="521" equivocal="false" functional-effect="missense" gene="ROS1" percent-reads="33.78" position="chr6:117677852" protein-effect="W1361R" status="unknown" strand="-" transcript="NM_002944">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.609" cds-effect="528C&gt;A" depth="335" equivocal="false" functional-effect="missense" gene="AR" percent-reads="60.9" position="chrX:66765516" protein-effect="S176R" status="unknown" strand="+" transcript="NM_000044">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.5057" cds-effect="2624T&gt;A" depth="439" equivocal="false" functional-effect="missense" gene="PDGFRA" percent-reads="50.57" position="chr4:55153658" protein-effect="L875Q" status="unknown" strand="+" transcript="NM_006206">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.3478" cds-effect="1183A&gt;T" depth="460" equivocal="false" functional-effect="missense" gene="ZNF703" percent-reads="34.78" position="chr8:37555602" protein-effect="S395C" status="unknown" strand="+" transcript="NM_025069">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.5818" cds-effect="2545G&gt;A" depth="330" equivocal="false" functional-effect="missense" gene="AXIN1" percent-reads="58.18" position="chr16:338166" protein-effect="V849I" status="unknown" strand="-" transcript="NM_003502">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.2077" cds-effect="1387G&gt;T" depth="284" equivocal="false" functional-effect="missense" gene="CHEK2" percent-reads="20.77" position="chr22:29090094" protein-effect="V463F" status="unknown" strand="-" transcript="NM_007194">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.5224" cds-effect="14747C&gt;T" depth="268" equivocal="false" functional-effect="missense" gene="MLL2" percent-reads="52.24" position="chr12:49421002" protein-effect="P4916L" status="unknown" strand="-" transcript="NM_003482">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </short-variant>
+      </short-variants>
+      <copy-number-alterations>
+        <copy-number-alteration copy-number="11" equivocal="false" gene="EMSY" number-of-exons="20 of 20" position="chr11:76157953-76261190" ratio="2.9" status="known" type="amplification">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </copy-number-alteration>
+        <copy-number-alteration copy-number="32" equivocal="false" gene="KLHL6" number-of-exons="7 of 7" position="chr3:183209714-183273441" ratio="8.78" status="unknown" type="amplification">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </copy-number-alteration>
+      </copy-number-alterations>
+      <rearrangements>
+        <rearrangement allele-fraction="0.1522" description="MST1R(NM_002447) rearrangement exon 15" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="15.22" pos1="chr3:49929263" pos2="chr3:49970007" status="unknown" supporting-read-pairs="202" targeted-gene="MST1R" type="rearrangement">
+          <dna-evidence sample="SQ-US1556823.01-1" />
+        </rearrangement>
+      </rearrangements>
+      <biomarkers>
+        <microsatellite-instability status="MSS" />
+        <tumor-mutation-burden score="12.07" status="intermediate" unit="mutations-per-megabase" />
+      </biomarkers>
+      <non-human-content />
+    </variant-report>
+  </rr:ResultsPayload>
+</rr:ResultsReport>

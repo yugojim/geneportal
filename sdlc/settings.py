@@ -14,7 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 500 # 500 MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 500 # 500 MB
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -57,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-#CSRF_TRUSTED_ORIGINS = ['https://104.42.221.219','http://104.42.221.219']
+CSRF_TRUSTED_ORIGINS = ['https://104.42.221.219','http://104.42.221.219']
 CORS_ALLOW_ALL_ORIGINS = True 
 CORS_ALLOWED_ORIGINS = ["https://example.com","http://127.0.0.1:8000",]
 #CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://\w+\.example\.com$",]

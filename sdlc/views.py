@@ -2,23 +2,14 @@ from django.shortcuts import render,redirect#, from django.shortcuts import redi
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseRedirect
 #from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
-from linebot import LineBotApi, WebhookParser
-from linebot.exceptions import InvalidSignatureError, LineBotApiError
-from linebot.models import MessageEvent, TextSendMessage, ImageSendMessage \
-    #,VideoSendMessage, AudioSendMessage, LocationSendMessage, StickerSendMessage\
-        #, ButtonsTemplate, TemplateSendMessage, PostbackTemplateAction, MessageTemplateAction, URITemplateAction
-from datetime import datetime
 import numpy as np
 import pandas as pd
 import pathlib
 import os
 import json 
-import PyPDF2
-import base64
 import requests
 import psycopg2
 import shutil
-import csv
 import zipfile
 from . import gene2cbio
 from . import Function
@@ -63,11 +54,9 @@ risk = DocumentPath + 'risk.csv'
 riskdf = pd.read_csv(risk, encoding='utf8')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-genepostgresip = "104.42.221.219"
-#genepostgresip = "104.208.68.39"
+genepostgresip = "104.208.68.39"
 #genepostgresip = "10.97.242.13"
-genepostgresport="5432"
+genepostgresport="8081"
 jsonPath=str(pathlib.Path().absolute()) + "/static/template/Observation-Imaging-EKG.json"
 ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
 
@@ -170,7 +159,7 @@ def convert(request):
             Resource=request.POST['Resource']        
             jsonPath=str(pathlib.Path().absolute()) + '/media/'+Resource
             cancerbasejson = json.load(open(jsonPath,encoding="utf-8"))
-            sqw=flatten_dict(cancerbasejson)
+            flattendict=flatten_dict(cancerbasejson)
             for k in flattendict.keys():
                 if request.POST[k+'_select']!='':
                     #print(request.POST[k+'_select'])
@@ -1069,15 +1058,24 @@ def UpGeneZip(request):
                 uploadedFile = uploadedFile,
             )            
             Genezip.save()
-            conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host="172.174.201.121", port="5432")
+            conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
             cur = conn.cursor()
             #print('Opened database successfully')
             #print(uploadedFile)
-            filename = root+'/media/UploadedFiles/'+str(uploadedFile).replace('(','').replace(')','')
+            filename = root+'/media/Genezip/'+str(uploadedFile).replace('(','').replace(')','')
             #print(filename)
             source = filename
             destination = root+'/static/doc/'+str(uploadedFile)
             #print(destination)
+            try:
+                os.remove(destination)
+                print("文件删除成功")
+            except FileNotFoundError:
+                print("文件不存在")
+            except PermissionError:
+                print("没有权限删除文件")
+            except Exception as e:
+                print("发生错误:", e)
             dest = shutil.copyfile(source, destination)                       
             #print(dest)
             with zipfile.ZipFile(dest,"r") as zip_ref:
@@ -1086,50 +1084,71 @@ def UpGeneZip(request):
             os.chdir(root+'/static/doc/'+str(uploadedFile).replace('.zip', ''))
             #print(os.getcwd())
 
-            dirpath = 'ACTGV1'
+            dirpath = 'ACTOnco V1'
             gene2cbio.ACTGV12xml(dirpath)
             gene2cbio.xmlisql(dirpath, conn, cur)
             gene2cbio.pdf2dir(dirpath, root)
-            
-            dirpath = 'ACTGV2'
+            print('ACTOnco V1')
+            dirpath = 'ACTOnco V2'
             gene2cbio.ACTGV22xml(dirpath)
             gene2cbio.xmlisql(dirpath, conn, cur)
             gene2cbio.pdf2dir(dirpath, root)
-            
+            print('ACTOnco V2')
+
             dirpath = 'Guardant360'
             gene2cbio.Guardant3602xml(dirpath)
             gene2cbio.xmlisql(dirpath, conn, cur)
             gene2cbio.pdf2dir(dirpath, root)
-            
-            dirpath = 'Archer'
-            gene2cbio.Archer2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            
-            dirpath = 'BRCA Assay'
-            gene2cbio.BRCAAssay2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            
-            dirpath = 'Focus Assay'
-            gene2cbio.FocusAssay2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
+            print('Guardant360')
             
             dirpath = 'Foundation One'
             gene2cbio.xmlisql(dirpath, conn, cur)
             gene2cbio.pdf2dir(dirpath, root)
+            print('Foundation One')
+            
+            dirpath = 'Archer Lung'
+            gene2cbio.pdf2floder(dirpath)
+            gene2cbio.Archer2xml(dirpath)
+            gene2cbio.xmlisql(dirpath, conn, cur)
+            gene2cbio.pdf2dir(dirpath, root)
+            print('Archer Lung')
+            
+            dirpath = 'Archer Sarcoma'
+            gene2cbio.pdf2floder(dirpath)
+            gene2cbio.Archer2xml(dirpath)
+            gene2cbio.xmlisql(dirpath, conn, cur)
+            gene2cbio.pdf2dir(dirpath, root)
+            print('Archer')
+                        
+            dirpath = 'BRCA Assay'
+            gene2cbio.pdf2floder(dirpath)
+            gene2cbio.BRCAAssay2xml(dirpath)
+            gene2cbio.xmlisql(dirpath, conn, cur)
+            gene2cbio.pdf2dir(dirpath, root)
+            print('BRCA')
+            
+            dirpath = 'Focus Assay'
+            gene2cbio.pdf2floder(dirpath)
+            gene2cbio.FocusAssay2xml(dirpath)
+            gene2cbio.xmlisql(dirpath, conn, cur)
+            gene2cbio.pdf2dir(dirpath, root)
+            print('Focus')
             
             dirpath = 'Myeloid Assay'
+            gene2cbio.pdf2floder(dirpath)
             gene2cbio.MyeloidAssay2xml(dirpath)
             gene2cbio.xmlisql(dirpath, conn, cur)
             gene2cbio.pdf2dir(dirpath, root)
+            print('Myeloid')
             
             dirpath = 'Tumor Mutation Load Assay'
+            gene2cbio.pdf2floder(dirpath)
             gene2cbio.MutationLoadAssay2xml(dirpath)
             gene2cbio.xmlisql(dirpath, conn, cur)
             gene2cbio.pdf2dir(dirpath, root)
-            #documents = models.Document.objects.all()        
+            print('Tumor')
+            #documents = models.Document.objects.all()    
+           
         context = {
                 'Generight' : Generight,
                 'right' : right,
@@ -1217,7 +1236,7 @@ def Metaxlsx(request):
             #print(dfpath)
 
             conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
-            print('Opened database successfully')
+            #print('Opened database successfully')
             cur = conn.cursor()
             
             df = pd.read_excel(dfpath)
