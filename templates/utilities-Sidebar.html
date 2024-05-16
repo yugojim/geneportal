@@ -91,13 +91,13 @@
                     <i class="fas fa-fw fa-solid fa-dna"></i>
                     <span>cBioPortal</span></a>
             </li>
-			<li class="nav-item">
-                <a class="nav-link" target="_blank" href="{% url 'convert' %}">
-                    <i class="fas fa-fw fa-solid fa-dna"></i>
-                    <span>convert</span></a>
-            </li>
-			<!--
--->
+				{% if Generight.0.rearrangements %}
+					<li class="nav-item">
+						<a class="nav-link" target="_blank" href="http://104.42.221.219/">
+							<i class="fas fa-fw fa-solid fa-dna"></i>
+							<span>luad_vghtpe_2024</span></a>
+					</li>
+				{% endif %}
 			{% endif %}
 			
 			{% if right.0.emergency %}
