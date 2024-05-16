@@ -1133,7 +1133,7 @@ def UpGeneZip(request):
             gene2cbio.xmlisql(dirpath, conn, cur)
             gene2cbio.pdf2dir(dirpath, root)
             print('Focus')
-            
+
             dirpath = 'Myeloid Assay'
             gene2cbio.pdf2floder(dirpath)
             gene2cbio.MyeloidAssay2xml(dirpath)

@@ -8,7 +8,7 @@ import re
 import warnings
 warnings.filterwarnings('ignore')
 
-### 新增XML 至SQL ###
+### 移动PDF 至目錄 ###
 def pdf2floder(PdfPath):
     os.chdir(PdfPath)
     dirlist=glob.glob('*_*')
@@ -1133,143 +1133,147 @@ def MyeloidAssay2xml(PdfPath):
         ReportNo, MPNo= dirpath.replace('(', '').replace(')', '').split('_')
         filepathlist =glob.glob(os.path.join(dirpath, "*).pdf"))
         #print(filepathlist)
-        #try:        
-        for filename in filepathlist:
-                #print(filename)            
-                reader = PyPDF2.PdfReader(filename)
-                #text_file = open("Output.txt", "w", encoding="utf-8")
-                text=[]
-                for i in range(len(reader.pages)):
-                    text.append(reader.pages[i].extract_text())
-                    #text_file.write(reader.pages[i].extract_text())
-                #text_file.close()            
-                short_variants = []            
-                rearrangement = []
-                biomarkers = []
-                copy_number_alterations = []
-                pmi = [] 
-                
-                for i in range(len(text)):
-                        
-                    try:    
-                        #rearrangement
-                        if text[i].find('Fusions (RNA)') > -1: 
-                            rearrangementlist=[]
-                            #print(text[i])
-                            start = text[i].find('Read Count')
-                            end = text[i].find('Gene Fusions')
-                            rearrangement.extend(text[i][start+11:end].split('  '))
-                            rearrangement=rearrangement[0].split('\n')
-                            for j in range(len(rearrangement)):
-                                rearrangementlist.append({
-                                    "description": "",
-                                    "equivocal": "",
-                                    "in_frame": "",
-                                    "other_gene": rearrangement[0].replace(' - ', '-').split(' ')[1],
-                                    "pos1": rearrangement[0].replace(' - ', '-').split(' ')[2],
-                                    "pos2": "",
-                                    "status": "",
-                                    "supporting_read_pairs": rearrangement[0].replace(' - ', '-').split(' ')[3],
-                                    "targeted_gene": rearrangement[0].replace(' - ', '-').split(' ')[0],
-                                    "type": "",
-                                    "dna_evidence": {
-                                    "sample": ""
-                                    }})
+        try:        
+            for filename in filepathlist:
+                    print(filename)            
+                    reader = PyPDF2.PdfReader(filename)
+                    #text_file = open("Output.txt", "w", encoding="utf-8")
+                    text=[]
+                    for i in range(len(reader.pages)):
+                        text.append(reader.pages[i].extract_text())
+                        #text_file.write(reader.pages[i].extract_text())
+                    #text_file.close()            
+                    short_variants = []            
+                    rearrangement = []
+                    biomarkers = []
+                    copy_number_alterations = []
+                    pmi = [] 
+                    
+                    for i in range(len(text)):                        
+                        try:    
+                            #rearrangement
+                            if text[i].find('Fusions (RNA)') > -1: 
+                                rearrangementlist=[]
+                                #print(text[i])
+                                start = text[i].find('Read Count')
+                                end = text[i].find('Gene Fusions')
+                                rearrangement.extend(text[i][start+11:end].split('  '))
+                                rearrangement=rearrangement[0].split('\n')
+                                for j in range(len(rearrangement)):
+                                    rearrangementlist.append({
+                                        "description": "",
+                                        "equivocal": "",
+                                        "in_frame": "",
+                                        "other_gene": rearrangement[0].replace(' - ', '-').split(' ')[1],
+                                        "pos1": rearrangement[0].replace(' - ', '-').split(' ')[2],
+                                        "pos2": "",
+                                        "status": "",
+                                        "supporting_read_pairs": rearrangement[0].replace(' - ', '-').split(' ')[3],
+                                        "targeted_gene": rearrangement[0].replace(' - ', '-').split(' ')[0],
+                                        "type": "",
+                                        "dna_evidence": {
+                                        "sample": ""
+                                        }})
+                                
+                                print('\nFusions')
+                                basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['rearrangements']['rearrangement']=rearrangementlist
+                                #print(rearrangement)    
+                        except:
+                            None
+            
+                        if text[i].find('Sample Information') > -1: 
+                            #print('\nPMI')
+                            #print(text[0])
+                            start = text[i].find('Sample Information')
+                            end = text[i].find('Note:')
+                            #print(text[i][start:end])
+                            PATIENT=text[i][start+18:end].strip() 
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['FullName'] = PATIENT.split('\n')[0].split(':')[1].strip()
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['Gender'] = PATIENT.split('\n')[1].split(':')[1].strip()
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['MRN'] = PATIENT.split('\n')[3].split(':')[1].strip()
+                            try:
+                                basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMD'] = PATIENT.split('\n')[6].split(':')[1].strip().split(' ')[1]
+                                basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMDId'] = PATIENT.split('\n')[6].split(':')[1].strip().split(' ')[0]
+                            except:
+                                basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMDId'] = PATIENT.split('\n')[6].split(':')[1].strip()
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['ReportId'] = MPNo
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['TestType'] = PATIENT.split('\n')[12].split(':')[1].strip()
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['SpecFormat'] = PATIENT.split('\n')[13].split(':')[1].strip()
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['BlockId'] = PATIENT.split('\n')[14].split(':')[1].strip()
+                            try:
+                                basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['TumorPurity'] = PATIENT.split('\n')[15].split(':')[1].strip()
+                            except:
+                                basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['BlockId'] = ''
+                                basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['ReceivedDate'] = PATIENT.split('\n')[14].split(':')[1].strip()
                             
-                            print('\nFusions')
-                            basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['rearrangements']['rearrangement']=rearrangementlist
-                            #print(rearrangement)    
-                    except:
-                        None
-        
-                    if text[i].find('Sample Information') > -1: 
-                        #print('\nPMI')
-                        #print(text[0])
-                        start = text[i].find('Sample Information')
-                        end = text[i].find('Note:')
-                        #print(text[i][start:end])
-                        PATIENT=text[i][start+18:end].strip() 
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['FullName'] = PATIENT.split('\n')[0].split(':')[1].strip()
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['Gender'] = PATIENT.split('\n')[1].split(':')[1].strip()
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['MRN'] = PATIENT.split('\n')[3].split(':')[1].strip()
-                        try:
-                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMD'] = PATIENT.split('\n')[6].split(':')[1].strip().split(' ')[1]
-                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMDId'] = PATIENT.split('\n')[6].split(':')[1].strip().split(' ')[0]
+                            start = text[i].find('Cancer Type:')
+                            end = text[i].find('Table of Contents')
+                            (text[i][start:end])
+                            CancerType = text[i][start+12:end].strip() 
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['SubmittedDiagnosis'] = CancerType
+                            
+                        try:   
+                            if text[i].find('DNA Sequence') > -1:
+                                #print('\nDETECTED VARIANTS')                        
+                                #print(text[i])
+                                start = text[i].find('Effect Coverage')
+                                end = text[i].find('DNA Sequence')
+                                short_variants.extend(text[i][start+16:end].strip().split('\n'))
+                                #print(len(text[i][start+22:end-5].split(' \n')))
+                                #print(text[i][start+22:end-5].split(' \n'))
                         except:
-                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMDId'] = PATIENT.split('\n')[6].split(':')[1].strip()
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['ReportId'] = MPNo
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['TestType'] = PATIENT.split('\n')[12].split(':')[1].strip()
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['SpecFormat'] = PATIENT.split('\n')[13].split(':')[1].strip()
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['BlockId'] = PATIENT.split('\n')[14].split(':')[1].strip()
-                        try:
-                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['TumorPurity'] = PATIENT.split('\n')[15].split(':')[1].strip()
+                            None
+                            
+                        try:    
+                            if len(short_variants) > 0:
+                                short_variantllist=[]
+                                short_variantllist_temp=''
+                                for j in range(len(short_variants)):
+                                    if len(short_variants[j].split(' ')) > 8 : 
+                                        try:
+                                            functional_effect = short_variants[j].split(' ')[7]
+                                            depth = short_variants[j].split(' ')[8]
+                                        except:
+                                            depth = ''
+                                            functional_effect = ''
+                                        if  short_variants[j].split(' ')[6] == 'frameshift':
+                                            transcript = 'frameshift Deletion'
+                                        else:
+                                            transcript = short_variants[j].split(' ')[6]
+                                        short_variantllist.append({
+                                            "cds_effect": short_variants[j].split(' ')[2],
+                                            "depth":depth,
+                                            "functional_effect": functional_effect,
+                                            "gene": short_variants[j].split(' ')[0],
+                                            "percent_reads": short_variants[j].split(' ')[5],
+                                            "position": short_variants[j].split(' ')[4],
+                                            "protein_effect": short_variants[j].split(' ')[1],
+                                            "transcript": transcript,
+                                            })
+                                    else:
+                                       short_variantllist_temp=short_variantllist_temp+short_variants[i]
+                                       if len(short_variantllist_temp.split(' ')) > 6:
+                                           short_variantllist.append({
+                                               "cds_effect": short_variantllist_temp.split(' ')[2],
+                                               "depth":short_variantllist_temp.split(' ')[6][len(short_variantllist_temp.split(' ')[6])-4:],
+                                               "functional_effect": short_variantllist_temp.split(' ')[6][:len(short_variantllist_temp.split(' ')[6])-4],
+                                               "gene": short_variantllist_temp.split(' ')[0],
+                                               "percent_reads": short_variantllist_temp.split(' ')[4],
+                                               "position": short_variantllist_temp.split(' ')[3],
+                                               "protein_effect": short_variantllist_temp.split(' ')[1],
+                                               "transcript": short_variantllist_temp.split(' ')[5],
+                                               })
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variantllist                                       
+                            #print('short_variantllist')
                         except:
-                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['BlockId'] = ''
-                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['ReceivedDate'] = PATIENT.split('\n')[14].split(':')[1].strip()
-                        
-                        start = text[i].find('Cancer Type:')
-                        end = text[i].find('Table of Contents')
-                        (text[i][start:end])
-                        CancerType = text[i][start+12:end].strip() 
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['SubmittedDiagnosis'] = CancerType
-                       
-                    if text[i].find('DNA Sequence') > -1:
-                        #print('\nDETECTED VARIANTS')                        
-                        #print(text[i])
-                        start = text[i].find('Effect Coverage')
-                        end = text[i].find('DNA Sequence')
-                        short_variants.extend(text[i][start+16:end].strip().split('\n'))
-                        #print(len(text[i][start+22:end-5].split(' \n')))
-                        #print(text[i][start+22:end-5].split(' \n'))
-                        
-                    if len(short_variants) > 0:
-                        short_variantllist=[]
-                        short_variantllist_temp=''
-                        for j in range(len(short_variants)):
-                            if len(short_variants[j].split(' ')) > 8 : 
-                                try:
-                                    functional_effect = short_variants[j].split(' ')[7]
-                                    depth = short_variants[j].split(' ')[8]
-                                except:
-                                    depth = ''
-                                    functional_effect = ''
-                                if  short_variants[j].split(' ')[6] == 'frameshift':
-                                    transcript = 'frameshift Deletion'
-                                else:
-                                    transcript = short_variants[j].split(' ')[6]
-                                short_variantllist.append({
-                                    "cds_effect": short_variants[j].split(' ')[2],
-                                    "depth":depth,
-                                    "functional_effect": functional_effect,
-                                    "gene": short_variants[j].split(' ')[0],
-                                    "percent_reads": short_variants[j].split(' ')[5],
-                                    "position": short_variants[j].split(' ')[4],
-                                    "protein_effect": short_variants[j].split(' ')[1],
-                                    "transcript": transcript,
-                                    })
-                            else:
-                               short_variantllist_temp=short_variantllist_temp+short_variants[i]
-                               if len(short_variantllist_temp.split(' ')) > 6:
-                                   short_variantllist.append({
-                                       "cds_effect": short_variantllist_temp.split(' ')[2],
-                                       "depth":short_variantllist_temp.split(' ')[6][len(short_variantllist_temp.split(' ')[6])-4:],
-                                       "functional_effect": short_variantllist_temp.split(' ')[6][:len(short_variantllist_temp.split(' ')[6])-4],
-                                       "gene": short_variantllist_temp.split(' ')[0],
-                                       "percent_reads": short_variantllist_temp.split(' ')[4],
-                                       "position": short_variantllist_temp.split(' ')[3],
-                                       "protein_effect": short_variantllist_temp.split(' ')[1],
-                                       "transcript": short_variantllist_temp.split(' ')[5],
-                                       })
-                                   
-        
-                        basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variantllist
-                        #print('short_variantllist')
-                        
-                with open(dirpath+'\\'+ReportNo+'_('+MPNo+').xml', 'w', encoding="utf-8") as output:
-                    output.write(xmltodict.unparse(basedict, pretty=True))            
-                #print(dirpath + ' OK')
-        #except:
-            #print(dirpath + ' NG')
+                            None
+                    with open(dirpath+'\\'+ReportNo+'_('+MPNo+').xml', 'w', encoding="utf-8") as output:
+                        output.write(xmltodict.unparse(basedict, pretty=True)) 
+                    
+                    #print(basedict)
+                    #print(dirpath+'\\'+ReportNo+'_('+MPNo+').xml')
+        except:
+            print(dirpath + ' NG')
     os.chdir('..')
     return 'MyeloidAssay2xml done'
 
@@ -1682,8 +1686,7 @@ def FocusAssay2xml(PdfPath):
                 #print(dirpath + ' OK')           
         except:
             None
-            #print(dirpath + ' NG')
-            
+            #print(dirpath + ' NG')            
     os.chdir('..')
     return 'FocusAssay2xml done'
 
