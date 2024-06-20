@@ -15,9 +15,9 @@ services:
     #  - "443:443"
     # env_file:
       # - ../server/.env
-    environment:
-      - FHIR_URL=http:
-      - DICOM_URL=http:
+    #environment:
+    #  - FHIR_URL=http:
+    #  - DICOM_URL=http:
     working_dir: /server
     tty: true
     restart: always

@@ -20,8 +20,8 @@ COPY uwsgi.ini /etc/
 COPY supervisord.conf /etc/
 #COPY ssl.csr /etc/nginx/ssl.csr
 #COPY ssl.key /etc/nginx/ssl.key
-#CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord"]
 #CMD ["uwsgi", "uwsgi.ini"]
-CMD ["python manage.py runserver 0:8000"]
+#CMD ["python manage.py runserver 0:8000"]
 EXPOSE 8000
 #EXPOSE 443

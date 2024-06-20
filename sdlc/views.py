@@ -57,6 +57,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 genepostgresip = "104.208.68.39"
 #genepostgresip = "10.97.242.13"
 genepostgresport="8081"
+#genepostgresport="5432"
 jsonPath=str(pathlib.Path().absolute()) + "/static/template/Observation-Imaging-EKG.json"
 ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
 
@@ -1078,8 +1079,12 @@ def UpGeneZip(request):
                 print("发生错误:", e)
             dest = shutil.copyfile(source, destination)                       
             #print(dest)
-            with zipfile.ZipFile(dest,"r") as zip_ref:
-                zip_ref.extractall(root + '/static/doc/')
+            #print(root)
+            try:
+                with zipfile.ZipFile(dest,"r") as zip_ref:
+                    zip_ref.extractall(root + '/static/doc/'+str(uploadedFile).replace('.zip', ''))
+            except Exception as e:
+                print("错误:", e)
             #print(os.listdir(root+'/static/doc/'+str(uploadedFile).replace('.zip', '')))        
             os.chdir(root+'/static/doc/'+str(uploadedFile).replace('.zip', ''))
             #print(os.getcwd())

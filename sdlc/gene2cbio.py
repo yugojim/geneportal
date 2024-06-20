@@ -154,6 +154,7 @@ def Guardant3602xml(PdfPath):
             }
             ReportNo, MPNo  = dirpath.replace('(', '').replace(')', '').split('_')
             filepathlist =glob.glob(os.path.join(dirpath, "*).pdf"))
+            #filepath="D:/2024/3/geneportal/FhirPotal/static/doc/gene/M112-00052_(AL23002).pdf"
             #print(filepathlist)        
             for filename in filepathlist:
                 #print(filename)
