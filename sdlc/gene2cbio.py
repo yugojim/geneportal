@@ -299,8 +299,10 @@ def Guardant3602xml(PdfPath):
 
 ### ACTOnco V1 ###
 def ACTGV12xml(PdfPath):
+    print(PdfPath)
     os.chdir(PdfPath)
     dirlist=glob.glob('*')
+    print(dirlist)
     for dirpath in dirlist:
         basedict={
             "rr:ResultsReport": {
@@ -1692,31 +1694,36 @@ def FocusAssay2xml(PdfPath):
     return 'FocusAssay2xml done'
 
 ### 轉出PDF 至 目錄 ###
-def pdf2dir(PdfPath,root):
+def pdf2dir(PdfPath, root):
     os.chdir(PdfPath)
     try:
-        dirlist=glob.glob('*_*')
-        #print(len(dirlist))
+        dirlist = glob.glob('*_*')
         for dirpath in dirlist:
-            try:    
+            try:
                 ReportNo, MPNo = dirpath.replace('(', '').replace(')', '').split('_')
-                #filepathlist =glob.glob(os.path.join(dirpath, "*.xml"))
-                filepathlist =glob.glob(os.path.join(dirpath, "*).pdf"))
-                #print(filepathlist)        
+                filepathlist = glob.glob(os.path.join(dirpath, "*).pdf"))
+                print(filepathlist)
+                
                 for filename in filepathlist:
-                    #print(filename.split('\\')[1])
-                    # Source file
-                    source = filename              
-                    # Destination file 
-                    destination = '../../gene/'+filename.split('\\')[1]             
-                    # Copy source to destination 
-                    #dest = shutil.move(source, destination) 
-                    dest = shutil.copyfile(source, destination) 
-                    #print(dirpath + ' OK')
-            except:
-                None
-                #print(dirpath + ' NG')
-    except:
-        None
+                    # 源文件路径
+                    source = filename
+                    # 目标文件路径
+                    destination_dir = os.path.join(root, 'gene')
+                    destination = os.path.join(destination_dir, os.path.basename(filename))
+
+                    # 如果目标目录不存在，则创建它
+                    if not os.path.exists(destination_dir):
+                        os.makedirs(destination_dir)
+                        print(f"创建目录: {destination_dir}")
+
+                    # 复制源文件到目标位置
+                    dest = shutil.copyfile(source, destination)
+                    print(f"{dirpath} OK")
+            except ValueError as ve:
+                print(f"处理目录 {dirpath} 时发生错误: {ve}")
+            except Exception as e:
+                print(f"处理文件 {filename} 时发生未预期的错误: {e}")
+    except Exception as e:
+        print(f"处理目录列表时发生错误: {e}")
     os.chdir('..')
     return 'pdf2dir done'

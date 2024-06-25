@@ -1034,40 +1034,32 @@ def Userright(request):
 
 def UpGeneZip(request):
     user = request.user    
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    Genezipall=models.Genezip.objects.all().order_by('-id')
-    root=os.getcwd()
-    #df = pd.read_excel(uploadedFile)
-    #print(method)
-        #print(inlineRadioOptions)
+    Generight = models.Genepermission.objects.filter(user__username__startswith=user.username)
+    right = models.Permission.objects.filter(user__username__startswith=user.username)
+    Genezipall = models.Genezip.objects.all().order_by('-id')
+    root = os.getcwd()
 
-    #
     try:
-        if request.POST["fileTitle"] !='' and request.FILES["uploadedFile"]!='':
-            if request.POST["fileTitle"] !='':
-                fileTitle = request.POST["fileTitle"]
-            else:
-                fileTitle = '' 
-            try:
-                uploadedFile = request.FILES["uploadedFile"]
-            except:
-                uploadedFile = ''
-            # Saving the information in the database
+        if request.POST["fileTitle"] != '' and request.FILES["uploadedFile"] != '':
+            fileTitle = request.POST["fileTitle"]
+            uploadedFile = request.FILES["uploadedFile"]
+            
+            # 保存上传文件信息到数据库
             Genezip = models.Genezip(
-                fileTitle = fileTitle,
-                uploadedFile = uploadedFile,
+                fileTitle=fileTitle,
+                uploadedFile=uploadedFile,
             )            
             Genezip.save()
+            
+            # 数据库连接信息
             conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
             cur = conn.cursor()
-            #print('Opened database successfully')
-            #print(uploadedFile)
-            filename = root+'/media/Genezip/'+str(uploadedFile).replace('(','').replace(')','')
-            #print(filename)
+
+            filename = os.path.join(root, 'media', 'Genezip', str(uploadedFile).replace('(', '').replace(')', ''))
             source = filename
-            destination = root+'/static/doc/'+str(uploadedFile)
-            #print(destination)
+            destination = os.path.join(root, 'static', 'doc', str(uploadedFile))
+
+            # 删除已有的目标文件
             try:
                 os.remove(destination)
                 print("文件删除成功")
@@ -1077,98 +1069,118 @@ def UpGeneZip(request):
                 print("没有权限删除文件")
             except Exception as e:
                 print("发生错误:", e)
+
+            # 复制文件到目标位置
             dest = shutil.copyfile(source, destination)                       
-            #print(dest)
-            #print(root)
+
+            # 解压缩文件
             try:
-                with zipfile.ZipFile(dest,"r") as zip_ref:
-                    zip_ref.extractall(root + '/static/doc/'+str(uploadedFile).replace('.zip', ''))
+                destination_dir = os.path.join(root, 'static', 'doc', str(uploadedFile).replace('.zip', ''))
+                with zipfile.ZipFile(dest, "r") as zip_ref:
+                    zip_ref.extractall(destination_dir)
+            except zipfile.BadZipFile as e:
+                print("错误: ZIP 文件无效 -", e)
+            except FileNotFoundError as e:
+                print("错误: 文件未找到 -", e)
             except Exception as e:
                 print("错误:", e)
-            #print(os.listdir(root+'/static/doc/'+str(uploadedFile).replace('.zip', '')))        
-            os.chdir(root+'/static/doc/'+str(uploadedFile).replace('.zip', ''))
-            #print(os.getcwd())
 
+            print(os.listdir(destination_dir))
+            print(os.getcwd())
+
+            # 处理解压后的文件目录
             dirpath = 'ACTOnco V1'
-            gene2cbio.ACTGV12xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('ACTOnco V1')
-            dirpath = 'ACTOnco V2'
-            gene2cbio.ACTGV22xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('ACTOnco V2')
+            if os.path.isdir(dirpath):                
+                print("目录存在。")
+            else:
+                print("目录不存在。")
+                os.chdir(os.path.join(destination_dir, str(uploadedFile).replace('.zip', '')))
+                print(os.getcwd())
 
-            dirpath = 'Guardant360'
-            gene2cbio.Guardant3602xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('Guardant360')
-            
-            dirpath = 'Foundation One'
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('Foundation One')
-            
-            dirpath = 'Archer Lung'
-            gene2cbio.pdf2floder(dirpath)
-            gene2cbio.Archer2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('Archer Lung')
-            
-            dirpath = 'Archer Sarcoma'
-            gene2cbio.pdf2floder(dirpath)
-            gene2cbio.Archer2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('Archer')
-                        
-            dirpath = 'BRCA Assay'
-            gene2cbio.pdf2floder(dirpath)
-            gene2cbio.BRCAAssay2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('BRCA')
-            
-            dirpath = 'Focus Assay'
-            gene2cbio.pdf2floder(dirpath)
-            gene2cbio.FocusAssay2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('Focus')
+            genepath = os.path.join(root, 'static', 'doc')
+            process_gene_files(dirpath, conn, cur, genepath)
 
-            dirpath = 'Myeloid Assay'
-            gene2cbio.pdf2floder(dirpath)
-            gene2cbio.MyeloidAssay2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('Myeloid')
-            
-            dirpath = 'Tumor Mutation Load Assay'
-            gene2cbio.pdf2floder(dirpath)
-            gene2cbio.MutationLoadAssay2xml(dirpath)
-            gene2cbio.xmlisql(dirpath, conn, cur)
-            gene2cbio.pdf2dir(dirpath, root)
-            print('Tumor')
-            #documents = models.Document.objects.all()    
-           
+            context = {
+                'Generight': Generight,
+                'right': right,
+                'Genezip': Genezipall,
+                'FuncResult': 'Upload finish'
+            }
+            return render(request, 'Geneload.html', context)
+    except Exception as e:
+        print("发生错误:", e)
         context = {
-                'Generight' : Generight,
-                'right' : right,
-                'Genezip' : Genezipall,
-                'FuncResult' : 'Upload finsh'
-                }
+            'Generight': Generight,
+            'right': right,
+            'Genezip': Genezipall,
+            'FuncResult': 'No file upload'
+        }
         return render(request, 'Geneload.html', context)
-    except:
-        context = {
-                'Generight' : Generight,
-                'right' : right,
-                'Genezip' : Genezipall,
-                'FuncResult' : 'No file upload'
-                }
-        return render(request, 'Geneload.html' , context)
+
+def process_gene_files(dirpath, conn, cur, genepath):
+    gene2cbio.ACTGV12xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('ACTOnco V1')
+
+    dirpath = 'ACTOnco V2'
+    gene2cbio.ACTGV22xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('ACTOnco V2')
+
+    dirpath = 'Guardant360'
+    gene2cbio.Guardant3602xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('Guardant360')
+
+    dirpath = 'Foundation One'
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('Foundation One')
+
+    dirpath = 'Archer Lung'
+    gene2cbio.pdf2floder(dirpath)
+    gene2cbio.Archer2xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('Archer Lung')
+
+    dirpath = 'Archer Sarcoma'
+    gene2cbio.pdf2floder(dirpath)
+    gene2cbio.Archer2xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('Archer')
+
+    dirpath = 'BRCA Assay'
+    gene2cbio.pdf2floder(dirpath)
+    gene2cbio.BRCAAssay2xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('BRCA')
+
+    dirpath = 'Focus Assay'
+    gene2cbio.pdf2floder(dirpath)
+    gene2cbio.FocusAssay2xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('Focus')
+
+    dirpath = 'Myeloid Assay'
+    gene2cbio.pdf2floder(dirpath)
+    gene2cbio.MyeloidAssay2xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('Myeloid')
+
+    dirpath = 'Tumor Mutation Load Assay'
+    gene2cbio.pdf2floder(dirpath)
+    gene2cbio.MutationLoadAssay2xml(dirpath)
+    gene2cbio.xmlisql(dirpath, conn, cur)
+    gene2cbio.pdf2dir(dirpath, genepath)
+    print('Tumor')
     
 def UpdateMeta(request):
     user = request.user
