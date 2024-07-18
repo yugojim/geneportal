@@ -58,6 +58,18 @@ def xmlisql(PdfPath,conn,cur):
             #print(dirpath + ' NG')
     os.chdir('..')
     return 'xml2sql done'
+### 新增XML 至SQL ###
+def sqldelduplicate(conn,cur):
+    try:
+        sql='WITH duplicates AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY "ReportNo", "MPNo" ORDER BY id DESC) AS row_num FROM public.reportxml) DELETE FROM public.reportxml WHERE id IN (SELECT id FROM duplicates WHERE row_num > 1);'
+        #print(sql)
+        cur.execute(sql)            
+        conn.commit()
+        print('duplicate')
+    except:            
+        print('NG')
+    return 'sqldelduplicate done'
+
 
 ### 更新XML 至SQL ###
 def xml2sql(PdfPath,conn,cur):

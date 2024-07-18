@@ -1062,7 +1062,7 @@ def UpGeneZip(request):
             # 删除已有的目标文件
             try:
                 os.remove(destination)
-                print("文件删除成功")
+                #print("文件删除成功")
             except FileNotFoundError:
                 print("文件不存在")
             except PermissionError:
@@ -1085,17 +1085,17 @@ def UpGeneZip(request):
             except Exception as e:
                 print("错误:", e)
 
-            print(os.listdir(destination_dir))
-            print(os.getcwd())
+            #print(os.listdir(destination_dir))
+            #print(os.getcwd())
 
             # 处理解压后的文件目录
             dirpath = 'ACTOnco V1'
             if os.path.isdir(dirpath):                
                 print("目录存在。")
             else:
-                print("目录不存在。")
+                #print("目录不存在。")
                 os.chdir(os.path.join(destination_dir, str(uploadedFile).replace('.zip', '')))
-                print(os.getcwd())
+                #print(os.getcwd())
 
             genepath = os.path.join(root, 'static', 'doc')
             process_gene_files(dirpath, conn, cur, genepath)
@@ -1108,7 +1108,7 @@ def UpGeneZip(request):
             }
             return render(request, 'Geneload.html', context)
     except Exception as e:
-        print("发生错误:", e)
+        #print("发生错误:", e)
         context = {
             'Generight': Generight,
             'right': right,
@@ -1122,66 +1122,67 @@ def process_gene_files(dirpath, conn, cur, genepath):
     gene2cbio.ACTGV12xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('ACTOnco V1')
+    #print('ACTOnco V1')
 
     dirpath = 'ACTOnco V2'
     gene2cbio.ACTGV22xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('ACTOnco V2')
+    #print('ACTOnco V2')
 
     dirpath = 'Guardant360'
     gene2cbio.Guardant3602xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('Guardant360')
+    #print('Guardant360')
 
     dirpath = 'Foundation One'
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('Foundation One')
+    #print('Foundation One')
 
     dirpath = 'Archer Lung'
     gene2cbio.pdf2floder(dirpath)
     gene2cbio.Archer2xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('Archer Lung')
+    #print('Archer Lung')
 
     dirpath = 'Archer Sarcoma'
     gene2cbio.pdf2floder(dirpath)
     gene2cbio.Archer2xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('Archer')
+    #print('Archer')
 
     dirpath = 'BRCA Assay'
     gene2cbio.pdf2floder(dirpath)
     gene2cbio.BRCAAssay2xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('BRCA')
+    #print('BRCA')
 
     dirpath = 'Focus Assay'
     gene2cbio.pdf2floder(dirpath)
     gene2cbio.FocusAssay2xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('Focus')
+    #print('Focus')
 
     dirpath = 'Myeloid Assay'
     gene2cbio.pdf2floder(dirpath)
     gene2cbio.MyeloidAssay2xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('Myeloid')
+    #print('Myeloid')
 
     dirpath = 'Tumor Mutation Load Assay'
     gene2cbio.pdf2floder(dirpath)
     gene2cbio.MutationLoadAssay2xml(dirpath)
     gene2cbio.xmlisql(dirpath, conn, cur)
     gene2cbio.pdf2dir(dirpath, genepath)
-    print('Tumor')
+    gene2cbio.sqldelduplicate(conn, cur)
+    #print('Tumor')
     
 def UpdateMeta(request):
     user = request.user
