@@ -79,15 +79,14 @@ def auth(request):
         #return HttpResponse('Authenticated')
 
 def index(request):
-    #User = get_user_model()
-    #usersdf = User.objects.all().values()
-    #print(type([{i.title: i.specs} for i in User.objects.all()]))
-    #print([{i.title: i.specs} for i in User.objects.all()])
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    
     try:
+        #User = get_user_model()
+        #usersdf = User.objects.all().values()
+        #print(type([{i.title: i.specs} for i in User.objects.all()]))
+        #print([{i.title: i.specs} for i in User.objects.all()])
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         context = {
                 'Generight' : Generight,
                 'right' : right,
@@ -103,15 +102,15 @@ def index(request):
         return render(request, 'index.html', context)
 @csrf_exempt
 def convert(request):
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    Resourcejsonall=models.Resourcejson.objects.all()
-    
-    rows=''
-    flattendict=''
-    Resource=''
     try:
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
+        Resourcejsonall=models.Resourcejson.objects.all()
+        
+        rows=''
+        flattendict=''
+        Resource=''
         try:
             uploadedFile = request.FILES["uploadedFile"]
             Resourcejson = models.Resourcejson(
@@ -194,13 +193,13 @@ def convert(request):
         return render(request, 'convert.html', context)
     
 def GeneReport(request):
-    ReportNo=''
-    MPNo=''
-    MRN=''
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        ReportNo=''
+        MPNo=''
+        MRN=''
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
         cur = conn.cursor()
         consentsql = 'SELECT * FROM public.reportxml where true '
@@ -240,28 +239,34 @@ def GeneReport(request):
                 'search' : search,
                 'right' : right,
                 'FuncResult' : SELECTint,
-                'rows' : rows
+                'rows' : rows,
+                'ReportNo':ReportNo,
+                'MPNo':MPNo,
+                'MRN':MRN
                 }
         return render(request, 'GeneReport.html', context)
     except:
         context = {
                 'Generight' : Generight,
                 'right' : right,
-                'FuncResult' : 'Function'
+                'FuncResult' : 'Function',
+                'ReportNo':ReportNo,
+                'MPNo':MPNo,
+                'MRN':MRN
                 }
         return render(request, 'GeneReport.html', context)
 
 def PMI(request):
-    #ReportNo=''
-    #MPNo=''
-    #MRN=''
-    Diagnosis=''
-    TestType=''
-    OrderingMD=''
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        #ReportNo=''
+        #MPNo=''
+        #MRN=''
+        Diagnosis=''
+        TestType=''
+        OrderingMD=''
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
         cur = conn.cursor()
         consentsql = 'SELECT * FROM public.reportxml where true '
@@ -333,22 +338,23 @@ def PMI(request):
         return render(request, 'PMI.html', context)
     except:
         context = {
-                'Generight' : Generight,
+                'Generight' : Generight,                
+                'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
         return render(request, 'PMI.html', context)
 
 def Biomarker(request):
-    #ReportNo=''
-    #MPNo=''
-    #MRN=''
-    status=''
-    score=''
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        #ReportNo=''
+        #MPNo=''
+        #MRN=''
+        status=''
+        score=''
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
         cur = conn.cursor()
         consentsql = 'SELECT * FROM public.reportxml where true '       
@@ -413,24 +419,25 @@ def Biomarker(request):
     except:
         context = {
                 'Generight' : Generight,
+                'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
         return render(request, 'Biomarker.html', context)
     
 def ShortVariants(request):
-    #ReportNo=''
-    #MPNo=''
-    #MRN=''
-    gene=''
-    protein_effect=''
-    cds_effect=''
-    allele_fraction=''
-    functional_effect=''
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        #ReportNo=''
+        #MPNo=''
+        #MRN=''
+        gene=''
+        protein_effect=''
+        cds_effect=''
+        allele_fraction=''
+        functional_effect=''
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
         cur = conn.cursor()
         consentsql = 'SELECT * FROM public.reportxml where true '       
@@ -515,22 +522,23 @@ def ShortVariants(request):
     except:
         context = {
                 'Generight' : Generight,
+                'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
         return render(request, 'ShortVariants.html', context)
 
 def CopyNumberAlterations(request):
-    #ReportNo=''
-    #MPNo=''
-    #MRN=''
-    gene=''
-    type=''
-    copy_number=''
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        #ReportNo=''
+        #MPNo=''
+        #MRN=''
+        gene=''
+        type=''
+        copy_number=''
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
         cur = conn.cursor()
         consentsql = 'SELECT * FROM public.reportxml where true '       
@@ -603,22 +611,23 @@ def CopyNumberAlterations(request):
     except:
         context = {
                 'Generight' : Generight,
+                'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
         return render(request, 'CopyNumberAlterations.html', context)
 
 def Rearrangement(request):
-    #ReportNo=''
-    #MPNo=''
-    #MRN=''
-    description=''
-    targeted_gene=''
-    other_gene=''
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        #ReportNo=''
+        #MPNo=''
+        #MRN=''
+        description=''
+        targeted_gene=''
+        other_gene=''
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
         cur = conn.cursor()
         consentsql = 'SELECT * FROM public.reportxml where true '       
@@ -691,19 +700,20 @@ def Rearrangement(request):
     except:
         context = {
                 'Generight' : Generight,
+                'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
         return render(request, 'Rearrangement.html', context)
     
 def GeneFinalReportDetails(request):
-    user = request.user
-    #print(user.username)
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    #print(Generight) 
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    #print(right)  
     try:
+        user = request.user
+        #print(user.username)
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        #print(Generight) 
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
+        #print(right)  
         rid=request.GET['id']
         #print(rid)
         conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
@@ -759,9 +769,9 @@ def GeneVariantReportDetails(request):
         return render(request, 'GeneVariantReportDetails.html', context)
     
 def ambulance(request):
-    user = request.user
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    try:        
+    try:
+        user = request.user
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         context = {
                 'right' : right,
                 'FuncResult' : 'Function'
@@ -819,12 +829,10 @@ def Biosample(request):
         return render(request, 'Biosample.html', context)
     
 def Individual(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-
     try:
-        
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.IndividualCURD(request)
         context = {
                 'right' : right,
@@ -880,13 +888,12 @@ def ClinvarVariant(request):
         return render(request, 'ClinvarVariant.html', context)
 
 def Patient(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    fhirip=models.fhirip.objects.all()
-    #print(fhirip)
     try:
-        
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
+        fhirip=models.fhirip.objects.all()
+        #print(fhirip)            
         Result,data = Function.PatientCURD(request)
         context = {
                 'right' : right,
@@ -904,10 +911,10 @@ def Patient(request):
         return render(request, 'Patient.html', context)
 
 def Organization(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.OrganizationCURD(request)
 
         context = {
@@ -943,14 +950,13 @@ def Practitioner(request):
         return render(request, 'Practitioner.html', context)
         
 def PatientUpload(request):
-    user = request.user
-    #print(user.username)
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    Genedataall=models.Genedata.objects.all().order_by('-id')
-    #df = pd.read_excel(uploadedFile)
-    
     try:
+        user = request.user
+        #print(user.username)
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
+        Genedataall=models.Genedata.objects.all().order_by('-id')
+        #df = pd.read_excel(uploadedFile)
         try:
             inlineRadioOptions = request.POST["inlineRadioOptions"]
         except:
@@ -992,14 +998,15 @@ def PatientUpload(request):
         return render(request, 'PatientUpload.html' , context)
 
 def Userright(request):
-    user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    Userrightall=models.Userright.objects.all().order_by('-id')
-    #conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
-    #cur = conn.cursor()
-    #print('Opened database successfully')
     try:
+        user = request.user
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
+        Userrightall=models.Userright.objects.all().order_by('-id')
+        #conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
+        #cur = conn.cursor()
+        #print('Opened database successfully')
+    
         if request.POST["fileTitle"] !='':
             fileTitle = request.POST["fileTitle"]
         else:
@@ -1033,24 +1040,23 @@ def Userright(request):
         return render(request, 'UsrUpload.html' , context)
 
 def UpGeneZip(request):
-    user = request.user    
-    Generight = models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right = models.Permission.objects.filter(user__username__startswith=user.username)
-    Genezipall = models.Genezip.objects.all().order_by('-id')
-    root = os.getcwd()
-
     try:
+        user = request.user    
+        Generight = models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right = models.Permission.objects.filter(user__username__startswith=user.username)
+        Genezipall = models.Genezip.objects.all().order_by('-id')
+        root = os.getcwd()
         if request.POST["fileTitle"] != '' and request.FILES["uploadedFile"] != '':
             fileTitle = request.POST["fileTitle"]
             uploadedFile = request.FILES["uploadedFile"]
-            
+
             # 保存上传文件信息到数据库
             Genezip = models.Genezip(
                 fileTitle=fileTitle,
                 uploadedFile=uploadedFile,
             )            
-            Genezip.save()
-            
+            Genezip.save()            
+            #print(Genezippk.pk)
             # 数据库连接信息
             conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
             cur = conn.cursor()
@@ -1108,11 +1114,11 @@ def UpGeneZip(request):
             }
             return render(request, 'Geneload.html', context)
     except Exception as e:
-        #print("发生错误:", e)
+        print("发生错误:", e)
         context = {
-            'Generight': Generight,
-            'right': right,
-            'Genezip': Genezipall,
+            'Generight': '',
+            'right': '',
+            'Genezip': '',
             'FuncResult': 'No file upload'
         }
         return render(request, 'Geneload.html', context)
@@ -1185,15 +1191,14 @@ def process_gene_files(dirpath, conn, cur, genepath):
     #print('Tumor')
     
 def UpdateMeta(request):
-    user = request.user
-    #print(user.username)
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    Metaxlsxall=models.Metaxlsx.objects.all().order_by('-id')
-    #df = pd.read_excel(uploadedFile)
-    #print(method)
-    
     try:
+        user = request.user
+        #print(user.username)
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
+        Metaxlsxall=models.Metaxlsx.objects.all().order_by('-id')
+        #df = pd.read_excel(uploadedFile)
+        #print(method)
         if request.POST["fileTitle"] !='' and request.FILES["uploadedFile"]!='':
             if request.POST["fileTitle"] !='':
                 fileTitle = request.POST["fileTitle"]
@@ -1217,12 +1222,13 @@ def UpdateMeta(request):
                 'FuncResult' : 'Upload finsh'
                 }
         return render(request, 'MetaUpload.html', context)
-    except:
+    except Exception as e:
+        print("发生错误:", e)
         context = {
                 'Generight' : Generight,
                 'right' : right,
                 'Metaxlsx' : Metaxlsxall,
-                'FuncResult' : 'No file upload'
+                'FuncResult' : e
                 }
         return render(request, 'MetaUpload.html' , context)
     
@@ -1236,13 +1242,12 @@ class NpEncoder(json.JSONEncoder):
             return obj.tolist()
         return super(NpEncoder, self).default(obj)
 
-def Metaxlsx(request):
-    user = request.user
-    #print(user.username)
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    
+def Metaxlsx(request):    
     try:
+        user = request.user
+        #print(user.username)
+        Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         rid=request.GET["id"]
         #print(rid)
         Metaxlsx=models.Metaxlsx.objects.filter(id=rid)
@@ -1322,12 +1327,13 @@ def Metaxlsx(request):
                 'FuncResult' : 'Updata finsh'
                 }
         return render(request, 'Update.html', context)
-    except:
+    except Exception as e:
+        print("发生错误:", e)
         context = {
                 'Generight' : Generight,
                 'right' : right,
                 'Metaxlsx' : '',
-                'FuncResult' : 'Updata Fail'
+                'FuncResult' :  e
                 }
         return render(request, 'Update.html' , context)
 
@@ -1376,10 +1382,10 @@ def DataUpload(request):
         return render(request, 'DataUpload.html', context )
 
 def AllergyIntolerance(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.AllergyIntoleranceCRUD(request)
         context = {
                 'right' : right,
@@ -1395,10 +1401,10 @@ def AllergyIntolerance(request):
         return render(request, 'AllergyIntolerance.html', context)
 
 def FamilyMemberHistory(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.FamilyMemberHistoryCRUD(request)
         context = {
                 'right' : right,
@@ -1414,10 +1420,10 @@ def FamilyMemberHistory(request):
         return render(request, 'FamilyMemberHistory.html', context)
 
 def Encounter(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.EncounterCRUD(request)
         context = {
                 'right' : right,
@@ -1433,10 +1439,10 @@ def Encounter(request):
         return render(request, 'Encounter.html', context)
     
 def CarePlan(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.CarePlanCRUD(request)
         context = {
                 'right' : right,
@@ -1452,10 +1458,10 @@ def CarePlan(request):
         return render(request, 'CarePlan.html', context)
 
 def DiagnosticReportNursing(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.DiagnosticReportNursingCRUD(request)
         context = {
                 'right' : right,
@@ -1471,10 +1477,10 @@ def DiagnosticReportNursing(request):
         return render(request, 'DiagnosticReportNursing.html', context)
 
 def DiagnosticReportRadiationTreatment(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.DiagnosticReportRadiationTreatmentCRUD(request)
         context = {
                 'right' : right,
@@ -1490,10 +1496,10 @@ def DiagnosticReportRadiationTreatment(request):
         return render(request, 'DiagnosticReportRadiationTreatment.html', context)
     
 def DiagnosticReportPathologyReport(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.DiagnosticReportPathologyReportCRUD(request)
         context = {
                 'right' : right,
@@ -1547,10 +1553,10 @@ def ServiceRequest(request):
         return render(request, 'ServiceRequest.html', context)
     
 def ConditionStage(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.ConditionStageCRUD(request)
         context = {
                 'right' : right,
@@ -1604,10 +1610,10 @@ def Endpoint(request):
         return render(request, 'Endpoint.html', context)
 
 def Medication(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.MedicationCRUD(request)
         context = {
                 'right' : right,
@@ -1623,10 +1629,10 @@ def Medication(request):
         return render(request, 'Medication.html', context)
 
 def MedicationRequest(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.MedicationRequestCRUD(request)
         context = {
                 'right' : right,
@@ -1642,10 +1648,10 @@ def MedicationRequest(request):
         return render(request, 'MedicationRequest.html', context)    
 
 def MedicationAdministration(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.MedicationAdministrationCRUD(request)
         context = {
                 'right' : right,
@@ -1661,10 +1667,10 @@ def MedicationAdministration(request):
         return render(request, 'MedicationAdministration.html', context)
 
 def Immunization(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.ImmunizationCRUD(request)
         context = {
                 'right' : right,
@@ -1699,10 +1705,10 @@ def dbSNP(request):
         return render(request, 'geneticsdbSNP.html', context)
 
 def getRisk(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)    
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)    
         riskrlue = request.GET['risk']
         #riskrlue='Alc_risk'
         #print(riskrlue)
@@ -1721,10 +1727,10 @@ def getRisk(request):
         return render(request,'geneticsRisk.html', context)
 
 def Gene(request):
-    user = request.user
-    #print(user.username)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
     try:
+        user = request.user
+        #print(user.username)
+        right=models.Permission.objects.filter(user__username__startswith=user.username)
         Result,data = Function.GeneCRUD(request)
         context = {
                 'right' : right,

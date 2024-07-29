@@ -13,8 +13,7 @@ def pdf2floder(PdfPath):
     os.chdir(PdfPath)
     dirlist=glob.glob('*_*')
     for dirpath in dirlist:
-        print(dirpath.replace('.pdf', ''))
-        
+        #print(dirpath.replace('.pdf', ''))
         source_dir = dirpath
         destination_dir = dirpath.replace('.pdf', '')
                 
@@ -309,8 +308,8 @@ def Guardant3602xml(PdfPath):
     os.chdir('..')
     return 'Guardant3602xml done'
 
-### ACTOnco V1 ###
-def ACTGV12xml(PdfPath):
+### ACTOnco V2 ###
+def ACTGV22xml(PdfPath):
     print(PdfPath)
     os.chdir(PdfPath)
     dirlist=glob.glob('*')
@@ -554,9 +553,9 @@ def ACTGV12xml(PdfPath):
             None
             #print(dirpath + ' NG')
     os.chdir('..')
-    return 'ACTGV12xml done'
-### ACTOnco V2 ###
-def ACTGV22xml(PdfPath):
+    return 'ACTGV22xml done'
+### ACTOnco V1 ###
+def ACTGV12xml(PdfPath):
     os.chdir(PdfPath)
     dirlist=glob.glob('*')    
     for dirpath in dirlist:
@@ -814,7 +813,7 @@ def ACTGV22xml(PdfPath):
             None
             #print(dirpath + ' NG')
     os.chdir('..')
-    return 'ACTGV22xml done'
+    return 'ACTGV12xml done'
 ### Archer ###
 def Archer2xml(PdfPath):
     os.chdir(PdfPath)
