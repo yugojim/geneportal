@@ -54,10 +54,11 @@ risk = DocumentPath + 'risk.csv'
 riskdf = pd.read_csv(risk, encoding='utf8')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-genepostgresip = "104.208.68.39"
-#genepostgresip = "10.97.242.13"
-genepostgresport="8081"
-#genepostgresport="5432"
+#genepostgresip = "104.208.68.39"
+genepostgresip = "20.205.134.146"
+
+#genepostgresport="8081"
+genepostgresport="5432"
 jsonPath=str(pathlib.Path().absolute()) + "/static/template/Observation-Imaging-EKG.json"
 ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
 
@@ -65,10 +66,10 @@ ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
 def auth(request):
     user = request.user
     Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    #print(Generight.get().cbioportal)
+    print(Generight.get().cbioportal)
     right=models.Permission.objects.filter(user__username__startswith=user.username)
     if request.user.is_authenticated and Generight.get().cbioportal:
-        #return HttpResponseForbidden('Forbidden')
+        return HttpResponseForbidden('Forbidden')
         return HttpResponse('Authenticated' ,status = 200)
         #return HttpResponse('Authenticated')
     elif request.user.is_authenticated:
@@ -193,6 +194,7 @@ def convert(request):
         return render(request, 'convert.html', context)
     
 def GeneReport(request):
+    #Function.postlog(request)
     try:
         ReportNo=''
         MPNo=''
@@ -336,12 +338,13 @@ def PMI(request):
                 'rows' : rows
                 }
         return render(request, 'PMI.html', context)
-    except:
+    except Exception as e:
+        print("发生错误:", e)
         context = {
                 'Generight' : Generight,                
-                'search' : search,
+                #'search' : search,
                 'right' : right,
-                'FuncResult' : 'Function'
+                'FuncResult' : 'FuncResult'
                 }
         return render(request, 'PMI.html', context)
 
@@ -419,7 +422,7 @@ def Biomarker(request):
     except:
         context = {
                 'Generight' : Generight,
-                'search' : search,
+                #'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
@@ -522,7 +525,7 @@ def ShortVariants(request):
     except:
         context = {
                 'Generight' : Generight,
-                'search' : search,
+                #'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
@@ -611,7 +614,7 @@ def CopyNumberAlterations(request):
     except:
         context = {
                 'Generight' : Generight,
-                'search' : search,
+                #'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
@@ -700,7 +703,7 @@ def Rearrangement(request):
     except:
         context = {
                 'Generight' : Generight,
-                'search' : search,
+                #'search' : search,
                 'right' : right,
                 'FuncResult' : 'Function'
                 }
@@ -1116,9 +1119,9 @@ def UpGeneZip(request):
     except Exception as e:
         print("发生错误:", e)
         context = {
-            'Generight': '',
-            'right': '',
-            'Genezip': '',
+            'Generight': Generight,
+            'right': right,
+            'Genezip': Genezipall,
             'FuncResult': 'No file upload'
         }
         return render(request, 'Geneload.html', context)
@@ -1252,12 +1255,12 @@ def Metaxlsx(request):
         #print(rid)
         Metaxlsx=models.Metaxlsx.objects.filter(id=rid)
         for meta in Metaxlsx:
-            #print(meta.uploadedFile)
+            print(meta.uploadedFile)
             #for dirname in os.listdir(os.getcwd()+'/media/'):
-                #print(dirname)
+                #print(dirname)\media\Metaxlsx
             dfpath=os.getcwd().replace('\\','/')+'/media/'+str(meta.uploadedFile)
-            #dfpath='/media/'+str(meta.uploadedFile)
-            #print(dfpath)
+            #dfpath='/server/media/'+str(meta.uploadedFile)#VM用
+            print(dfpath)
 
             conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
             #print('Opened database successfully')

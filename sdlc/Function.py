@@ -2,8 +2,12 @@
 import pathlib
 import json
 import requests
-import datetime
+#import datetime
 import requests.packages.urllib3
+import psycopg2
+from datetime import datetime
+from datetime import timedelta
+
 requests.packages.urllib3.disable_warnings()
 
 fhir = 'http://192.168.211.9:8080/fhir/'#4600VM
@@ -14,6 +18,30 @@ headers = {
     'Authorization': 'Basic ZmhpcnVzZXI6Y2hhbmdlLXBhc3N3b3Jk'
 }
 payload={}
+
+postgresip = "20.205.134.146"
+def postlog(request):
+    ip_addr = request.remote_addr
+    method = request.method
+    host_url  = request.url
+    headers=dict(request.headers)
+    conn = psycopg2.connect(database="consent", user="postgres", password="1qaz@WSX3edc", host=postgresip, port="5432")
+    #print('Opened database')
+    cur = conn.cursor()
+    #sql="INSERT INTO public.log (ip_addr, method, host_url, headers, datetime ) VALUES ( '123.123.123.123', 'GET', 'http://1', 'header', '2023-10-11 08:12:22');"
+    sql="INSERT INTO public.log (ip_addr, method, host_url, headers, datetime ) VALUES ('" + ip_addr + "', '" + \
+            method + "', '" + host_url + "', '" + json.dumps(headers) + "', '" + (datetime.now()+timedelta(hours=8)).strftime("%Y/%m/%d %H:%M:%S") + "');"
+    #print(sql)
+    cur.execute(sql)
+    conn.commit()
+
+    cur.execute('SELECT * FROM public.log')
+    rows = cur.fetchall()
+    #for row in rows:
+        #print(row)
+    conn.close()
+    #print('Close database')
+    return rows
 def PatientCURD(request):
     jsonPath=str(pathlib.Path().absolute()) + "/static/template/Patient病人資料.json"
     #print(jsonPath)

@@ -29,26 +29,26 @@
 					</div>					
 					<form method="post" action="{% url 'UpGeneZip' %}" enctype="multipart/form-data">
 					{% csrf_token %}
-					<div class="form-group">
-						<div class="form-row">
-							<div class="form-group col-md-1">
-								<label><h5>檔案說明</h5></label>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="form-group col-md-1">
+									<label><h5>檔案說明</h5></label>
+								</div>
+								<div class="form-group col-md-2">
+									<input type="text" class="form-control" name="fileTitle" placeholder="Enter a title">
+								</div>
+								<div class="form-group col-md-1">
+									<label><h5>檔案選擇</h5></label>
+								</div>
+								<div class="form-group col-md-3">								
+									<input class="form-control" type="file" name="uploadedFile" accept=".zip">
+								</div>
+								<div class="form-group col-md-1">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>	
 							</div>
-							<div class="form-group col-md-2">
-								<input type="text" class="form-control" name="fileTitle" placeholder="Enter a title">
-							</div>
-							<div class="form-group col-md-1">
-								<label><h5>檔案選擇</h5></label>
-							</div>
-							<div class="form-group col-md-3">								
-								<input class="form-control" type="file" name="uploadedFile" accept=".zip">
-							</div>
-							<div class="form-group col-md-1">
-								<button type="submit" class="btn btn-primary">Submit</button>
-							</div>	
 						</div>
-					</div>
-					</form>
+						</form>
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Gene Zip</h6>
@@ -86,7 +86,6 @@
                             </div>
                         </div>
                     </div>				
-					{{data.diagnostics}}
 				</div>
 			</div>
             <!-- Footer -->
@@ -103,9 +102,8 @@
 		<!-- End of Main Content -->
 		
 	</div>
-        <!-- End of Content Wrapper -->
-    </div>
-    <!-- End of Page Wrapper -->
+	<!-- End of Content Wrapper -->
+<!-- End of Page Wrapper -->
 {% include 'utilities-js.html' %}
 </body>
 

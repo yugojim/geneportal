@@ -89,11 +89,18 @@
 			{% endif %}
 			{% if Generight.0.cbioportal %}
 				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="http://104.42.221.219/">
+					<a class="nav-link" target="_blank" href="http://20.212.244.127:8080/">
 						<i class="fas fa-fw fa-solid fa-dna"></i>
 						<span>cBioPortal</span></a>
 				</li>
-			{% endif %}			
+			{% endif %}
+			{% if Generight.0.cbioportal1 %}
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="http://20.212.244.127:8180/">
+						<i class="fas fa-fw fa-solid fa-dna"></i>
+						<span>cBioPortal</span></a>
+				</li>
+			{% endif %}					
 			{% if right.0.emergency %}
 			<li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"

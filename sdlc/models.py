@@ -57,6 +57,7 @@ class Genepermission(models.Model):
     copy_number_alterations=models.BooleanField()
     short_variants=models.BooleanField()
     cbioportal=models.BooleanField()
+    cbioportal1=models.BooleanField()
     dateTimeOfUpload = models.DateTimeField(auto_now = True)
     #def __str__(self):
         #return self.User

@@ -7,7 +7,7 @@ UserAdmin.list_display = ('username', 'email', 'is_staff', 'is_active', 'is_supe
 @admin.register(Genepermission)
 class GenepermissionAdmin(admin.ModelAdmin):
     #list display
-    list_display = ['user', 'pmi', 'specimen', 'biomarker', 'rearrangements','GenomicFindings','VariantProperties','Trials','reportProperties','copy_number_alterations','short_variants','cbioportal']
+    list_display = ['cbioportal1','cbioportal','user', 'pmi', 'specimen', 'biomarker', 'rearrangements','GenomicFindings','VariantProperties','Trials','reportProperties','copy_number_alterations','short_variants']
     #list Filter
     list_filter = ('user','dateTimeOfUpload')
     # search list
@@ -21,7 +21,7 @@ class PermissionAdmin(admin.ModelAdmin):
     list_filter = ('user','dateTimeOfUpload')
     # search list
     #search_fields = ['User']
-
+'''
 @admin.register(Resourcejson)
 class ResourcejsonAdmin(admin.ModelAdmin):
     #list display
@@ -66,7 +66,7 @@ class UserrightAdmin(admin.ModelAdmin):
     list_filter = ('fileTitle','dateTimeOfUpload')
     # search list
     #search_fields = ['User']
-    
+   
 @admin.register(fhirip)
 class fhiripAdmin(admin.ModelAdmin):
     #list display
@@ -75,3 +75,4 @@ class fhiripAdmin(admin.ModelAdmin):
     list_filter = ('location','dateTimeOfUpload')
     # search list
     #search_fields = ['User']
+'''
