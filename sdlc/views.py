@@ -65,14 +65,15 @@ ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
 @csrf_exempt 
 def auth(request):
     user = request.user
-    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username)
-    print(Generight.get().cbioportal)
-    right=models.Permission.objects.filter(user__username__startswith=user.username)
-    if request.user.is_authenticated and Generight.get().cbioportal:
-        return HttpResponseForbidden('Forbidden')
+    #print(user.username)
+    Generight=models.Genepermission.objects.filter(user__username__startswith=user.username).values()
+    #print(Generight[0].get('cbioportal'))
+    #print(Generight[0].get('cbioportal1'))
+    if request.user.is_authenticated and Generight[0].get('cbioportal'):
+        #return redirect('https://20.212.244.127:8080')
         return HttpResponse('Authenticated' ,status = 200)
         #return HttpResponse('Authenticated')
-    elif request.user.is_authenticated:
+    elif request.user.is_authenticated and Generight[0].get('cbioportal1'):
         return HttpResponse('Unauthenticated',status = 401)
         #return redirect('https://104.42.221.219/accounts/login/')
     else:
