@@ -54,11 +54,11 @@ risk = DocumentPath + 'risk.csv'
 riskdf = pd.read_csv(risk, encoding='utf8')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#genepostgresip = "104.208.68.39"
-genepostgresip = "20.205.134.146"
+genepostgresip = "104.208.68.39"
+#genepostgresip = "20.205.134.146"
 
-#genepostgresport="8081"
-genepostgresport="5432"
+genepostgresport="8081"
+#genepostgresport="5432"
 jsonPath=str(pathlib.Path().absolute()) + "/static/template/Observation-Imaging-EKG.json"
 ObservationImagingEKGJson = json.load(open(jsonPath,encoding="utf-8"))
 
@@ -1261,7 +1261,7 @@ def Metaxlsx(request):
                 #print(dirname)\media\Metaxlsx
             dfpath=os.getcwd().replace('\\','/')+'/media/'+str(meta.uploadedFile)
             #dfpath='/server/media/'+str(meta.uploadedFile)#VM用
-            print(dfpath)
+            #print(dfpath)
 
             conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
             #print('Opened database successfully')
@@ -1321,8 +1321,9 @@ def Metaxlsx(request):
                             if cur.rowcount > -1:
                                 df['update'][i]='OK'
                             conn.commit()
-                except:
-                    df['update'][i]='NG'
+                #except:
+                except Exception as e:
+                    df['update'][i]=e
             df.to_excel(dfpath,index=False)
         context = {
                 'Generight' : Generight,
