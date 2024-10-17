@@ -140,8 +140,8 @@ def convert(request):
                     'table':table                
                     }
                 #print(dbconn)
-                #conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
-                conn = psycopg2.connect(database=db, user=ID, password=PassWord, host=IP, port=Port)
+                conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
+                #conn = psycopg2.connect(database=db, user=ID, password=PassWord, host=IP, port=Port)
                 cur = conn.cursor()
                 #db list
                 #consentsql = "SELECT table_schema,table_name FROM information_schema.tables where table_schema='public';"
@@ -230,7 +230,7 @@ def GeneReport(request):
                 }        
         cur.execute(consentsql)
         rows = cur.fetchall()
-        #print(type(rows))
+        print(type(rows))
         df = pd.DataFrame(rows)
         #print(consentsql)
         df.to_csv('static/doc/datalist.csv', sep='\t', encoding='utf-8')

@@ -21,7 +21,7 @@ class PermissionAdmin(admin.ModelAdmin):
     list_filter = ('user','dateTimeOfUpload')
     # search list
     #search_fields = ['User']
-'''
+
 @admin.register(Resourcejson)
 class ResourcejsonAdmin(admin.ModelAdmin):
     #list display
@@ -75,4 +75,3 @@ class fhiripAdmin(admin.ModelAdmin):
     list_filter = ('location','dateTimeOfUpload')
     # search list
     #search_fields = ['User']
-'''

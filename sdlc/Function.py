@@ -19,13 +19,15 @@ headers = {
 }
 payload={}
 
-postgresip = "20.205.134.146"
+#postgresip = "20.205.134.146"
+postgresip = "104.208.68.39"
+port="8081"
 def postlog(request):
     ip_addr = request.remote_addr
     method = request.method
     host_url  = request.url
     headers=dict(request.headers)
-    conn = psycopg2.connect(database="consent", user="postgres", password="1qaz@WSX3edc", host=postgresip, port="5432")
+    conn = psycopg2.connect(database="consent", user="postgres", password="1qaz@WSX3edc", host=postgresip, port=port)
     #print('Opened database')
     cur = conn.cursor()
     #sql="INSERT INTO public.log (ip_addr, method, host_url, headers, datetime ) VALUES ( '123.123.123.123', 'GET', 'http://1', 'header', '2023-10-11 08:12:22');"
