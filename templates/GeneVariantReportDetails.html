@@ -9,7 +9,29 @@
     <meta name="author" content="">
 	<link rel="icon" href="data:,">
     <title>VariantReport</title>	
-	{% include 'utilities-css.html' %}	
+	{% include 'utilities-css.html' %}
+    <script>
+        function openEditWindow(type, data) {
+            let newWindow = window.open("", "_blank", "width=500,height=500");
+            newWindow.document.write(`
+                <html>
+                <head>
+                    <title>Edit ${type}</title>
+                </head>
+                <body>
+                    <h2>Edit ${type}</h2>
+                    <textarea id="editField" style="width: 100%; height: 300px;">${data}</textarea>
+                    <br>
+                    <button onclick="window.opener.updateData('${type}', document.getElementById('editField').value); window.close();">Save</button>
+                </body>
+                </html>
+            `);
+        }
+
+        function updateData(type, newData) {
+            document.getElementById(`${type}_data`).innerText = newData;
+        }
+    </script>	
 </head>
 
 <body id="page-top">

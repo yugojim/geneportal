@@ -1947,7 +1947,7 @@ def logging(request):
         operationdate=''    
     #print(formip,method,operationdate)
     
-    conn = psycopg2.connect(database="consent", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port="5432")
+    conn = psycopg2.connect(database="consent", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
     cur = conn.cursor()  
     sqlstring =  "SELECT * FROM public.log WHERE method = '" + method + "'"
     if formip != '':
